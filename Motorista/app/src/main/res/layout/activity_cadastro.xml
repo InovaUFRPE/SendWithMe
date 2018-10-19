@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.CadastroActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:background="@drawable/edit_text_style"
+                android:id="@+id/edtCadNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nome"
+                android:inputType="textCapCharacters"/>
+
+            <EditText
+                android:background="@drawable/edit_text_style"
+                android:id="@+id/edtCadSobrenome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sobrenome"
+                android:inputType="textCapCharacters"/>
+
+            <EditText
+                android:background="@drawable/edit_text_style"
+                android:id="@+id/edtCadDataNascimento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/data_nascimento"
+                android:inputType="date"/>
+
+            <EditText
+                android:background="@drawable/edit_text_style"
+                android:id="@+id/edtCadEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:background="@drawable/edit_text_style"
+                android:id="@+id/edtCadSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/senha"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:background="@drawable/edit_text_style"
+                android:id="@+id/edtCadConfirmarSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirmar_senha"
+                android:inputType="textPassword"/>
+
+            <RadioGroup
+                android:id="@+id/rgSexo"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rbFeminino"
+                    android:hint="@string/feminino"
+                    android:checked="true"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rbMasculino"
+                    android:hint="@string/masculino"
+                    android:checked="true"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <Button
+                android:background="@drawable/button_style"
+                android:id="@+id/btnSalvar"
+                android:hint="@string/salvar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

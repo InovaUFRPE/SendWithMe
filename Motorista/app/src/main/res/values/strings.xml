@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Send With Me Motorista</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="data_nascimento">Data de Nascimento</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="confirmar_senha">Confirma Senha</string>
+    <string name="feminino">Feminino</string>
+    <string name="masculino">Masculino</string>
+    <string name="salvar">Salvar</string>
+    <string name="login">Login</string>
+    <string name="nao_tem_cadastro">Não tem cadastro? Clique aqui</string>
+    <string name="fazer_login">Fazer login</string>
+</resources>
