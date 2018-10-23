@@ -34,6 +34,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -68,6 +73,8 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
 
     private Marker posicaoAtual;
     private LatLng latLng;
+    private DatabaseReference databaseReference;
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +106,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         // Add a marker in Sydney and move the camera
         LatLng sydney = recife;
 
-        CameraPosition cameraPosition = new CameraPosition.Builder().zoom(15).target(sydney).build();
+        CameraPosition cameraPosition = new CameraPosition.Builder().zoom(10).target(sydney).build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
@@ -466,14 +473,6 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
                 CameraPosition updateRota = new CameraPosition(latLng, 15, 0, 0);
                 mMap.animateCamera(CameraUpdateFactory.newCameraPosition(updateRota), 3000, null);
 
-                /*mo.title(origem);
-                mo2.title(destino);
-                mMap.addMarker(mo);
-                mMap.addMarker(mo2);
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng2));
-                */
-
             }
 
 
@@ -483,21 +482,6 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     }
 
 
-    public void fazerPedido(View view){
-        EditText  edt_pegaLoc =(EditText)findViewById(R.id.editOrigemPedido);
-        EditText  edt_destino =(EditText)findViewById(R.id.edtDestinoPedido);
-        String origem= edt_pegaLoc.getText().toString();
-        String destino= edt_destino.getText().toString();
-
-
-        Intent intent = new Intent(getApplicationContext(),ConfirmarPedidoActivity.class);
-        intent.putExtra("origem",origem);
-        intent.putExtra("destino",destino);
-        startActivity(intent);
-
-
-
-    }
 
     private class MinhaAsyncTask extends AsyncTask<String, Void, JSONObject> {
 
@@ -517,6 +501,49 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
             }
         }
 
+    }
+
+
+
+    public void fazerPedido(View view){
+
+        EditText origem = (EditText) findViewById(R.id.editOrigemPedido);
+        EditText destino = (EditText) findViewById(R.id.edtDestinoPedido);
+        String origem1 = origem.getText().toString();
+        String destino1 = destino.getText().toString();
+
+        EditText titulo = (EditText) findViewById(R.id.editTítuloPedido);
+        EditText nome = (EditText) findViewById(R.id.editNomeItem);
+        String titulo1 = titulo.getText().toString();
+        String nome1 = nome.getText().toString();
+
+        if(origem1.isEmpty()){
+            origem.setError("Campo em branco");
+        }else if(destino1.isEmpty()){
+            destino.setError("Campo em branco");
+        }else if(titulo1.isEmpty()){
+            titulo.setError("Campo em branco");
+        }else if(nome1.isEmpty()){
+            nome.setError("Campo em branco");
+        }else {
+
+            Pedido pedido = new Pedido();
+            pedido.setTitulo(titulo1);
+            pedido.setObjeto(nome1);
+            pedido.setOrigem(origem1);
+            pedido.setDestino(destino1);
+            pedido.setIdUsuario(user.getUid());
+
+            databaseReference = FirebaseDatabase.getInstance().getReference().child("Pedidos");
+
+            databaseReference.push().setValue(pedido);
+
+            Intent intent = new Intent(getApplicationContext(), HomeDrawerActivity.class);
+            startActivity(intent);
+
+            Toast.makeText(getApplicationContext(), "Pedido Salvo", Toast.LENGTH_LONG).show();
+
+        }
     }
 
 }
