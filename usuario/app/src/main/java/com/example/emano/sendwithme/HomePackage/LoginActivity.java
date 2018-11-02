@@ -14,6 +14,7 @@ import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.CadastroActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
         setView();
@@ -55,9 +57,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser!=null){
-            startActivity(new Intent(LoginActivity.this,HomeDrawerActivity.class));
-        }
+//        if(currentUser!=null){
+//            startActivity(new Intent(LoginActivity.this,HomeDrawerActivity.class));
+//        }
 
         //updateUI(currentUser);
 

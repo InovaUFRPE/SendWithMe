@@ -8,4 +8,14 @@
     tools:context=".HomePackage.HomeDrawerActivity"
     tools:showIn="@layout/app_bar_drawer">
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.osmdroid.views.MapView android:id="@+id/mapaId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
