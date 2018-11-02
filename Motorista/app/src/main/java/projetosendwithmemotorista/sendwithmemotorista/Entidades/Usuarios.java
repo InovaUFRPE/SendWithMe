@@ -16,6 +16,7 @@ public class Usuarios {
     private String nome;
     private String sobrenome;
     private String datanascimento;
+    private String cpf;
     private String sexo;
 
     public Usuarios() {
@@ -37,6 +38,7 @@ public class Usuarios {
         hashMapUsuario.put("nome", getNome());
         hashMapUsuario.put("sobrenome", getSobrenome());
         hashMapUsuario.put("datanascimento", getNascimento());
+        hashMapUsuario.put("cpf", getCpf());
         hashMapUsuario.put("sexo", getSexo());
 
         return hashMapUsuario;
@@ -89,6 +91,10 @@ public class Usuarios {
     public void setNascimento(String nascimento) {
         this.datanascimento = nascimento;
     }
+
+    public String getCpf() { return  cpf;}
+
+    public void setCpf(String cpf) {this.cpf = cpf;}
 
     public String getSexo() {
         return sexo;

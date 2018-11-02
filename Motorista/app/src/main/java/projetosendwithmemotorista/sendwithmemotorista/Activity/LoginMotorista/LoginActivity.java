@@ -1,7 +1,6 @@
-package projetosendwithmemotorista.sendwithmemotorista.Activity;
+package projetosendwithmemotorista.sendwithmemotorista.Activity.LoginMotorista;
 
 import android.content.Intent;
-import android.preference.EditTextPreference;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,8 +15,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import projetosendwithmemotorista.sendwithmemotorista.Activity.CadastroMotorista.CadastroActivity;
+import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPrincipalMapa.PrincipalActivity;
 import projetosendwithmemotorista.sendwithmemotorista.DAO.ConfiguracaoFirebase;
 import projetosendwithmemotorista.sendwithmemotorista.Entidades.Usuarios;
+import projetosendwithmemotorista.sendwithmemotorista.Helper.Base64Custom;
+import projetosendwithmemotorista.sendwithmemotorista.Helper.PreferenciasAndroid;
 import projetosendwithmemotorista.sendwithmemotorista.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -79,6 +82,12 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
 
                     abrirTelaPrincipal();
+                    String identificadorUsuario = Base64Custom.codificarBase64(usuarios.getEmail());
+                    PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(LoginActivity.this);
+                    preferenciasAndroid.salvarUsuarioPreferencias(identificadorUsuario, usuarios.getNome());
+                    Toast.makeText(LoginActivity.this, preferenciasAndroid.getIdentificador(), Toast.LENGTH_LONG).show();
+
+
                     Toast.makeText(LoginActivity.this, "Login efetuado com sucesso!", Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(LoginActivity.this, "Usuário ou Senha inválidos!", Toast.LENGTH_SHORT).show();
@@ -94,11 +103,13 @@ public class LoginActivity extends AppCompatActivity {
     public void abrirTelaPrincipal(){
         Intent intentAbrirTelaPrincipal = new Intent(LoginActivity.this, PrincipalActivity.class);
         startActivity(intentAbrirTelaPrincipal);
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
     }
 
     public void abreCadastroUsuario(){
         Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
         startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 }
