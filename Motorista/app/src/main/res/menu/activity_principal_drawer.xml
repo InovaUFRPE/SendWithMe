@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/AdicionarRota"
+            android:icon="@drawable/ic_place_black_24dp"
+            android:title="Sua Localização" />
+
+        <item
+            android:id="@+id/EditarRota"
+            android:icon="@drawable/ic_edit_location_black_24dp"
+            android:title="Editar Rota" />
+
+        <item
+            android:id="@+id/EditarPerfil"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Perfil" />
+
+        <item
+            android:id="@+id/Historico"
+            android:icon="@drawable/ic_timer_black_24dp"
+            android:title="Histórico" />
+
+        <item
+            android:id="@+id/Configuracoes"
+            android:icon="@drawable/ic_build_black_24dp"
+            android:title="Configurações" />
+        <item
+            android:id="@+id/Sair"
+            android:icon="@drawable/ic_power_settings_new_black_24dp"
+            android:title="Sair" />
+
+    </group>
+
+
+
+</menu>

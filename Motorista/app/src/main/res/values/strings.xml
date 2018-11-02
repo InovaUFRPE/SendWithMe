@@ -11,11 +11,15 @@
     <string name="data_nascimento">Data de Nascimento</string>
     <string name="email">Email</string>
     <string name="senha">Senha</string>
+    <string name="cpf">CPF</string>
     <string name="confirmar_senha">Confirma Senha</string>
     <string name="feminino">Feminino</string>
     <string name="masculino">Masculino</string>
-    <string name="salvar">Salvar</string>
+    <string name="salvar">Cadastrar</string>
     <string name="login">Login</string>
     <string name="nao_tem_cadastro">Não tem cadastro? Clique aqui</string>
     <string name="fazer_login">Fazer login</string>
+    <string name="title_activity_principal">PrincipalActivity</string>
+    <string name="title_activity_mapa">Map</string>
+    <string name="titulo">Send With Me Motorista</string>
 </resources>
