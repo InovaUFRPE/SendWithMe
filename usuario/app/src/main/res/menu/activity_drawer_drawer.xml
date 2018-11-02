@@ -14,8 +14,17 @@
             android:title="Perfil" />
 
         <item
+            android:id="@+id/nav_pedido"
+            android:title="Cadastrar Pedido" />
+
+        <item
             android:id="@+id/nav_viagem"
             android:title="Cadastrar Viagem" />
+
+        <item
+            android:id="@+id/nav_home_default"
+            android:icon="@drawable/ic_home_black"
+            android:title="Home Default" />
 
         <item
             android:id="@+id/nav_sair"

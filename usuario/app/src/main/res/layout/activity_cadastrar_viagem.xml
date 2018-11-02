@@ -10,14 +10,14 @@
         android:id="@+id/map4"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="381dp"
-        android:layout_height="501dp"
+        android:layout_height="308dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         map:layout_constraintBottom_toTopOf="@+id/btnSalvarViagem"
         map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.384"
         map:layout_constraintStart_toStartOf="parent"
-        tools:context=".CadastroViagem" />
+        tools:context=".ViagemPackage.CadastroViagem" />
 
     <Button
         android:id="@+id/btnBuscaRota"
@@ -26,7 +26,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="BuscarViagem"
+        android:onClick="buscarViagem"
         android:text="Buscar"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
