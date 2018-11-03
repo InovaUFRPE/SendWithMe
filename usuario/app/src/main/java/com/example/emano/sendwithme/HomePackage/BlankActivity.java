@@ -17,7 +17,7 @@ public class BlankActivity extends AppCompatActivity {
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        transaction.add(R.id.containerId, new HomeFragment(), "MapsFragment");
+        transaction.add(R.id.containerId, new HomeFragmentMap(), "MapsFragment");
 
         transaction.commitAllowingStateLoss();
 

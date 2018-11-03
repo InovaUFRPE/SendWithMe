@@ -81,6 +81,8 @@ public class HomeFragment extends Fragment {
                 String texto = cidadeDigitada1.getText().toString();
                 LatLng latLng = getLocationFromAddress(getContext(), texto);
 
+
+
                 String texto2 = cidadeDigitada2.getText().toString();
                 LatLng latLng2 = getLocationFromAddress(getContext(), texto2);
 
