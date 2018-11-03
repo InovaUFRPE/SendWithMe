@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.emano.sendwithme.PedidoPackage.CadastrarPedido;
+import com.example.emano.sendwithme.PedidoPackage.ListarPedidos;
 import com.example.emano.sendwithme.PerfilPackage.PerfilActivity;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.Usuario;
@@ -279,6 +280,8 @@ public class HomeDrawerActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_home_default) {
             startActivity(new Intent(HomeDrawerActivity.this, BlankActivity.class));
+        } else if (id == R.id.nav_lista_pedidos){
+            startActivity(new Intent(HomeDrawerActivity.this, ListarPedidos.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
