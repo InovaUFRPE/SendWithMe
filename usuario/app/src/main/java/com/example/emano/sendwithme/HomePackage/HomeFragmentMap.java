@@ -27,13 +27,20 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.osmdroid.api.IMapController;
+import org.osmdroid.bonuspack.routing.OSRMRoadManager;
+import org.osmdroid.bonuspack.routing.Road;
+import org.osmdroid.bonuspack.routing.RoadManager;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.Polyline;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+
+import util.DesenhaRotaTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -116,6 +123,8 @@ public class HomeFragmentMap extends Fragment {
         //Centraliza o mapa no ponto de referência
         mapController.setCenter(GeoPointOrigem);
 
+        tracarRota(GeoPointOrigem, GeoPointDestino);
+
 
     }
 
@@ -149,6 +158,29 @@ public class HomeFragmentMap extends Fragment {
         }
 
         return resLatLng;
+    }
+
+    public void tracarRota(GeoPoint pontoInicial, GeoPoint pontoFinal){
+        ArrayList<GeoPoint> waypoints = new ArrayList<GeoPoint>();
+        waypoints.add(pontoInicial);
+        waypoints.add(pontoFinal);
+
+        RoadManager roadManager = new OSRMRoadManager(getContext());
+        Road road = null;
+
+        try {
+
+            road = new DesenhaRotaTask(waypoints, roadManager).execute(roadManager).get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
+
+        this.mapa.getOverlays().add(roadOverlay);
+
+        this.mapa.invalidate();
     }
 
 

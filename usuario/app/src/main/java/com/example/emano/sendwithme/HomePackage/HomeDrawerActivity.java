@@ -102,7 +102,7 @@ public class HomeDrawerActivity extends AppCompatActivity
         this.mapa.setTileSource(TileSourceFactory.MAPNIK);
 
 //Cria um ponto de referência com base na latitude e longitude
-        this.pontoInicial = new GeoPoint(-7.082433, -41.468516);
+        this.pontoInicial = new GeoPoint(-7.8031351,-35.2372257);
 
         IMapController mapController = this.mapa.getController();
 //Faz zoom no mapa
@@ -118,7 +118,7 @@ public class HomeDrawerActivity extends AppCompatActivity
         startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
         mapa.getOverlays().add(startMarker);
 
-        this.pontoFinal = new GeoPoint(-7.078601, -41.462174);
+        this.pontoFinal = new GeoPoint(-7.8450178,-35.243718);
         Marker endMarker = new Marker(mapa);
         endMarker.setPosition(this.pontoFinal);
         endMarker.setTitle("Ponto Final");
