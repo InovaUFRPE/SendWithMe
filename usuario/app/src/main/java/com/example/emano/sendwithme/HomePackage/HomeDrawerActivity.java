@@ -7,6 +7,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -51,18 +53,15 @@ import util.DesenhaRotaTask;
 public class HomeDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private TextView textoEntrada;
+
     private TextView nomeUsuario;
     private TextView emailUsuario;
-    private FloatingActionButton fabTracarRota;
     private FirebaseAuth mAuth;
     private DatabaseReference dataBaseReferencia = FirebaseDatabase.getInstance().getReference();
     private DatabaseReference usuarioReferencia = dataBaseReferencia.child("Usuarios");
     private DatabaseReference usuarioReferencia2;
     private View hView;
-    private MapView mapa;
-    private GeoPoint pontoInicial;
-    private GeoPoint pontoFinal;
+    private FragmentManager fragmentManager;
 
     @Override
 
@@ -71,7 +70,7 @@ public class HomeDrawerActivity extends AppCompatActivity
         setContentView(R.layout.activity_home_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        this.fabTracarRota = (FloatingActionButton) findViewById(R.id.fbRotaID);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -82,6 +81,9 @@ public class HomeDrawerActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         hView = navigationView.getHeaderView(0);
+
+        setInfoUsuario();
+        setFragmentoPadrao();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
@@ -97,58 +99,22 @@ public class HomeDrawerActivity extends AppCompatActivity
 
         }
 
-        //Pega o mapa adicionada no arquivo activity_main.xml
-        this.mapa = (MapView) findViewById(R.id.mapaId);
-//Fonte de imagens
-        this.mapa.setTileSource(TileSourceFactory.MAPNIK);
-
-//Cria um ponto de referência com base na latitude e longitude
-        this.pontoInicial = new GeoPoint(-7.8031351,-35.2372257);
-
-        IMapController mapController = this.mapa.getController();
-//Faz zoom no mapa
-        mapController.setZoom(15);
-//Centraliza o mapa no ponto de referência
-        mapController.setCenter(this.pontoInicial);
-
-//Cria um marcador no mapa
-        Marker startMarker = new Marker(this.mapa);
-        startMarker.setPosition(this.pontoInicial);
-        startMarker.setTitle("Ponto Inicial");
-//Posição do ícone
-        startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        mapa.getOverlays().add(startMarker);
-
-        this.pontoFinal = new GeoPoint(-7.8450178,-35.243718);
-        Marker endMarker = new Marker(mapa);
-        endMarker.setPosition(this.pontoFinal);
-        endMarker.setTitle("Ponto Final");
-//Posição do ícone
-        endMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        mapa.getOverlays().add(endMarker);
 
 
-        /// classe para nome
-        /*
-        * FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            // Name, email address, and profile photo Url
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-            Uri photoUrl = user.getPhotoUrl();
+    }
 
-            // Check if user's email is verified
-            boolean emailVerified = user.isEmailVerified();
+    private void setFragmentoPadrao() {
+        fragmentManager = getSupportFragmentManager(); //setou
 
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getIdToken() instead.
-            String uid = user.getUid();
-        }
-        * */
-        //textoEntrada = findViewById(R.id.textoEntradaId2);
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.add(R.id.containerIdCentral, new HomeFragmentMap(), "MapsFragment");
+
+        transaction.commitAllowingStateLoss();
+    }
+
+    private void setInfoUsuario() {
         nomeUsuario = hView.findViewById(R.id.nomeUsuarioDrawerId);
-        //nomePerfil = hView.findViewById(R.id.nomePerfilHomeId);
         emailUsuario = hView.findViewById(R.id.emailUsuarioDrawerId);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
@@ -157,10 +123,8 @@ public class HomeDrawerActivity extends AppCompatActivity
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
-                //textoEntrada.setText(usuario.getNome());
                 nomeUsuario.setText(usuario.getNome());
                 emailUsuario.setText(usuario.getEmail());
-                //textoEntrada.setText("TELA MAPA HOME");
 
             }
 
@@ -169,42 +133,8 @@ public class HomeDrawerActivity extends AppCompatActivity
 
             }
         });
-        ///
-
-        this.fabTracarRota.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tracarRota();
-            }
-        });
-
     }
 
-
-    public void tracarRota(){
-        ArrayList<GeoPoint> waypoints = new ArrayList<GeoPoint>();
-        waypoints.add(this.pontoInicial);
-        waypoints.add(this.pontoFinal);
-
-//Cria o objeto gerenciador de rotas
-        RoadManager roadManager = new OSRMRoadManager(this);
-        Road road = null;
-//        Road road = roadManager.getRoad(waypoints);
-        try {
-            //Chama a classe(DesenhaRotaTask) que executa tarefas assincronas, passa os pontos de referências
-            //para a classe DesenhaRotaTask traçar a rota
-            road = new DesenhaRotaTask(waypoints, roadManager).execute(roadManager).get();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-//Desenha a rota
-        Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
-//Adiciona a rota no mapa
-        this.mapa.getOverlays().add(roadOverlay);
-//atualiza o mapa
-        this.mapa.invalidate();
-    }
 
     @Override
     public void onBackPressed() {

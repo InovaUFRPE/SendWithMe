@@ -178,6 +178,7 @@ public class HomeFragmentMap extends Fragment {
 
         Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
 
+
         this.mapa.getOverlays().add(roadOverlay);
 
         this.mapa.invalidate();

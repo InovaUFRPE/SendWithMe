@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         //djair fez isso
-        startActivity(new Intent(LoginActivity.this, BlankActivity.class));
+        startActivity(new Intent(LoginActivity.this, HomeDrawerActivity.class));
 
         //FirebaseUser currentUser = mAuth.getCurrentUser();
 //        if(currentUser!=null){

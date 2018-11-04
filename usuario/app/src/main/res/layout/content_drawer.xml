@@ -5,17 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".HomePackage.HomeDrawerActivity"
-    tools:showIn="@layout/app_bar_drawer">
+    tools:context=".HomePackage.HomeDrawerActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <include
+        android:id="@+id/include"
+        layout="@layout/app_bar_drawer"
 
-    <org.osmdroid.views.MapView android:id="@+id/mapaId"
+
+        />
+
+    <FrameLayout
+        android:id="@+id/containerIdCentral"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include">
 
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>
