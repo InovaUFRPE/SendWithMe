@@ -41,10 +41,11 @@
             android:id="@+id/botaoAchaCidadeId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="68dp"
+            android:layout_marginLeft="68dp"
             android:layout_marginBottom="21dp"
             android:text="FIND ROUTE"
             app:layout_constraintBottom_toTopOf="@+id/container2Id"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cidadeDigitadaId2" />
 

@@ -57,7 +57,8 @@
             android:name=".ViagemPackage.CadastroViagem"
             android:label="@string/title_activity_cadastro_viagem" />
         <activity android:name=".HomePackage.BlankActivity" />
-        <activity android:name=".PedidoPackage.ListarPedidos"></activity>
+        <activity android:name=".PedidoPackage.ListarPedidos" />
+        <activity android:name=".PedidoPackage.ConfirmarPedido"></activity>
     </application>
 
 </manifest>

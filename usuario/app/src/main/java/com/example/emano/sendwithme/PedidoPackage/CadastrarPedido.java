@@ -10,6 +10,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.provider.Settings;
@@ -95,6 +96,7 @@ public class CadastrarPedido extends FragmentActivity implements OnMapReadyCallb
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -476,7 +478,7 @@ public class CadastrarPedido extends FragmentActivity implements OnMapReadyCallb
             pedido.setDestino(destino1);
             pedido.setIdUsuario(user.getUid());
 
-            databaseReference = FirebaseDatabase.getInstance().getReference().child("Pedidos");
+            databaseReference = FirebaseDatabase.getInstance().getReference("Pedidos").child(user.getUid());
 
             databaseReference.push().setValue(pedido);
 

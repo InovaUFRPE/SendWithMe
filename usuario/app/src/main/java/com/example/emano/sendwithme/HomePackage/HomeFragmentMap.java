@@ -2,6 +2,7 @@ package com.example.emano.sendwithme.HomePackage;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Geocoder;
 import android.location.Address;
@@ -20,6 +21,7 @@ import android.widget.EditText;
 import android.Manifest;
 import android.widget.Toast;
 
+import com.example.emano.sendwithme.PedidoPackage.ConfirmarPedido;
 import com.example.emano.sendwithme.R;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 
@@ -50,6 +52,7 @@ public class HomeFragmentMap extends Fragment {
     private EditText cidadeDigitada1;
     private EditText cidadeDigitada2;
     private Button botaoAchar;
+    private Button botaoPedido;
     private MapView mapa;
 
 
@@ -72,6 +75,7 @@ public class HomeFragmentMap extends Fragment {
         mapa.setTileSource(TileSourceFactory.MAPNIK);
 
         botaoAchar = rootView.findViewById(R.id.botaoAchaCidadeId);
+        botaoPedido = rootView.findViewById(R.id.botaoFazerPedido);
 
         botaoAchar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +94,16 @@ public class HomeFragmentMap extends Fragment {
 
 
                 //Toast.makeText(getContext(), latLng.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        botaoPedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ConfirmarPedido.class);
+                intent.putExtra("origem",cidadeDigitada1.getText().toString());
+                intent.putExtra("destino",cidadeDigitada2.getText().toString());
+                startActivity(intent);
             }
         });
 

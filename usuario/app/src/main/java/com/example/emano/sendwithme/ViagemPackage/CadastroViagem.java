@@ -85,7 +85,7 @@ public class CadastroViagem extends FragmentActivity implements OnMapReadyCallba
             viagem.setFim(fim);
             viagem.setIdUsuario(user.getUid());
 
-            databaseReference = FirebaseDatabase.getInstance().getReference().child("Viagens");
+            databaseReference = FirebaseDatabase.getInstance().getReference("Viagens").child(user.getUid());
 
             databaseReference.push().setValue(viagem);
 
