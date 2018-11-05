@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.emano.sendwithme.PedidoPackage.ListarPedidos;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.CadastroActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -58,12 +57,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         //djair fez isso
-        startActivity(new Intent(LoginActivity.this, HomeDrawerActivity.class));
+        //startActivity(new Intent(LoginActivity.this, HomeDrawerActivity.class));
 
-        //FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if(currentUser!=null){
-//            startActivity(new Intent(LoginActivity.this,HomeDrawerActivity.class));
-//        }
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser!=null){
+            startActivity(new Intent(LoginActivity.this,HomeDrawerActivity.class));
+        }
 
         //updateUI(currentUser);
 

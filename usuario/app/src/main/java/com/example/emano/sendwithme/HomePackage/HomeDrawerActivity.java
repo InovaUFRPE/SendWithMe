@@ -210,7 +210,7 @@ public class HomeDrawerActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_home_default) {
             startActivity(new Intent(HomeDrawerActivity.this, BlankActivity.class));
-        } else if (id == R.id.nav_lista_pedidos){
+        }else if (id == R.id.nav_lista_pedidos){
             startActivity(new Intent(HomeDrawerActivity.this, ListarPedidos.class));
         }
 
