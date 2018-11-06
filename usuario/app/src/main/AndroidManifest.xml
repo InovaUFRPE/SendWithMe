@@ -20,13 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomePackage.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".HomePackage.LoginActivity"/>
         <activity android:name=".UsuarioPackage.CadastroActivity" />
         <activity android:name=".PerfilPackage.PerfilActivity">
             <meta-data
@@ -37,6 +31,16 @@
             android:name=".HomePackage.HomeDrawerActivity"
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".HomePackage.Splashscreen"
+            android:label="@string/app_name"
+            android:theme="@style/AppCompat.TelaCheia">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

@@ -12,71 +12,65 @@
 
         <Button
             android:id="@+id/botaoFazerPedido"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="12dp"
             android:text="FAZER PEDIDO"
-            app:layout_constraintBottom_toTopOf="@+id/container2Id"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.49"
-            app:layout_constraintStart_toEndOf="@+id/botaoAchaCidadeId"
-            app:layout_constraintTop_toBottomOf="@+id/cidadeDigitadaId2"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintBottom_toTopOf="@+id/botaoAchaCidadeId"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <EditText
             android:id="@+id/cidadeDigitadaId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="7dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Carpina"
-            app:layout_constraintBottom_toTopOf="@+id/cidadeDigitadaId2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/cidadeDigitadaId2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Tracunhaém"
-            app:layout_constraintBottom_toTopOf="@+id/botaoAchaCidadeId"
-            app:layout_constraintStart_toStartOf="@+id/cidadeDigitadaId"
-            app:layout_constraintTop_toBottomOf="@+id/cidadeDigitadaId" />
+            app:layout_constraintBottom_toTopOf="@+id/cidadeDigitadaId"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/botaoAchaCidadeId"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"
             android:text="FIND ROUTE"
-            app:layout_constraintBottom_toTopOf="@+id/container2Id"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cidadeDigitadaId2" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <FrameLayout
             android:id="@+id/container2Id"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cidadeDigitadaId2"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/botaoAchaCidadeId">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <org.osmdroid.views.MapView android:id="@+id/mapaId"
+            <org.osmdroid.views.MapView
+                android:id="@+id/mapaId"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

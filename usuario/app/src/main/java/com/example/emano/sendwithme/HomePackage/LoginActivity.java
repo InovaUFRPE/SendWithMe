@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
@@ -20,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
-    private Button botaoCadastrarHome;
+    private TextView botaoCadastrarHome;
     private Button botaoLogar;
     private EditText email;
     private EditText senha;
@@ -50,21 +51,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        //djair fez isso
-        //startActivity(new Intent(LoginActivity.this, HomeDrawerActivity.class));
-
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser!=null){
-            startActivity(new Intent(LoginActivity.this,HomeDrawerActivity.class));
-        }
-
-        //updateUI(currentUser);
 
     }
 
