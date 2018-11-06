@@ -22,7 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <EditText
-            android:id="@+id/cidadeDigitadaId"
+            android:id="@+id/txtNomeObjeto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -35,7 +35,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/cidadeDigitadaId2"
+            android:id="@+id/txtTituloPedido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -44,7 +44,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Tracunhaém"
-            app:layout_constraintBottom_toTopOf="@+id/cidadeDigitadaId"
+            app:layout_constraintBottom_toTopOf="@+id/txtNomeObjeto"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
@@ -63,7 +63,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/cidadeDigitadaId2"
+            app:layout_constraintBottom_toTopOf="@+id/txtTituloPedido"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"

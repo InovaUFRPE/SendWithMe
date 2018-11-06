@@ -68,8 +68,8 @@ public class HomeFragment extends Fragment {
 
         listPoints = new ArrayList<>();
 
-        cidadeDigitada1 = rootView.findViewById(R.id.cidadeDigitadaId);
-        cidadeDigitada2 = rootView.findViewById(R.id.cidadeDigitadaId2);
+        cidadeDigitada1 = rootView.findViewById(R.id.txtNomeObjeto);
+        cidadeDigitada2 = rootView.findViewById(R.id.txtTituloPedido);
 
 
         botaoAchar = rootView.findViewById(R.id.botaoAchaCidadeId);

@@ -1,5 +1,6 @@
 package com.example.emano.sendwithme.PedidoPackage;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,7 +34,7 @@ public class ListarPedidos extends AppCompatActivity {
         setContentView(R.layout.activity_listar_pedidos);
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        databaseReference = FirebaseDatabase.getInstance().getReference(user.getUid()).child("Pedidos");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Pedidos").child(user.getUid());
 
         lista = (ListView) findViewById(R.id.lista_pedidos_view);
 
@@ -45,7 +46,7 @@ public class ListarPedidos extends AppCompatActivity {
 
                     Pedido dado = dados.getValue(Pedido.class);
 
-                        addOnLista(dado);
+                    addOnLista(dado);
 
                 }
 
@@ -59,15 +60,19 @@ public class ListarPedidos extends AppCompatActivity {
             }
         });
 
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                String texto = pedidos.get(position).getDestino();
-                Toast.makeText(getApplicationContext(), texto, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(),InfoPedido.class);
+                intent.putExtra("origem",String.valueOf(pedidos.get(position).getOrigem()));
+                intent.putExtra("destino",String.valueOf(pedidos.get(position).getDestino()));
+                intent.putExtra("titulo",String.valueOf(pedidos.get(position).getTitulo()));
+                intent.putExtra("nome",String.valueOf(pedidos.get(position).getObjeto()));
+                startActivity(intent);
 
             }
-        });
+        });*/
 
     }
 

@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/cidadeDigitadaId"
+            android:id="@+id/txtNomeObjeto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -20,13 +20,13 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Carpina"
-            app:layout_constraintBottom_toTopOf="@+id/cidadeDigitadaId2"
+            app:layout_constraintBottom_toTopOf="@+id/txtTituloPedido"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/cidadeDigitadaId2"
+            android:id="@+id/txtTituloPedido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -34,8 +34,8 @@
             android:inputType="textPersonName"
             android:text="Tracunhaém"
             app:layout_constraintBottom_toTopOf="@+id/botaoAchaCidadeId"
-            app:layout_constraintStart_toStartOf="@+id/cidadeDigitadaId"
-            app:layout_constraintTop_toBottomOf="@+id/cidadeDigitadaId" />
+            app:layout_constraintStart_toStartOf="@+id/txtNomeObjeto"
+            app:layout_constraintTop_toBottomOf="@+id/txtNomeObjeto" />
 
         <Button
             android:id="@+id/botaoAchaCidadeId"
@@ -47,7 +47,7 @@
             android:text="FIND ROUTE"
             app:layout_constraintBottom_toTopOf="@+id/container2Id"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cidadeDigitadaId2" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloPedido" />
 
         <FrameLayout
             android:id="@+id/container2Id"

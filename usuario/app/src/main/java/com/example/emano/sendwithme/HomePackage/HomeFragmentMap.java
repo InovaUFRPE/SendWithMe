@@ -3,30 +3,22 @@ package com.example.emano.sendwithme.HomePackage;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.location.Geocoder;
 import android.location.Address;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import android.Manifest;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.PedidoPackage.ConfirmarPedido;
 import com.example.emano.sendwithme.R;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.routing.OSRMRoadManager;
@@ -67,8 +59,8 @@ public class HomeFragmentMap extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_home_fragment_map, container, false);
 
-        cidadeDigitada1 = rootView.findViewById(R.id.cidadeDigitadaId);
-        cidadeDigitada2 = rootView.findViewById(R.id.cidadeDigitadaId2);
+        cidadeDigitada1 = rootView.findViewById(R.id.txtNomeObjeto);
+        cidadeDigitada2 = rootView.findViewById(R.id.txtTituloPedido);
 
         mapa = rootView.findViewById(R.id.mapaId);
 

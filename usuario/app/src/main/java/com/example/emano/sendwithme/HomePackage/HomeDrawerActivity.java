@@ -200,10 +200,6 @@ public class HomeDrawerActivity extends AppCompatActivity
         } else if (id == R.id.nav_sair) {
             logout();
 
-        } else if (id == R.id.nav_pedido) {
-
-            startActivity(new Intent(HomeDrawerActivity.this, CadastrarPedido.class));
-
         } else if (id == R.id.nav_viagem) {
 
             startActivity(new Intent(HomeDrawerActivity.this, CadastroViagem.class));

@@ -20,7 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomePackage.LoginActivity"/>
+        <activity android:name=".HomePackage.LoginActivity" />
         <activity android:name=".UsuarioPackage.CadastroActivity" />
         <activity android:name=".PerfilPackage.PerfilActivity">
             <meta-data
@@ -31,14 +31,15 @@
             android:name=".HomePackage.HomeDrawerActivity"
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HomePackage.Splashscreen"
+        <activity
+            android:name=".HomePackage.Splashscreen"
             android:label="@string/app_name"
             android:theme="@style/AppCompat.TelaCheia">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <!--
@@ -62,7 +63,8 @@
             android:label="@string/title_activity_cadastro_viagem" />
         <activity android:name=".HomePackage.BlankActivity" />
         <activity android:name=".PedidoPackage.ListarPedidos" />
-        <activity android:name=".PedidoPackage.ConfirmarPedido"></activity>
+        <activity android:name=".PedidoPackage.ConfirmarPedido" />
+        <activity android:name=".PedidoPackage.InfoPedido"></activity>
     </application>
 
 </manifest>
