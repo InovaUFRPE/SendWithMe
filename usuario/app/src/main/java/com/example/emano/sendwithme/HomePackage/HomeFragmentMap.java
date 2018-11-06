@@ -101,8 +101,8 @@ public class HomeFragmentMap extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(),ConfirmarPedido.class);
-                intent.putExtra("origem",cidadeDigitada1.getText().toString());
-                intent.putExtra("destino",cidadeDigitada2.getText().toString());
+                intent.putExtra("origem",String.valueOf(cidadeDigitada1.getText().toString()));
+                intent.putExtra("destino",String.valueOf(cidadeDigitada2.getText().toString()));
                 startActivity(intent);
             }
         });

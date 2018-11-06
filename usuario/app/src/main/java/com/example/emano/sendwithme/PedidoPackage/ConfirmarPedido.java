@@ -17,11 +17,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ConfirmarPedido extends AppCompatActivity {
 
-    Button confirma = (Button) findViewById(R.id.btnConfirmarPedido);
-    EditText titulo = (EditText) findViewById(R.id.editTituloPedido);
-    EditText nome = (EditText) findViewById(R.id.editNomeObjeto);
-    String titulo1 = titulo.getText().toString();
-    String nome1 = nome.getText().toString();
+    Button confirma;
+    EditText titulo;
+    EditText nome;
+    String titulo1;
+    String nome1;
     private DatabaseReference databaseReference;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     Pedido pedido = new Pedido();
@@ -35,10 +35,13 @@ public class ConfirmarPedido extends AppCompatActivity {
 
     public void ConfirmarPedido(View view) {
 
-        Intent novaIntent = getIntent();
+        setView();
 
-        String origem = novaIntent.getStringExtra("origem");
-        String destino = novaIntent.getStringExtra("destino");
+        //Intent novaIntent = getIntent();
+        Bundle novaIntent = getIntent().getExtras();
+
+        String origem = novaIntent.getString("origem");
+        String destino = novaIntent.getString("destino");
 
         pedido.setOrigem(origem);
         pedido.setDestino(destino);
@@ -66,6 +69,15 @@ public class ConfirmarPedido extends AppCompatActivity {
         }
 
 
+    }
+
+    private void setView() {
+
+       confirma = (Button) findViewById(R.id.btnConfirmarPedido);
+       titulo = (EditText) findViewById(R.id.editTituloPedido);
+       nome = (EditText) findViewById(R.id.editNomeObjeto);
+       titulo1 = titulo.getText().toString();
+       nome1 = nome.getText().toString();
     }
 
 }
