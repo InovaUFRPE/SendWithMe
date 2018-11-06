@@ -81,29 +81,63 @@ public class HomeFragmentMap extends Fragment {
             @Override
             public void onClick(View v) {
                 //SE AMBOS OS CAMPOS TÃO VAZIOS E EXISTEM!!!
-                String texto = cidadeDigitada1.getText().toString();
-                LatLng latLng = getLocationFromAddress(getContext(), texto);
+                if(!validarCampos()){
 
-                String texto2 = cidadeDigitada2.getText().toString();
-                LatLng latLng2 = getLocationFromAddress(getContext(), texto2);
+                    try {
 
-                marcarPontos(latLng, latLng2);
+                        String texto = cidadeDigitada1.getText().toString();
+                        LatLng latLng = getLocationFromAddress(getContext(), texto);
+
+                        String texto2 = cidadeDigitada2.getText().toString();
+                        LatLng latLng2 = getLocationFromAddress(getContext(), texto2);
+
+                        marcarPontos(latLng, latLng2);
+                    } catch (Exception e){
+                        Toast.makeText(getContext(),"Impossível encontrar endereços informados.", Toast.LENGTH_SHORT).show();
+                    }
 
 
-                //mapsFragment.setarLocalizacao(latLng);
+
+                }
 
 
-                //Toast.makeText(getContext(), latLng.toString(), Toast.LENGTH_SHORT).show();
+
+
+
+
+
             }
         });
 
         botaoPedido.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),ConfirmarPedido.class);
-                intent.putExtra("origem",String.valueOf(cidadeDigitada1.getText().toString()));
-                intent.putExtra("destino",String.valueOf(cidadeDigitada2.getText().toString()));
-                startActivity(intent);
+                if (!validarCampos()){
+
+                    try{
+                        String texto = cidadeDigitada1.getText().toString();
+                        LatLng latLng = getLocationFromAddress(getContext(), texto);
+
+                        String texto2 = cidadeDigitada2.getText().toString();
+                        LatLng latLng2 = getLocationFromAddress(getContext(), texto2);
+
+                        GeoPoint GeoPointOrigem = new GeoPoint(latLng.latitude, latLng.longitude);
+                        GeoPoint GeoPointDestino = new GeoPoint(latLng2.latitude, latLng2.longitude);
+
+                        Intent intent = new Intent(getActivity(),ConfirmarPedido.class);
+                        intent.putExtra("origem",String.valueOf(cidadeDigitada1.getText().toString()));
+                        intent.putExtra("destino",String.valueOf(cidadeDigitada2.getText().toString()));
+                        startActivity(intent);
+
+                    }catch (Exception e){
+                        Toast.makeText(getContext(),"Impossível encontrar endereços informados.", Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+
+                }
+
             }
         });
 
@@ -113,6 +147,27 @@ public class HomeFragmentMap extends Fragment {
 
         return rootView;
     }
+
+    private boolean validarCampos() {
+        boolean erro = false;
+        String cidade1 = cidadeDigitada1.getText().toString().trim();
+        String cidade2 = cidadeDigitada2.getText().toString().trim();
+        if (cidade1.isEmpty()) {
+            erro = true;
+            cidadeDigitada1.setError("Campo em branco");
+        }
+
+        else if(cidade2.isEmpty()){
+            erro = true;
+            cidadeDigitada2.setError("Campo em branco");
+        }
+
+        return erro;
+
+
+    }
+
+
 
     private void setMapLocationDefault() {
         IMapController mapControllerDefault = mapa.getController();
