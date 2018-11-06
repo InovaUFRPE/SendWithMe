@@ -107,9 +107,19 @@ public class HomeFragmentMap extends Fragment {
             }
         });
 
+        setMapLocationDefault();
+
 
 
         return rootView;
+    }
+
+    private void setMapLocationDefault() {
+        IMapController mapControllerDefault = mapa.getController();
+        mapControllerDefault.setZoom(15);
+        //Centraliza o mapa no ponto de referência
+        mapControllerDefault.setCenter(new GeoPoint(-8.0175094, -34.9492219));
+
     }
 
 
