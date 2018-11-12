@@ -21,7 +21,7 @@
             android:layout_marginBottom="8dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Carpina"
+            android:text="Samsung J2 Pro"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -34,7 +34,7 @@
             android:layout_marginBottom="8dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Tracunhaém"
+            android:text="Smartphone"
             app:layout_constraintBottom_toTopOf="@+id/txtNomeObjeto"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -57,6 +57,53 @@
                 android:layout_height="match_parent" />
 
         </FrameLayout>
+
+        <TextView
+            android:id="@+id/txtOrigemView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Olinda"
+            app:layout_constraintEnd_toStartOf="@+id/btnRotaView"
+            app:layout_constraintHorizontal_bias="0.142"
+            app:layout_constraintStart_toEndOf="@+id/txtTituloPedido"
+            app:layout_constraintTop_toBottomOf="@+id/container2Id" />
+
+        <TextView
+            android:id="@+id/txtDestinoView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Recife"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnRotaView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/txtNomeObjeto"
+            app:layout_constraintTop_toBottomOf="@+id/txtOrigemView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btnRotaView"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="VerRota"
+            android:text="Ver rota"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container2Id" />
 
     </android.support.constraint.ConstraintLayout>
 

@@ -6,6 +6,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,8 @@ public class InfoPedido extends AppCompatActivity {
 
     private TextView titulo;
     private TextView nome;
+    private TextView origem;
+    private TextView destino;
     private MapView mapa;
 
 
@@ -42,31 +45,37 @@ public class InfoPedido extends AppCompatActivity {
         setView();
 
         Intent intent = getIntent();
-        String origem = intent.getStringExtra("origem");
-        String destino = intent.getStringExtra("destino");
+        String origem1 = intent.getStringExtra("origem");
+        String destino1 = intent.getStringExtra("destino");
         String titulo1 = intent.getStringExtra("titulo");
         String nome1 = intent.getStringExtra("nome");
 
         titulo.setText(titulo1);
         nome.setText(nome1);
+        origem.setText(origem1);
+        destino.setText(destino1);
 
-        String texto = origem;
+    }
+
+    public void VerRota(View view){
+
+        String texto = origem.getText().toString();
         LatLng latLng = getLocationFromAddress(getApplicationContext(), texto);
 
-        String texto2 = destino;
+        String texto2 = destino.getText().toString();
         LatLng latLng2 = getLocationFromAddress(getApplicationContext(), texto2);
 
         marcarPontos(latLng,latLng2);
 
     }
 
-
-
     private void setView(){
 
         mapa = (MapView) findViewById(R.id.mapaIdInfo);
         titulo = (TextView) findViewById(R.id.txtTituloPedido);
         nome = (TextView) findViewById(R.id.txtNomeObjeto);
+        origem = (TextView) findViewById(R.id.txtOrigemView);
+        destino = (TextView) findViewById(R.id.txtDestinoView);
 
     }
 
