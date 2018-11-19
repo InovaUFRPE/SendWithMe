@@ -49,7 +49,8 @@
         <activity android:name=".Activity.TelaPerfil.EditarPerfil" />
         <activity android:name=".Activity.TelaPrincipalMapa.TelaInicial" />
         <activity android:name=".Activity.TelaPrincipalMapa.InicioViagem" />
-        <activity android:name=".Activity.TelaPrincipalMapa.DestinoViagem"></activity>
+        <activity android:name=".Activity.TelaPrincipalMapa.DestinoViagem" />
+        <activity android:name=".Activity.TelaPrincipalMapa.ListaViagens"></activity>
     </application>
 
 </manifest>
