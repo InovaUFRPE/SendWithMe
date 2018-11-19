@@ -30,6 +30,7 @@ public class TelaPerfil extends AppCompatActivity {
 
     private Button btnExcluirConta;
     private TextView nomePerfil;
+    private TextView sobrenomePerfil;
     private TextView emailPerfil;
     private TextView cpfPerfil;
     private TextView dataPerfil;
@@ -78,11 +79,13 @@ public class TelaPerfil extends AppCompatActivity {
               Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
               setView();
               EditarNome();
+              EditarSobrenome();
               EditarEmail();
               EditarCpf();
               EditarData();
               EditarSenha();
               nomePerfil.setText(usuarios.getNome());
+              sobrenomePerfil.setText(usuarios.getSobrenome());
               emailPerfil.setText(usuarios.getEmail());
               cpfPerfil.setText(usuarios.getCpf());
               dataPerfil.setText(usuarios.getNascimento());
@@ -98,6 +101,7 @@ public class TelaPerfil extends AppCompatActivity {
 
     private void setView() {
         nomePerfil = findViewById(R.id.nomePerfilId);
+        sobrenomePerfil = findViewById(R.id.sobrenomePerfilId);
         emailPerfil = findViewById(R.id.emailPerfilId);
         cpfPerfil = findViewById(R.id.cpfPerfilId);
         dataPerfil = findViewById(R.id.dataPerfilId);
@@ -116,7 +120,7 @@ public class TelaPerfil extends AppCompatActivity {
                 Button buttonConfirmar = alertview.findViewById(R.id.bttEdicao);
                 Button buttonCancelar = alertview.findViewById(R.id.bttCancelarEdicao);
 
-                alertTitulo.setText("Digite seu Nome: ");
+                alertTitulo.setText("Digite um novo Nome: ");
                 buttonConfirmar.setText("Editar");
                 buttonCancelar.setText("Cancelar");
                 alertDialog.setView(alertview);
@@ -161,6 +165,52 @@ public class TelaPerfil extends AppCompatActivity {
         });
 
     }
+    private void EditarSobrenome(){
+        sobrenomePerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(TelaPerfil.this);
+                View alertview = getLayoutInflater().inflate(R.layout.dialogo_editar_perfil, null);
+                TextView alertTitulo = alertview.findViewById(R.id.textViewEditar);
+                final EditText editTextAlterar = alertview.findViewById(R.id.editTextAlertConf);
+                Button buttonConfirmar = alertview.findViewById(R.id.bttEdicao);
+                Button buttonCancelar = alertview.findViewById(R.id.bttCancelarEdicao);
+
+                alertTitulo.setText("Digite um novo Sobrenome: ");
+                buttonConfirmar.setText("Editar");
+                buttonCancelar.setText("Cancelar");
+                alertDialog.setView(alertview);
+                final AlertDialog dialog = alertDialog.create();
+                dialog.show();
+
+                buttonCancelar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+
+                    }
+                });
+                buttonConfirmar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+
+                    public void onClick(View v) {
+                        if (!editTextAlterar.toString().isEmpty()) {
+
+                            PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(TelaPerfil.this);
+                            mDatebaseRef = FirebaseDatabase.getInstance().getReference("usuario").child(preferenciasAndroid.getIdentificador()).child("sobrenome"); //mudar o child para cada informacao correspondente
+                            mDatebaseRef.setValue(editTextAlterar.getText().toString());
+                            setarDadosPerfil();
+                            Toast.makeText(TelaPerfil.this, "SobreNome alterado", Toast.LENGTH_LONG).show();
+                            dialog.dismiss();
+
+                        }
+
+
+                    }
+                });
+            }
+        });
+    }
 
 
     private void EditarEmail(){
@@ -186,7 +236,7 @@ public class TelaPerfil extends AppCompatActivity {
                 Button buttonConfirmar = alertview.findViewById(R.id.bttEdicao);
                 Button buttonCancelar = alertview.findViewById(R.id.bttCancelarEdicao);
 
-                alertTitulo.setText("Digite seu CPF: "); //Alterar
+                alertTitulo.setText("Digite um novo CPF: "); //Alterar
                 buttonConfirmar.setText("Editar");
                 buttonCancelar.setText("Cancelar");
                 alertDialog.setView(alertview);
@@ -243,7 +293,7 @@ public class TelaPerfil extends AppCompatActivity {
                 Button buttonConfirmar = alertview.findViewById(R.id.bttEdicao);
                 Button buttonCancelar = alertview.findViewById(R.id.bttCancelarEdicao);
 
-                alertTitulo.setText("Digite sua data de nascimento: "); //Alterar
+                alertTitulo.setText("Digite uma nova data de nascimento: "); //Alterar
                 buttonConfirmar.setText("Editar");
                 buttonCancelar.setText("Cancelar");
                 alertDialog.setView(alertview);
@@ -289,6 +339,7 @@ public class TelaPerfil extends AppCompatActivity {
 
     }
 
+
     private void EditarSenha(){//chmar no oncreate
         senhaPerfil.setOnClickListener(new View.OnClickListener() { //Alterar
             @Override
@@ -300,7 +351,7 @@ public class TelaPerfil extends AppCompatActivity {
                 Button buttonConfirmar = alertview.findViewById(R.id.bttEdicao);
                 Button buttonCancelar = alertview.findViewById(R.id.bttCancelarEdicao);
 
-                alertTitulo.setText("Digite sua senha: "); //Alterar
+                alertTitulo.setText("Digite uma nova senha: "); //Alterar
                 buttonConfirmar.setText("Editar");
                 buttonCancelar.setText("Cancelar");
                 alertDialog.setView(alertview);
