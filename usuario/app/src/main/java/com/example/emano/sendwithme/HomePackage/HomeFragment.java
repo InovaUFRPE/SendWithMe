@@ -68,8 +68,8 @@ public class HomeFragment extends Fragment {
 
         listPoints = new ArrayList<>();
 
-        cidadeDigitada1 = rootView.findViewById(R.id.cidadeDigitadaId);
-        cidadeDigitada2 = rootView.findViewById(R.id.cidadeDigitadaId2);
+        cidadeDigitada1 = rootView.findViewById(R.id.txtNomeObjeto);
+        cidadeDigitada2 = rootView.findViewById(R.id.txtTituloPedido);
 
 
         botaoAchar = rootView.findViewById(R.id.botaoAchaCidadeId);
@@ -80,6 +80,8 @@ public class HomeFragment extends Fragment {
                 //SE AMBOS OS CAMPOS TÃO VAZIOS E EXISTEM!!!
                 String texto = cidadeDigitada1.getText().toString();
                 LatLng latLng = getLocationFromAddress(getContext(), texto);
+
+
 
                 String texto2 = cidadeDigitada2.getText().toString();
                 LatLng latLng2 = getLocationFromAddress(getContext(), texto2);

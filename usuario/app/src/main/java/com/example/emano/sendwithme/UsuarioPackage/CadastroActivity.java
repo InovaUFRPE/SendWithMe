@@ -29,7 +29,6 @@ public class CadastroActivity extends AppCompatActivity {
     private EditText senha;
     private EditText senhaConfirma;
     private Button botaoCadastrar;
-    private Button botaoCancelar;
 
 
     @Override
@@ -49,15 +48,6 @@ public class CadastroActivity extends AppCompatActivity {
                 }
             }
         });
-
-        botaoCancelar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-
     }
 
 
@@ -76,13 +66,11 @@ public class CadastroActivity extends AppCompatActivity {
     public void setView(){
 
         nome = findViewById(R.id.edtNome);
-        email = findViewById(R.id.edtEmail);
+        email = findViewById(R.id.emailPerfilId);
         cpf = findViewById(R.id.edtCpf);
-        senha = findViewById(R.id.edtSenha);
+        senha = findViewById(R.id.senhaId);
         senhaConfirma = findViewById(R.id.edtSenhaCompara);
         botaoCadastrar = findViewById(R.id.btnCadastro);
-        botaoCancelar = findViewById(R.id.btnCancelar);
-
     }
 
     public void inserirUsuarioNoBanco(Usuario usuario){

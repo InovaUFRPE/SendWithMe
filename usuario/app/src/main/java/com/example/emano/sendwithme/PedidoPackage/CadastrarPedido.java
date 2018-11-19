@@ -10,6 +10,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.provider.Settings;
@@ -41,12 +42,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -101,6 +96,7 @@ public class CadastrarPedido extends FragmentActivity implements OnMapReadyCallb
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -311,39 +307,6 @@ public class CadastrarPedido extends FragmentActivity implements OnMapReadyCallb
         return url;
     }
 
-    public JSONObject requisicaoHTTP(String url) {
-        JSONObject resultado = null;
-
-        try {
-            //Criamos um cliente HTTP para que possamos realizar a
-            //requisição a um Servidor HTTP
-            DefaultHttpClient httpClient = new DefaultHttpClient();
-            //Definimos o método de requisição como sendo POST
-            HttpPost httpPost = new HttpPost(url);
-            //Recuperamos a resposta do Servidor HTTP
-            HttpResponse httpResponse = httpClient.execute(httpPost);
-            //Recuperamos o conteúdo enviado do Servidor HTTP
-            HttpEntity httpEntity = httpResponse.getEntity();
-            //Transformamos tal conteúdo em 'String'
-            String conteudo = EntityUtils.toString(httpEntity);
-
-            //Transformamos a 'String' do conteúdo em Objeto JSON
-            resultado = new JSONObject(conteudo);
-
-        } catch (UnsupportedEncodingException e) {
-            Log.e("ProjetoMapas", e.getMessage());
-        } catch (ClientProtocolException e) {
-            Log.e("ProjetoMapas", e.getMessage());
-        } catch (IOException e) {
-            Log.e("ProjetoMapas", e.getMessage());
-        } catch (JSONException e) {
-            Log.e("ProjetoMapas", e.getMessage());
-        }
-
-        //Retornamos o conteúdo em formato JSON
-        return resultado;
-    }
-
     private List<LatLng> extrairLatLngDaRota(String pontosPintar) {
         List<LatLng> listaResult = new ArrayList<LatLng>();
         int index = 0, len = pontosPintar.length();
@@ -414,96 +377,75 @@ public class CadastrarPedido extends FragmentActivity implements OnMapReadyCallb
         }
     }
 
-    public void buscarRota(View view) {
+//    public void buscarRota(View view) {
+//
+//        EditText torigem = (EditText)findViewById(R.id.editOrigemPedido);
+//        EditText tdestino = (EditText)findViewById(R.id.edtDestinoPedido);
+//        String origem = torigem.getText().toString();
+//        String destino = tdestino.getText().toString();
+//
+//
+//        List<Address>addressesList=null;
+//        List<Address>addressesList2=null;
+//        MarkerOptions mo = new MarkerOptions();
+//        MarkerOptions mo2 = new MarkerOptions();
+//
+//        if(!origem.equals("")){
+//
+//            Geocoder geocoder = new Geocoder(this);
+//            try{
+//                addressesList= geocoder.getFromLocationName(origem,5);
+//                addressesList2= geocoder.getFromLocationName(destino,5);
+//            }catch (IOException e){
+//                e.printStackTrace();
+//            }
+//
+//            for(int i = 0;i<addressesList.size();i++){
+//
+//                Address myadres = addressesList.get(i);
+//                Address myadres2 = addressesList2.get(i);
+//
+//                LatLng latLng= new LatLng(myadres.getLatitude(),myadres.getLongitude());
+//                LatLng latLng2= new LatLng(myadres2.getLatitude(),myadres2.getLongitude());
+//                mo.position(latLng);
+//                mo2.position(latLng2);
+//
+//                //Limpamos quaisquer configurações anteriores em nosso mapa
+//                 mMap.setInfoWindowAdapter(null);
+//                 mMap.setOnMyLocationChangeListener(null);
+//                 mMap.clear();
+//
+//                //Recuperamos a URL passando as cordenadas de origem como sendo a cordenada que definimos
+//                //para a nossa residência e as coordenadas de destino como sendo a do escritório da Google em SP.
+//                String url = montarURLRotaMapa(latLng.latitude, latLng.longitude, latLng2.latitude, latLng2.longitude);
+//                //Criamos uma instância de nossa AsyncTask (para cada requisição deverá ser criada uma nova instância).
+//                MinhaAsyncTask tarefa = new MinhaAsyncTask();
+//
+//                //Se a versão de SDK do Android do aparelho que está executando o aplicativo for menor que a HONEYCOMB (11)
+//                if(Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB){
+//                    //Executa a tarefa passando a URL recuperada
+//                    tarefa.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
+//                }else{
+//                    //Executa a tarefa passando a URL recuperada
+//                    tarefa.execute(url);
+//                }
+//
+//                //Adicionamos um marcador no ponto de partida e no ponto de destino
+//                mMap.addMarker(new MarkerOptions().position(latLng));
+//                mMap.addMarker(new MarkerOptions().position(latLng2));
+//
+//                //Animação para visualizar ponto de partida
+//                CameraPosition updateRota = new CameraPosition(latLng, 15, 0, 0);
+//                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(updateRota), 3000, null);
+//
+//            }
+//
+//
+//        }
+//
 
-        EditText torigem = (EditText)findViewById(R.id.editOrigemPedido);
-        EditText tdestino = (EditText)findViewById(R.id.edtDestinoPedido);
-        String origem = torigem.getText().toString();
-        String destino = tdestino.getText().toString();
+//    }
 
-
-        List<Address>addressesList=null;
-        List<Address>addressesList2=null;
-        MarkerOptions mo = new MarkerOptions();
-        MarkerOptions mo2 = new MarkerOptions();
-
-        if(!origem.equals("")){
-
-            Geocoder geocoder = new Geocoder(this);
-            try{
-                addressesList= geocoder.getFromLocationName(origem,5);
-                addressesList2= geocoder.getFromLocationName(destino,5);
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-
-            for(int i = 0;i<addressesList.size();i++){
-
-                Address myadres = addressesList.get(i);
-                Address myadres2 = addressesList2.get(i);
-
-                LatLng latLng= new LatLng(myadres.getLatitude(),myadres.getLongitude());
-                LatLng latLng2= new LatLng(myadres2.getLatitude(),myadres2.getLongitude());
-                mo.position(latLng);
-                mo2.position(latLng2);
-
-                //Limpamos quaisquer configurações anteriores em nosso mapa
-                 mMap.setInfoWindowAdapter(null);
-                 mMap.setOnMyLocationChangeListener(null);
-                 mMap.clear();
-
-                //Recuperamos a URL passando as cordenadas de origem como sendo a cordenada que definimos
-                //para a nossa residência e as coordenadas de destino como sendo a do escritório da Google em SP.
-                String url = montarURLRotaMapa(latLng.latitude, latLng.longitude, latLng2.latitude, latLng2.longitude);
-                //Criamos uma instância de nossa AsyncTask (para cada requisição deverá ser criada uma nova instância).
-                MinhaAsyncTask tarefa = new MinhaAsyncTask();
-
-                //Se a versão de SDK do Android do aparelho que está executando o aplicativo for menor que a HONEYCOMB (11)
-                if(Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB){
-                    //Executa a tarefa passando a URL recuperada
-                    tarefa.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
-                }else{
-                    //Executa a tarefa passando a URL recuperada
-                    tarefa.execute(url);
-                }
-
-                //Adicionamos um marcador no ponto de partida e no ponto de destino
-                mMap.addMarker(new MarkerOptions().position(latLng));
-                mMap.addMarker(new MarkerOptions().position(latLng2));
-
-                //Animação para visualizar ponto de partida
-                CameraPosition updateRota = new CameraPosition(latLng, 15, 0, 0);
-                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(updateRota), 3000, null);
-
-            }
-
-
-        }
-
-
-    }
-
-
-
-    private class MinhaAsyncTask extends AsyncTask<String, Void, JSONObject> {
-
-        @Override
-        protected JSONObject doInBackground(String... params) {
-            JSONObject resultJSON = requisicaoHTTP(params[0]);
-
-            return resultJSON;
-        }
-
-        @Override
-        protected void onPostExecute(JSONObject resultadoRequisicao) {
-            super.onPostExecute(resultadoRequisicao);
-
-            if (resultadoRequisicao != null) {
-                pintarCaminho(resultadoRequisicao);
-            }
-        }
-
-    }
 
 
 
@@ -536,7 +478,7 @@ public class CadastrarPedido extends FragmentActivity implements OnMapReadyCallb
             pedido.setDestino(destino1);
             pedido.setIdUsuario(user.getUid());
 
-            databaseReference = FirebaseDatabase.getInstance().getReference().child("Pedidos");
+            databaseReference = FirebaseDatabase.getInstance().getReference("Pedidos").child(user.getUid());
 
             databaseReference.push().setValue(pedido);
 

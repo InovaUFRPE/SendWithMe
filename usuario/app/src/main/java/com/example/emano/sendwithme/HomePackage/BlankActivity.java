@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.emano.sendwithme.R;
 
-public class BlankActivity extends AppCompatActivity {
+public class  BlankActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
 
     @Override
@@ -17,7 +17,7 @@ public class BlankActivity extends AppCompatActivity {
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        transaction.add(R.id.containerId, new HomeFragment(), "MapsFragment");
+        transaction.add(R.id.containerId, new HomeFragmentMap(), "MapsFragment");
 
         transaction.commitAllowingStateLoss();
 

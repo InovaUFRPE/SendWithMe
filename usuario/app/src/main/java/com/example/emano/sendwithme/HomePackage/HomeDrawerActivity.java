@@ -1,8 +1,15 @@
 package com.example.emano.sendwithme.HomePackage;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +19,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.emano.sendwithme.PedidoPackage.CadastrarPedido;
+import com.example.emano.sendwithme.PedidoPackage.ListarPedidos;
 import com.example.emano.sendwithme.PerfilPackage.PerfilActivity;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.Usuario;
@@ -27,10 +36,24 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.osmdroid.api.IMapController;
+import org.osmdroid.bonuspack.routing.OSRMRoadManager;
+import org.osmdroid.bonuspack.routing.Road;
+import org.osmdroid.bonuspack.routing.RoadManager;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.Polyline;
+
+import java.util.ArrayList;
+
+import util.DesenhaRotaTask;
+
 public class HomeDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private TextView textoEntrada;
+
     private TextView nomeUsuario;
     private TextView emailUsuario;
     private FirebaseAuth mAuth;
@@ -38,6 +61,7 @@ public class HomeDrawerActivity extends AppCompatActivity
     private DatabaseReference usuarioReferencia = dataBaseReferencia.child("Usuarios");
     private DatabaseReference usuarioReferencia2;
     private View hView;
+    private FragmentManager fragmentManager;
 
     @Override
 
@@ -46,6 +70,7 @@ public class HomeDrawerActivity extends AppCompatActivity
         setContentView(R.layout.activity_home_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -57,27 +82,39 @@ public class HomeDrawerActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         hView = navigationView.getHeaderView(0);
 
-        /// classe para nome
-        /*
-        * FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            // Name, email address, and profile photo Url
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-            Uri photoUrl = user.getPhotoUrl();
+        setInfoUsuario();
+        setFragmentoPadrao();
 
-            // Check if user's email is verified
-            boolean emailVerified = user.isEmailVerified();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getIdToken() instead.
-            String uid = user.getUid();
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED ||
+
+                    ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+                String[] permissoes = {Manifest.permission.INTERNET, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+                requestPermissions(permissoes, 1);
+
+            }
+
         }
-        * */
-        //textoEntrada = findViewById(R.id.textoEntradaId2);
+
+
+
+    }
+
+    private void setFragmentoPadrao() {
+        fragmentManager = getSupportFragmentManager(); //setou
+
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.add(R.id.containerIdCentral, new HomeFragmentMap(), "MapsFragment");
+
+        transaction.commitAllowingStateLoss();
+    }
+
+    private void setInfoUsuario() {
         nomeUsuario = hView.findViewById(R.id.nomeUsuarioDrawerId);
-        //nomePerfil = hView.findViewById(R.id.nomePerfilHomeId);
         emailUsuario = hView.findViewById(R.id.emailUsuarioDrawerId);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
@@ -86,10 +123,8 @@ public class HomeDrawerActivity extends AppCompatActivity
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
-                //textoEntrada.setText(usuario.getNome());
                 nomeUsuario.setText(usuario.getNome());
                 emailUsuario.setText(usuario.getEmail());
-                //textoEntrada.setText("TELA MAPA HOME");
 
             }
 
@@ -98,9 +133,8 @@ public class HomeDrawerActivity extends AppCompatActivity
 
             }
         });
-        ///
-
     }
+
 
     @Override
     public void onBackPressed() {
@@ -134,6 +168,23 @@ public class HomeDrawerActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case 1: {
+                // Se a solicitação de permissão foi cancelada o array vem vazio.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // Permissão cedida, recria a activity para carregar o mapa, só será executado uma vez
+                    this.recreate();
+
+                }
+
+            }
+        }
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -149,16 +200,14 @@ public class HomeDrawerActivity extends AppCompatActivity
         } else if (id == R.id.nav_sair) {
             logout();
 
-        }else if (id == R.id.nav_pedido){
-
-            startActivity(new Intent(HomeDrawerActivity.this, CadastrarPedido.class));
-
-        }else if (id == R.id.nav_viagem){
+        } else if (id == R.id.nav_viagem) {
 
             startActivity(new Intent(HomeDrawerActivity.this, CadastroViagem.class));
 
-        }else if(id == R.id.nav_home_default){
+        } else if (id == R.id.nav_home_default) {
             startActivity(new Intent(HomeDrawerActivity.this, BlankActivity.class));
+        }else if (id == R.id.nav_lista_pedidos){
+            startActivity(new Intent(HomeDrawerActivity.this, ListarPedidos.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -166,7 +215,7 @@ public class HomeDrawerActivity extends AppCompatActivity
         return true;
     }
 
-    private void logout(){
+    private void logout() {
         //Sessao.instance.reset();
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(HomeDrawerActivity.this, LoginActivity.class));
