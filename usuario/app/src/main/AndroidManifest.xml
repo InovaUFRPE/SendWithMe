@@ -64,7 +64,8 @@
         <activity android:name=".HomePackage.BlankActivity" />
         <activity android:name=".PedidoPackage.ListarPedidos" />
         <activity android:name=".PedidoPackage.ConfirmarPedido" />
-        <activity android:name=".PedidoPackage.InfoPedido"></activity>
+        <activity android:name=".PedidoPackage.InfoPedido" />
+        <activity android:name=".MotoristaPackage.ListarMotoristas"></activity>
     </application>
 
 </manifest>
