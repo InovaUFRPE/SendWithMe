@@ -40,6 +40,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.1'
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.1'
+
+    implementation 'com.google.maps.android:android-maps-utils:0.5+'
+
     //tutorial do site de emanoel
     implementation 'com.github.MKergall:osmbonuspack:6.5.2'
 

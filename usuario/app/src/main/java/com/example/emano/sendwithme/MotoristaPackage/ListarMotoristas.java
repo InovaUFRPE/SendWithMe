@@ -17,6 +17,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
+import com.google.android.gms.maps.model.LatLng;
+import com.google.maps.android.SphericalUtil;
+
 import java.util.ArrayList;
 
 public class ListarMotoristas extends AppCompatActivity {
@@ -88,5 +92,20 @@ public class ListarMotoristas extends AppCompatActivity {
     private void setAdapter(){
         adapter = new ListarMotoristasAdapter(getApplicationContext(), this.motoristas);
         lista.setAdapter(adapter);
+    }
+
+    private ArrayList<Motorista>  filtrarLista(ArrayList<Motorista> listaMotorista){
+        ArrayList<Motorista> listaFiltrada = new ArrayList<>();
+
+        for (Motorista motorista:listaMotorista) {
+            //condições de chacagem pra add em listaFiltrada
+            //if(SphericalUtil.computeDistanceBetween(latLng, latLng1) < 70000){
+            ///add latLng e latLng1 como as posições a serem comparadas
+
+        }
+
+
+        return listaFiltrada;
+
     }
 }
