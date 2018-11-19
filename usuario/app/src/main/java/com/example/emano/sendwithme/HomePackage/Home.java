@@ -17,10 +17,6 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        textoEntrada = findViewById(R.id.textoEntradaId);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String name = user.getDisplayName();
-        textoEntrada.setText("Bem-vindo usuário "+name+".");
 
 
 

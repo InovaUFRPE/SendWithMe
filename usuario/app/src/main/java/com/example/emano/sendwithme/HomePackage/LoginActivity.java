@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.CadastroActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -60,6 +61,12 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.emailPerfilId);
         senha = findViewById(R.id.senhaId);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        startActivity(new Intent(LoginActivity.this, ListarMotoristas.class));
     }
 
     public void fazerLogin(String email, String senha){
