@@ -4,136 +4,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/swmbg"
+    android:background="@color/colorAccent"
     android:orientation="vertical"
     tools:context=".Activity.CadastroMotorista.CadastroActivity">
 
-    <EditText
-        android:id="@+id/edtCadNome"
-        android:layout_width="320dp"
+    <Button
+        android:id="@+id/btnEditPerfilAtualizar"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/edit_text_style"
-        android:hint="@string/nome"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Atualizar"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/deletarContaId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtPerfilNome"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Nome"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtCadSobrenome"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/edtPerfilEmail"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/edit_text_style"
-        android:hint="@string/sobrenome"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Email"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCadNome" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPerfilNome" />
 
     <EditText
-        android:id="@+id/edtCadCpf"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/edtPerflCpf"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/edit_text_style"
-        android:hint="@string/cpf"
-        android:inputType="number"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:ems="10"
+        android:hint="CPF"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCadSobrenome" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPerfilEmail" />
 
     <EditText
-        android:id="@+id/edtCadDataNascimento"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/edtPerfilSenha"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/edit_text_style"
-        android:hint="@string/data_nascimento"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCadCpf" />
-
-    <EditText
-        android:id="@+id/edtCadEmail"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/edit_text_style"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCadDataNascimento" />
-
-    <EditText
-        android:id="@+id/edtCadSenha"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/edit_text_style"
-        android:hint="@string/senha"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCadEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPerflCpf" />
 
     <EditText
-        android:id="@+id/edtCadConfirmarSenha"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/edtPerfilSenhaCompara"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/edit_text_style"
-        android:hint="@string/confirmar_senha"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Confirmar Senha"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/rbFeminino"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCadSenha" />
-
-
-    <RadioButton
-        android:id="@+id/rbFeminino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:checked="true"
-        android:hint="@string/feminino"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintEnd_toStartOf="@+id/rbMasculino"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCadConfirmarSenha" />
-
-    <RadioButton
-        android:id="@+id/rbMasculino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:checked="true"
-        android:hint="@string/masculino"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rbFeminino"
-        app:layout_constraintTop_toBottomOf="@+id/edtCadConfirmarSenha" />
-
+        app:layout_constraintTop_toBottomOf="@+id/edtPerfilSenha" />
 
     <Button
-        android:id="@+id/btnSalvar"
+        android:id="@+id/btnPerfilCancelar"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/button_style"
-        android:hint="@string/salvar"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Cancelar"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rbFeminino" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/deletarContaId"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Deletar Conta"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/btnPerfilCancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
 
