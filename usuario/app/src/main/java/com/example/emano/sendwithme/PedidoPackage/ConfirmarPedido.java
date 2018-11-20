@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.PedidoPackage;
+package com.example.emano.sendwithme.pedidoPackage;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.emano.sendwithme.HomePackage.HomeDrawerActivity;
+import com.example.emano.sendwithme.homePackage.HomeDrawer;
 import com.example.emano.sendwithme.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -60,7 +60,7 @@ public class ConfirmarPedido extends AppCompatActivity {
 
             databaseReference.push().setValue(pedido);
 
-            Intent intent1 = new Intent(getApplicationContext(), HomeDrawerActivity.class);
+            Intent intent1 = new Intent(getApplicationContext(), HomeDrawer.class);
             startActivity(intent1);
 
             Toast.makeText(getApplicationContext(), "Pedido Salvo", Toast.LENGTH_LONG).show();

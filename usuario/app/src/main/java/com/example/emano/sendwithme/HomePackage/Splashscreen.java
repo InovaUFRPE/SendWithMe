@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.HomePackage;
+package com.example.emano.sendwithme.homePackage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +24,7 @@ public class Splashscreen extends AppCompatActivity{
     }
     private void mostrarLogin() {
         Intent intent = new Intent(Splashscreen.this,
-                LoginActivity.class);
+                Login.class);
         startActivity(intent);
         finish();
     }

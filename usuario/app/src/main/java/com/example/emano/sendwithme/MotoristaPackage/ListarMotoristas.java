@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.MotoristaPackage;
+package com.example.emano.sendwithme.motoristaPackage;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.emano.sendwithme.MotoristaPackage.Motorista;
-import com.example.emano.sendwithme.PedidoPackage.Pedido;
 import com.example.emano.sendwithme.R;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -17,9 +15,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
-import com.google.android.gms.maps.model.LatLng;
-import com.google.maps.android.SphericalUtil;
 
 import java.util.ArrayList;
 

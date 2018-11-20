@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.PedidoPackage;
+package com.example.emano.sendwithme.pedidoPackage;
 
 public class Pedido {
 

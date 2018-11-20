@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.PerfilPackage;
+package com.example.emano.sendwithme.perfilPackage;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.emano.sendwithme.HomePackage.LoginActivity;
+import com.example.emano.sendwithme.homePackage.Login;
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.UsuarioPackage.Usuario;
+import com.example.emano.sendwithme.usuarioPackage.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -29,7 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class EditarPerfilActivity extends AppCompatActivity {
+public class EditarPerfil extends AppCompatActivity {
 
     private EditText editNome;
     private EditText editEmail;
@@ -71,7 +71,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
         editBotaoDeletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(EditarPerfilActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(EditarPerfil.this);
                 builder.setTitle("Deletar Conta");
                 builder.setMessage("Deseja prosseguir com a exclusão de sua conta?");
 
@@ -146,7 +146,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
                 }else if(dellOrUpdate.equals("1")){
                     validarEmailFireBase(usuario.getSenha());
                 }else{
-                    Toast.makeText(EditarPerfilActivity.this,"Erro de Else", Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditarPerfil.this,"Erro de Else", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -314,7 +314,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
         DatabaseReference dataBaseReferencia = FirebaseDatabase.getInstance().getReference()
                 .child("Usuarios").child(user.getUid());
         dataBaseReferencia.setValue(montarUsuario());
-        startActivity(new Intent(EditarPerfilActivity.this, PerfilActivity.class));
+        startActivity(new Intent(EditarPerfil.this, Perfil.class));
         Toast.makeText(this,"Dados atualizados com suscesso",Toast.LENGTH_LONG).show();
         finish();
 
@@ -337,10 +337,10 @@ public class EditarPerfilActivity extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(EditarPerfilActivity.this,"Usuário deletado",Toast.LENGTH_LONG).show();
-                                            startActivity(new Intent(EditarPerfilActivity.this, LoginActivity.class));
+                                            Toast.makeText(EditarPerfil.this,"Usuário deletado",Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(EditarPerfil.this, Login.class));
                                         }else{
-                                            Toast.makeText(EditarPerfilActivity.this,"Erro ao deletar usuário",Toast.LENGTH_LONG).show();
+                                            Toast.makeText(EditarPerfil.this,"Erro ao deletar usuário",Toast.LENGTH_LONG).show();
 
                                         }
                                     }

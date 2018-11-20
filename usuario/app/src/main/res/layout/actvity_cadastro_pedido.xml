@@ -45,7 +45,7 @@
         map:layout_constraintHorizontal_bias="0.0"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toBottomOf="@+id/edtDestinoPedido"
-        tools:context=".PedidoPackage.CadastrarPedido" />
+        tools:context=".pedidoPackage.CadastrarPedido" />
 
     <Button
         android:id="@+id/button2"

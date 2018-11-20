@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.HomePackage;
+package com.example.emano.sendwithme.homePackage;
 
 
 import android.content.Context;
@@ -15,7 +15,7 @@ import android.widget.EditText;
 
 import android.widget.Toast;
 
-import com.example.emano.sendwithme.PedidoPackage.ConfirmarPedido;
+import com.example.emano.sendwithme.pedidoPackage.ConfirmarPedido;
 import com.example.emano.sendwithme.R;
 
 import com.google.android.gms.maps.model.LatLng;

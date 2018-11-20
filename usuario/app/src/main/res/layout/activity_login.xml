@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/swmbg"
-    tools:context=".HomePackage.LoginActivity">
+    tools:context=".homePackage.Login">
 
     <EditText
         android:id="@+id/emailPerfilId"

@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.HomePackage;
+package com.example.emano.sendwithme.homePackage;
 
 import android.Manifest;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
@@ -19,15 +18,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.emano.sendwithme.PedidoPackage.CadastrarPedido;
-import com.example.emano.sendwithme.PedidoPackage.ListarPedidos;
-import com.example.emano.sendwithme.PerfilPackage.PerfilActivity;
+import com.example.emano.sendwithme.pedidoPackage.ListarPedidos;
+import com.example.emano.sendwithme.perfilPackage.Perfil;
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.UsuarioPackage.Usuario;
-import com.example.emano.sendwithme.ViagemPackage.CadastroViagem;
+import com.example.emano.sendwithme.usuarioPackage.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -36,21 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.osmdroid.api.IMapController;
-import org.osmdroid.bonuspack.routing.OSRMRoadManager;
-import org.osmdroid.bonuspack.routing.Road;
-import org.osmdroid.bonuspack.routing.RoadManager;
-import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
-import org.osmdroid.util.GeoPoint;
-import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.Marker;
-import org.osmdroid.views.overlay.Polyline;
-
-import java.util.ArrayList;
-
-import util.DesenhaRotaTask;
-
-public class HomeDrawerActivity extends AppCompatActivity
+public class HomeDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
@@ -195,19 +177,13 @@ public class HomeDrawerActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_perfil) {
-            startActivity(new Intent(HomeDrawerActivity.this, PerfilActivity.class));
+            startActivity(new Intent(HomeDrawer.this, Perfil.class));
 
         } else if (id == R.id.nav_sair) {
             logout();
 
-        } else if (id == R.id.nav_viagem) {
-
-            startActivity(new Intent(HomeDrawerActivity.this, CadastroViagem.class));
-
-        } else if (id == R.id.nav_home_default) {
-            startActivity(new Intent(HomeDrawerActivity.this, BlankActivity.class));
         }else if (id == R.id.nav_lista_pedidos){
-            startActivity(new Intent(HomeDrawerActivity.this, ListarPedidos.class));
+            startActivity(new Intent(HomeDrawer.this, ListarPedidos.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -218,8 +194,8 @@ public class HomeDrawerActivity extends AppCompatActivity
     private void logout() {
         //Sessao.instance.reset();
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(HomeDrawerActivity.this, LoginActivity.class));
-        HomeDrawerActivity.this.finish();
+        startActivity(new Intent(HomeDrawer.this, Login.class));
+        HomeDrawer.this.finish();
     }
 
 }

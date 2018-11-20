@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.PedidoPackage;
+package com.example.emano.sendwithme.pedidoPackage;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 import com.example.emano.sendwithme.R;
 
 import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
 
 public class ListarPedidosAdapter extends ArrayAdapter<Pedido> {
 

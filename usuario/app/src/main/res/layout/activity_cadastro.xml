@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/swmbg"
-    tools:context=".UsuarioPackage.CadastroActivity">
+    tools:context=".homePackage.Cadastro">
     <EditText
         android:id="@+id/edtNome"
         android:layout_width="320dp"

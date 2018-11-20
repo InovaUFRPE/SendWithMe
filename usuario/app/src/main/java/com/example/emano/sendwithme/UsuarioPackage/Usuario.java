@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.UsuarioPackage;
+package com.example.emano.sendwithme.usuarioPackage;
 
 public class Usuario {
 

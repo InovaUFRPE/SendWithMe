@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.UsuarioPackage;
+package com.example.emano.sendwithme.homePackage;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
+import com.example.emano.sendwithme.usuarioPackage.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -21,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CadastroActivity extends AppCompatActivity {
+public class Cadastro extends AppCompatActivity {
 
     private EditText nome;
     private EditText email;
@@ -90,12 +91,12 @@ public class CadastroActivity extends AppCompatActivity {
                             FirebaseUser firebaseUser = task.getResult().getUser();
                             usuario.setId(firebaseUser.getUid());
                             inserirUsuarioNoBanco(usuario);
-                            Toast.makeText(CadastroActivity.this, "Usuário cadastrado com sucesso", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Cadastro.this, "Usuário cadastrado com sucesso", Toast.LENGTH_LONG).show();
                             finish();
 
 
                         }else{
-                            Toast.makeText(CadastroActivity.this, "Falha ao cadastrar usuário. Verifique os dados informados e tente novamente", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Cadastro.this, "Falha ao cadastrar usuário. Verifique os dados informados e tente novamente", Toast.LENGTH_SHORT).show();
 
                         }
 

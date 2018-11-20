@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.HomePackage;
+package com.example.emano.sendwithme.homePackage;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -11,17 +11,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
+import com.example.emano.sendwithme.motoristaPackage.ListarMotoristas;
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.UsuarioPackage.CadastroActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
     private TextView botaoCadastrarHome;
     private Button botaoLogar;
     private EditText email;
@@ -39,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         botaoCadastrarHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,CadastroActivity.class));
+                startActivity(new Intent(Login.this,Cadastro.class));
 
             }
         });
@@ -66,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        startActivity(new Intent(LoginActivity.this, ListarMotoristas.class));
+        startActivity(new Intent(Login.this, ListarMotoristas.class));
     }
 
     public void fazerLogin(String email, String senha){
@@ -79,16 +77,16 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {//sucesso ao logar
                                 Log.i("Login","Deu certo!");
-                                startActivity(new Intent(LoginActivity.this, HomeDrawerActivity.class));
+                                startActivity(new Intent(Login.this, HomeDrawer.class));
                             }else{
-                                Toast.makeText(LoginActivity.this, "Erro ao fazer login", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, "Erro ao fazer login", Toast.LENGTH_SHORT).show();
 
                             }
                         }
                     });
 
         }else{
-            Toast.makeText(LoginActivity.this,"Campos inválidos", Toast.LENGTH_LONG).show();
+            Toast.makeText(Login.this,"Campos inválidos", Toast.LENGTH_LONG).show();
         }
 
 

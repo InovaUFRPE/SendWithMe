@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.MotoristaPackage;
+package com.example.emano.sendwithme.motoristaPackage;
 
 
 import android.content.Context;
@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.emano.sendwithme.MotoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
 
 import java.util.ArrayList;

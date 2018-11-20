@@ -1,12 +1,10 @@
-package com.example.emano.sendwithme.HomePackage;
+package com.example.emano.sendwithme.homePackage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.emano.sendwithme.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class Home extends AppCompatActivity {
 

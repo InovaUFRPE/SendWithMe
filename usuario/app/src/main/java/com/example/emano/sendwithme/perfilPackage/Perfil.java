@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.PerfilPackage;
+package com.example.emano.sendwithme.perfilPackage;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.UsuarioPackage.Usuario;
+import com.example.emano.sendwithme.usuarioPackage.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -18,7 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class PerfilActivity extends AppCompatActivity {
+public class Perfil extends AppCompatActivity {
 
     private TextView nomePerfil;
     private TextView emailPerfil;
@@ -38,7 +38,7 @@ public class PerfilActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(PerfilActivity.this, "IR pra a tela de edicao", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(PerfilActivity.this, EditarPerfilActivity.class));
+                startActivity(new Intent(Perfil.this, EditarPerfil.class));
             }
         });
 
