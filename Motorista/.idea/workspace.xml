@@ -35,9 +35,21 @@
     <leaf>
       <file leaf-file-name="activity_principal2.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_principal2.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="-435">
               <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_novacarona.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_novacarona.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-246">
+              <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -45,52 +57,42 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Novacarona.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Carona/Novacarona.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+              <folding>
+                <element signature="e#623#764#0" expanded="true" />
+                <element signature="e#763#764#0" expanded="true" />
+                <element signature="e#935#936#0" expanded="true" />
+                <element signature="e#1019#1020#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PrincipalActivity2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPrincipal/PrincipalActivity2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="46" column="77" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
+            <state relative-caret-position="430">
+              <caret line="62" column="77" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="77" />
               <folding>
-                <element signature="e#898#1038#0" expanded="true" />
-                <element signature="e#1037#1038#0" expanded="true" />
-                <element signature="e#1178#1319#0" expanded="true" />
-                <element signature="e#1318#1319#0" expanded="true" />
-                <element signature="e#1639#1640#0" expanded="true" />
-                <element signature="e#1723#1724#0" expanded="true" />
+                <element signature="e#1555#1698#0" expanded="true" />
+                <element signature="e#1697#1698#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrincipalActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPrincipalMapa/PrincipalActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="167" column="40" selection-start-line="165" selection-start-column="8" selection-end-line="167" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TelaPerfil.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPerfil/TelaPerfil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="64" column="87" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="87" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_tela_perfil.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tela_perfil.xml">
-          <provider selected="true" editor-type-id="text-editor">
+      <file leaf-file-name="activity_inicio_viagem.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_viagem.xml">
+          <provider editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="95" column="31" selection-start-line="95" selection-start-column="31" selection-end-line="95" selection-end-column="31" />
+              <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
+          <provider selected="true" editor-type-id="android-designer2">
             <state />
           </provider>
         </entry>
@@ -2408,9 +2410,12 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_principal2.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/LoginMotorista/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPrincipal/PrincipalActivity2.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_tela_perfil.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPerfil/TelaPerfil.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_tela_perfil.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPrincipal/PrincipalActivity2.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_novacarona.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Carona/Novacarona.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_viagem.xml" />
       </list>
     </option>
   </component>
@@ -2432,41 +2437,6 @@
               <item name="Motorista" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
-            <path>
-              <item name="Motorista" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Motorista" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Motorista" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Motorista" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Motorista" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sendwithmemotorista" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -2484,6 +2454,7 @@
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
+      <recent name="projetosendwithmemotorista.sendwithmemotorista.Activity.Carona" />
       <recent name="projetosendwithmemotorista.sendwithmemotorista" />
     </key>
   </component>
@@ -2614,6 +2585,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -2792,14 +2764,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_principal2.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPerfil/TelaPerfil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        <state relative-caret-position="578">
+          <caret line="64" column="87" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="87" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPrincipalMapa/PrincipalActivity.java">
@@ -2812,36 +2781,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPrincipal/PrincipalActivity2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="46" column="77" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
-          <folding>
-            <element signature="e#898#1038#0" expanded="true" />
-            <element signature="e#1037#1038#0" expanded="true" />
-            <element signature="e#1178#1319#0" expanded="true" />
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1639#1640#0" expanded="true" />
-            <element signature="e#1723#1724#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tela_perfil.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="95" column="31" selection-start-line="95" selection-start-column="31" selection-end-line="95" selection-end-column="31" />
+        <state relative-caret-position="167">
+          <caret line="88" column="46" selection-start-line="88" selection-start-column="46" selection-end-line="88" selection-end-column="46" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPerfil/TelaPerfil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="64" column="87" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="87" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_principal2.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_novacarona.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-246">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/TelaPrincipal/PrincipalActivity2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="62" column="77" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="77" />
+          <folding>
+            <element signature="e#1555#1698#0" expanded="true" />
+            <element signature="e#1697#1698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Carona/Novacarona.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="e#623#764#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+            <element signature="e#1019#1020#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_inicio_viagem.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
   </component>

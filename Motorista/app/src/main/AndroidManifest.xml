@@ -47,7 +47,8 @@
             android:label="@string/title_activity_mapa" />
         <activity android:name=".Activity.TelaPerfil.TelaPerfil" />
         <activity android:name=".Activity.TelaPerfil.EditarPerfil" />
-        <activity android:name=".Activity.TelaPrincipal.PrincipalActivity2"></activity>
+        <activity android:name=".Activity.TelaPrincipal.PrincipalActivity2" />
+        <activity android:name=".Activity.Carona.Novacarona"></activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import projetosendwithmemotorista.sendwithmemotorista.Activity.Carona.Novacarona;
 import projetosendwithmemotorista.sendwithmemotorista.Activity.LoginMotorista.LoginActivity;
 import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPerfil.TelaPerfil;
 import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPrincipalMapa.PrincipalActivity;
@@ -17,6 +18,8 @@ public class PrincipalActivity2 extends AppCompatActivity {
 
     private Button buttonsair;
     private Button buttonperfil;
+    private Button buttonnovacarona;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,14 @@ public class PrincipalActivity2 extends AppCompatActivity {
                 Perfil();
             }
         });
+        buttonnovacarona = (Button) findViewById(R.id.button4);
+        buttonnovacarona.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Novacarona();
+            }
+        });
+
     }
     public void Sair(){
         FirebaseAuth.getInstance().signOut();
@@ -44,6 +55,11 @@ public class PrincipalActivity2 extends AppCompatActivity {
 
     }
     public void Perfil(){
+
         startActivity(new Intent(PrincipalActivity2.this, TelaPerfil.class));
+    }
+
+    public void Novacarona(){
+        startActivity(new Intent(PrincipalActivity2.this, Novacarona.class));
     }
 }
