@@ -1,12 +1,18 @@
 package com.example.emano.sendwithme.motoristaPackage;
 
+import android.content.Context;
+import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -16,7 +22,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListarMotoristas extends AppCompatActivity {
 
@@ -25,11 +33,19 @@ public class ListarMotoristas extends AppCompatActivity {
     ListView lista;
     FirebaseOptions options;
     DatabaseReference databaseReference;
+    LatLng latLng;
+    LatLng latLng1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_motoristas);
+
+        Intent intent = getIntent();
+        String origem = intent.getStringExtra("origem");
+        String destino = intent.getStringExtra("destino");
+        latLng = getLocationFromAddress(ListarMotoristas.this, origem);
+        latLng1 = getLocationFromAddress(ListarMotoristas.this, destino);
 
         criarMotoristaBanco();
         FirebaseApp bancoMotorista = FirebaseApp.initializeApp(getApplicationContext(), options, "appMotoristaBanco");
@@ -103,4 +119,37 @@ public class ListarMotoristas extends AppCompatActivity {
         return listaFiltrada;
 
     }
+
+    public LatLng getLocationFromAddress(Context context, String inputtedAddress) {
+
+        Geocoder coder = new Geocoder(context);
+        List<Address> address;
+        LatLng resLatLng = null;
+
+        try {
+            // May throw an IOException
+            address = coder.getFromLocationName(inputtedAddress, 5);
+            if (address == null) {
+                return null;
+            }
+
+            if (address.size() == 0) {
+                return null;
+            }
+
+            Address location = address.get(0);
+            location.getLatitude();
+            location.getLongitude();
+
+            resLatLng = new LatLng(location.getLatitude(), location.getLongitude());
+
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
+            Toast.makeText(context, ex.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+        return resLatLng;
+    }
+
 }
