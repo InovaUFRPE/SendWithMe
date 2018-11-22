@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import projetosendwithmemotorista.sendwithmemotorista.Activity.LoginMotorista.LoginActivity;
+import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPrincipal.PrincipalActivity2;
 import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPrincipalMapa.PrincipalActivity;
 import projetosendwithmemotorista.sendwithmemotorista.Entidades.Usuarios;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.PreferenciasAndroid;
@@ -35,7 +36,7 @@ public class TelaPerfil extends AppCompatActivity {
     private TextView cpfPerfil;
     private TextView dataPerfil;
     private TextView senhaPerfil;
-    private Button voltaMapa;
+    private Button voltar;
     private DatabaseReference mDatebaseRef;
 
 
@@ -57,11 +58,11 @@ public class TelaPerfil extends AppCompatActivity {
                 TelaPerfil.this.finish();
             }
         });
-        voltaMapa = (Button) findViewById(R.id.voltaMapa);
-        voltaMapa.setOnClickListener(new View.OnClickListener() {
+        voltar = (Button) findViewById(R.id.voltar);
+        voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentvoltaMapa = new Intent(TelaPerfil.this, PrincipalActivity.class);
+                Intent intentvoltaMapa = new Intent(TelaPerfil.this, PrincipalActivity2.class);
                 startActivity(intentvoltaMapa);
             }
         });

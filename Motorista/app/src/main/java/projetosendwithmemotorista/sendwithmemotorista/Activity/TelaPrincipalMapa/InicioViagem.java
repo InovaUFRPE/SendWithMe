@@ -3,6 +3,8 @@ package projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPrincipalMap
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import projetosendwithmemotorista.sendwithmemotorista.R;
+
 public class InicioViagem extends AppCompatActivity {
 
     @Override

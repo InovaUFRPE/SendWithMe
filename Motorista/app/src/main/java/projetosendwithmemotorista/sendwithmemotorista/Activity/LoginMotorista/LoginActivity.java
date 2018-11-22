@@ -16,11 +16,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import projetosendwithmemotorista.sendwithmemotorista.Activity.CadastroMotorista.CadastroActivity;
-import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPrincipalMapa.PrincipalActivity;
+import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPrincipal.PrincipalActivity2;
 import projetosendwithmemotorista.sendwithmemotorista.DAO.ConfiguracaoFirebase;
 import projetosendwithmemotorista.sendwithmemotorista.Entidades.Usuarios;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.Base64Custom;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.PreferenciasAndroid;
+import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPrincipal.PrincipalActivity2;
 import projetosendwithmemotorista.sendwithmemotorista.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -101,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void abrirTelaPrincipal(){
-        Intent intentAbrirTelaPrincipal = new Intent(LoginActivity.this, PrincipalActivity.class);
+        Intent intentAbrirTelaPrincipal = new Intent(LoginActivity.this, PrincipalActivity2.class);
         startActivity(intentAbrirTelaPrincipal);
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 

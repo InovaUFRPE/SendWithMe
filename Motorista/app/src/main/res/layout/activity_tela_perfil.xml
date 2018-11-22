@@ -93,12 +93,12 @@
         app:layout_constraintTop_toBottomOf="@+id/senhaPerfilId" />
 
     <Button
-        android:id="@+id/voltaMapa"
+        android:id="@+id/voltar"
         android:layout_width="309dp"
         android:layout_height="51dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/button_style"
-        android:text="Voltar para o Mapa"
+        android:text="Voltar para Tela anterior"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
