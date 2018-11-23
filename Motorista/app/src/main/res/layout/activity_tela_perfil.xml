@@ -85,8 +85,7 @@
         android:layout_width="309dp"
         android:layout_height="51dp"
         android:layout_marginTop="10dp"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorPrimary"
+        android:background="@drawable/button_style"
         android:text="Excluir Conta"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,13 +93,12 @@
         app:layout_constraintTop_toBottomOf="@+id/senhaPerfilId" />
 
     <Button
-        android:id="@+id/voltar"
+        android:id="@+id/voltaMapa"
         android:layout_width="309dp"
         android:layout_height="51dp"
         android:layout_marginTop="4dp"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorPrimary"
-        android:text="Voltar para Tela anterior"
+        android:background="@drawable/button_style"
+        android:text="Voltar para o Mapa"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -156,7 +154,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/Txtpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"

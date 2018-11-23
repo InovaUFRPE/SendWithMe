@@ -22,4 +22,11 @@
     <string name="title_activity_principal">PrincipalActivity</string>
     <string name="title_activity_mapa">Map</string>
     <string name="titulo">Send With Me Motorista</string>
+
+    //
+    <string name="cidade">Cidade</string>
+    <string name="endereço">Endereço</string>
+    <string name="title_activity_viagemconfig">viagemconfig</string>
+    <string name="data">Data</string>
+    <string name="Horario">Horário</string>
 </resources>

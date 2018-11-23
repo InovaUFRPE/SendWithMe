@@ -41,7 +41,6 @@ public class CadastroActivity extends AppCompatActivity {
     private RadioButton rbMasculino;
     private RadioButton rbFeminino;
     private Button btnSalvar;
-    private Button btnvoltar;
     private Usuarios usuarios;
     private FirebaseAuth autenticacao;
 
@@ -60,14 +59,6 @@ public class CadastroActivity extends AppCompatActivity {
         rbFeminino = (RadioButton) findViewById(R.id.rbFeminino);
         rbMasculino = (RadioButton) findViewById(R.id.rbMasculino);
         btnSalvar = (Button) findViewById(R.id.btnSalvar);
-        btnvoltar = (Button) findViewById(R.id.btnvoltar);
-
-        btnvoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Voltar();
-            }
-        });
 
 
 
@@ -250,9 +241,6 @@ public class CadastroActivity extends AppCompatActivity {
             edtCadConfirmarSenha.setError("Campo Vazio!");
         }
         return erro;
-    }
-    public void Voltar(){
-        startActivity(new Intent(CadastroActivity.this, LoginActivity.class));
     }
 
 }

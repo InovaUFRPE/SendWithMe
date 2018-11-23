@@ -3,7 +3,6 @@ package projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPerfil;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,8 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import projetosendwithmemotorista.sendwithmemotorista.Activity.LoginMotorista.LoginActivity;
-import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPrincipal.PrincipalActivity2;
-import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPrincipalMapa.PrincipalActivity;
 import projetosendwithmemotorista.sendwithmemotorista.Entidades.Usuarios;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.PreferenciasAndroid;
 import projetosendwithmemotorista.sendwithmemotorista.R;
@@ -36,7 +33,7 @@ public class TelaPerfil extends AppCompatActivity {
     private TextView cpfPerfil;
     private TextView dataPerfil;
     private TextView senhaPerfil;
-    private Button voltar;
+    private Button voltaMapa;
     private DatabaseReference mDatebaseRef;
 
 
@@ -58,14 +55,7 @@ public class TelaPerfil extends AppCompatActivity {
                 TelaPerfil.this.finish();
             }
         });
-        voltar = (Button) findViewById(R.id.voltar);
-        voltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentvoltaMapa = new Intent(TelaPerfil.this, PrincipalActivity2.class);
-                startActivity(intentvoltaMapa);
-            }
-        });
+        voltaMapa = (Button) findViewById(R.id.voltaMapa);
     }
 
 

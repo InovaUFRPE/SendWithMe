@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="projetosendwithmemotorista.sendwithmemotorista">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,7 +14,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".Activity.LoginMotorista.MainActivity"
             android:label="@string/app_name"
@@ -26,29 +28,12 @@
         </activity>
         <activity android:name=".Activity.LoginMotorista.LoginActivity" />
         <activity android:name=".Activity.CadastroMotorista.CadastroActivity" />
-        <activity
-            android:name=".Activity.TelaPrincipalMapa.PrincipalActivity"
-            android:label="@string/title_activity_principal"
-            android:theme="@style/AppTheme" />
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
-        <activity
-            android:name=".Activity.TelaPrincipalMapa.MapaActivity"
-            android:label="@string/title_activity_mapa" />
-        <activity android:name=".Activity.TelaPerfil.TelaPerfil" />
-        <activity android:name=".Activity.TelaPerfil.EditarPerfil" />
-        <activity android:name=".Activity.TelaPrincipal.PrincipalActivity2" />
-        <activity android:name=".Activity.Carona.Novacarona"></activity>
+        <activity android:name=".Activity.Viagens.TelaInicial" />
+        <activity android:name=".Activity.Viagens.InicioViagem"/>
+        <activity android:name=".Activity.Viagens.DestinoViagem"/>
+        <activity android:name=".Activity.Viagens.ListaViagens"/>
+        <activity android:name=".Activity.Viagens.Viagemconfig" />
+        <activity android:name=".Activity.Viagens.Viagemrevisao"></activity>
     </application>
 
 </manifest>
