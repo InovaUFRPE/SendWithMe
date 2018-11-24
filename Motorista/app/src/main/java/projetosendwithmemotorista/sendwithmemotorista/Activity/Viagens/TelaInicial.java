@@ -8,13 +8,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
+import projetosendwithmemotorista.sendwithmemotorista.Activity.LoginMotorista.LoginActivity;
+import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPerfil.TelaPerfil;
 import projetosendwithmemotorista.sendwithmemotorista.R;
 
 public class TelaInicial extends AppCompatActivity {
 
     private AlertDialog caixa;
     private Button btnnovacarona;
-    private Button btnperfil;
+    private Button buttonperfil;
     private Button btnlista;
     private Button btnsair;
     private String titulo;
@@ -26,7 +30,7 @@ public class TelaInicial extends AppCompatActivity {
         setContentView(R.layout.activity_tela_inicial);
 
         btnnovacarona = findViewById(R.id.btnnovacarona);
-        btnperfil = findViewById(R.id.btnperfil);
+        buttonperfil = findViewById(R.id.buttonperfil);
         btnlista = findViewById(R.id.btnlista);
         btnsair = findViewById(R.id.btnsair);
 
@@ -43,9 +47,16 @@ public class TelaInicial extends AppCompatActivity {
         btnsair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                titulo = "Deseja mesmo sair?";
-                cont = "teste";
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(TelaInicial.this, LoginActivity.class));
+                TelaInicial.this.finish();
 
+            }
+        });
+        buttonperfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TelaInicial.this, TelaPerfil.class));
             }
         });
 
@@ -69,4 +80,8 @@ public class TelaInicial extends AppCompatActivity {
         caixa = builder.create();
         caixa.show();
     }
+
+
+
+
 }

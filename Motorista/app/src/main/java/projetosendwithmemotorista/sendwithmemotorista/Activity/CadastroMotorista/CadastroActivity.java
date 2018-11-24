@@ -41,6 +41,7 @@ public class CadastroActivity extends AppCompatActivity {
     private RadioButton rbMasculino;
     private RadioButton rbFeminino;
     private Button btnSalvar;
+    private Button btnVoltar;
     private Usuarios usuarios;
     private FirebaseAuth autenticacao;
 
@@ -59,6 +60,15 @@ public class CadastroActivity extends AppCompatActivity {
         rbFeminino = (RadioButton) findViewById(R.id.rbFeminino);
         rbMasculino = (RadioButton) findViewById(R.id.rbMasculino);
         btnSalvar = (Button) findViewById(R.id.btnSalvar);
+        btnVoltar = (Button) findViewById(R.id.btnVoltar);
+
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentvolta = new Intent(CadastroActivity.this, LoginActivity.class);
+                startActivity(intentvolta);
+            }
+        });
 
 
 

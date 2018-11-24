@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/swmbg">
+    android:background="@color/laranja">
 
     <TextView
         android:id="@+id/textViewEditar"
@@ -54,6 +54,7 @@
         android:layout_marginRight="57dp"
         android:layout_marginBottom="340dp"
         android:background="@drawable/button_style"
+        android:textColor="@color/colorPrimary"
         android:text="Cancelar"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,6 +74,7 @@
         android:layout_marginRight="27dp"
         android:layout_marginBottom="345dp"
         android:background="@drawable/button_style"
+        android:textColor="@color/colorPrimary"
         android:text="Edição"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

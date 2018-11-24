@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/swmbg"
+    android:background="@color/laranja"
     tools:context=".Activity.TelaPerfil.TelaPerfil"
     tools:layout_editor_absoluteY="25dp">
 
@@ -15,7 +15,7 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="128dp"
         android:layout_marginLeft="128dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="156dp"
         android:layout_marginRight="156dp"
         android:layout_marginBottom="36dp"
@@ -86,6 +86,7 @@
         android:layout_height="51dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/button_style"
+        android:textColor="@color/colorPrimary"
         android:text="Excluir Conta"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,12 +94,13 @@
         app:layout_constraintTop_toBottomOf="@+id/senhaPerfilId" />
 
     <Button
-        android:id="@+id/voltaMapa"
+        android:id="@+id/voltar"
         android:layout_width="309dp"
         android:layout_height="51dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/button_style"
-        android:text="Voltar para o Mapa"
+        android:textColor="@color/colorPrimary"
+        android:text="Voltar"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
