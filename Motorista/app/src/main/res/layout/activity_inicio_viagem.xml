@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/laranja"
     tools:context=".Activity.Viagens.InicioViagem">
 
     <Button
@@ -16,7 +16,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="32dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/button_style"
         android:text="Avançar"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/Btnvolt"
@@ -32,7 +32,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="60dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/button_style"
         android:text="Voltar"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"

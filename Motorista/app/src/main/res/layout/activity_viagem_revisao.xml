@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/laranja"
     tools:context=".Activity.Viagens.Viagemrevisao">
 
     <TextView
@@ -22,7 +22,8 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds" />
 
     <Button
         android:id="@+id/Btnsalvar"
@@ -34,14 +35,14 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="12dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/button_style"
         android:text="Salvar viagem"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/Btncancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:ignore="UnknownId" />
 
     <Button
         android:id="@+id/Btnvolt"
@@ -52,7 +53,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/button_style"
         android:text="Voltar"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimary"
@@ -87,7 +88,8 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtpass3" />
+            app:layout_constraintTop_toBottomOf="@+id/txtpass3"
+            tools:ignore="DuplicateIds" />
 
         <TextView
             android:id="@+id/txtpartida"
