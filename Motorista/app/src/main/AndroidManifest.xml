@@ -28,6 +28,7 @@
         </activity>
         <activity android:name=".Activity.LoginMotorista.LoginActivity" />
         <activity android:name=".Activity.CadastroMotorista.CadastroActivity" />
+        <activity android:name=".Activity.TelaPerfil.TelaPerfil"/>
         <activity android:name=".Activity.Viagens.TelaInicial" />
         <activity android:name=".Activity.Viagens.InicioViagem"/>
         <activity android:name=".Activity.Viagens.DestinoViagem"/>
