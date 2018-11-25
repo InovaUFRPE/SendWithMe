@@ -7,12 +7,14 @@ import android.location.Geocoder;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.ViagemPackage.Viagem;
+import com.example.emano.sendwithme.viagemPackage.Viagem;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -30,6 +32,7 @@ import java.util.List;
 public class ListarMotoristas extends AppCompatActivity {
 
     ArrayList<Motorista> motoristas = new ArrayList<>();
+    ArrayList<Viagem> viagens = new ArrayList<>();
     ArrayAdapter adapter;
     ListView lista;
     FirebaseOptions options;
@@ -99,6 +102,33 @@ public class ListarMotoristas extends AppCompatActivity {
             }
         });
 
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                Intent intent1 = new Intent(ListarMotoristas.this, InfoMotoristaViagem.class);
+
+                intent1.putExtra("nome", String.valueOf(motoristas.get(position).getNome()));
+                intent1.putExtra("sobrenome", String.valueOf(motoristas.get(position).getSobrenome()));
+                intent1.putExtra("email", String.valueOf(motoristas.get(position).getEmail()));
+                intent1.putExtra("sexo", String.valueOf(motoristas.get(position).getSexo()));
+
+                intent1.putExtra("cidadedest", String.valueOf(viagens.get(position).getCidadedest()));
+                intent1.putExtra("enderecodest", String.valueOf(viagens.get(position).getEndereçodest()));
+                intent1.putExtra("endereco", String.valueOf(viagens.get(position).getEndereço()));
+                intent1.putExtra("cidade", String.valueOf(viagens.get(position).getCidade()));
+                intent1.putExtra("data", String.valueOf(viagens.get(position).getData()));
+                intent1.putExtra("hora", String.valueOf(viagens.get(position).getHora()));
+                intent1.putExtra("encomendas", String.valueOf(viagens.get(position).getEncomendas()));
+                intent1.putExtra("data", String.valueOf(viagens.get(position).getData()));
+                intent1.putExtra("hora", String.valueOf(viagens.get(position).getHora()));
+                intent1.putExtra("usuarioid", String.valueOf(viagens.get(position).getUsuarioid()));
+
+                startActivity(intent1);
+
+            }
+        });
+
     }
 
     private void criarMotoristaBanco() {
@@ -118,6 +148,11 @@ public class ListarMotoristas extends AppCompatActivity {
 
     private void addOnMotoristaOnLista(Motorista motorista){
         this.motoristas.add(motorista);
+
+    }
+
+    private void addOnViagemOnLista(Viagem viagem){
+        this.viagens.add(viagem);
 
     }
 

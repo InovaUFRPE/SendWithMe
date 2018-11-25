@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.ViagemPackage;
+package com.example.emano.sendwithme.viagemPackage;
 
 import java.util.ArrayList;
 

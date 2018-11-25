@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.example.emano.sendwithme.R;
 
-public class InfoMotorista extends AppCompatActivity {
+public class InfoMotoristaViagem extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_motorista);
+        setContentView(R.layout.activity_info_motorista_viagem);
     }
 }

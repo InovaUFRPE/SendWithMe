@@ -64,7 +64,7 @@
         <activity android:name=".motoristaPackage.ListarMotoristas" />
         <activity android:name=".homePackage.TelaInicial" />
         <activity android:name=".caronaPackage.EnderecoCarona" />
-        <activity android:name=".motoristaPackage.InfoMotorista"></activity>
+        <activity android:name=".motoristaPackage.InfoMotoristaViagem"></activity>
     </application>
 
 </manifest>
