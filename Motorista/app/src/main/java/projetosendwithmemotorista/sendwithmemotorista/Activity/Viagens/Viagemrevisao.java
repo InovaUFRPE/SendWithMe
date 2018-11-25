@@ -17,6 +17,7 @@ import org.w3c.dom.Text;
 
 import java.util.UUID;
 
+import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPerfil.TelaPerfil;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.PreferenciasAndroid;
 import projetosendwithmemotorista.sendwithmemotorista.R;
 
@@ -129,6 +130,7 @@ public class Viagemrevisao extends AppCompatActivity {
 
     //
     private void abrecaixasalvar() {
+        final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(Viagemrevisao.this);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Tem certeza que deseja salvar essa viagem?");
         builder.setMessage("mimimi");
@@ -145,7 +147,7 @@ public class Viagemrevisao extends AppCompatActivity {
                 v.setHora(hora);
                 v.setEncomendas(encomendas);
                 v.setUsuarioid(usuarioid);
-                databaseReference.child("Viagens").child(v.getViagemUID()).setValue(v);
+                databaseReference.child("Viagens").child(preferenciasAndroid.getIdentificador()).setValue(v);
 
             }
         });
