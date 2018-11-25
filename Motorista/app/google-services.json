@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "724796402843",
-    "firebase_url": "https://meu-app-send-with-me-motorista.firebaseio.com",
-    "project_id": "meu-app-send-with-me-motorista",
-    "storage_bucket": "meu-app-send-with-me-motorista.appspot.com"
+    "project_number": "243051234707",
+    "firebase_url": "https://sendwithme-login-motorista.firebaseio.com",
+    "project_id": "sendwithme-login-motorista",
+    "storage_bucket": "sendwithme-login-motorista.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:724796402843:android:6e217be4168ac264",
+        "mobilesdk_app_id": "1:243051234707:android:6e217be4168ac264",
         "android_client_info": {
           "package_name": "projetosendwithmemotorista.sendwithmemotorista"
         }
       },
       "oauth_client": [
         {
-          "client_id": "724796402843-4nq7pd6m6cpbkq10nr910eqp3su68jfg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "projetosendwithmemotorista.sendwithmemotorista",
-            "certificate_hash": "ef6be19087443ee07799d187410cf08a0fb94627"
-          }
-        },
-        {
-          "client_id": "724796402843-auevaguv75if2ubgs50p3hsqd37b3cjd.apps.googleusercontent.com",
+          "client_id": "243051234707-f8640u5lj43et5smt9bk6v8cpu1l90hd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyATkJDQ5EYgMDbc21zGJLhKgSgf4CNMthY"
+          "current_key": "AIzaSyB8msellqJ4JSNQc8aEupIdo-X0RQPsD1o"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "724796402843-auevaguv75if2ubgs50p3hsqd37b3cjd.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
