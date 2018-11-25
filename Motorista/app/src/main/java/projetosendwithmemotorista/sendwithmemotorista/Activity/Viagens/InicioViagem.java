@@ -108,4 +108,22 @@ public class InicioViagem extends AppCompatActivity {
             startActivity(i);
         }
     }
+
+    public String getcidade() {return cidade; }
+
+    public void setcidade(String cidade){this.cidade = cidade;}
+
+    public String getendereco() {return endereço;}
+
+    public void setendereco(String endereço) {this.endereço = endereço;}
+
+    public String getdata() {return data;}
+
+    public void setdata(String data) {this.data = data;}
+
+    public String gethora() {return hora;}
+
+    public void sethora(String hora) {this.hora = hora;}
+
+
 }

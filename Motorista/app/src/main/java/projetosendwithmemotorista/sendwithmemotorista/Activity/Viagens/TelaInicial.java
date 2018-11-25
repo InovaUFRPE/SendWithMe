@@ -19,6 +19,7 @@ public class TelaInicial extends AppCompatActivity {
     private AlertDialog caixa;
     private Button btnnovacarona;
     private Button buttonperfil;
+    private Button buttonlistadecarona;
     private Button btnlista;
     private Button btnsair;
     private String titulo;
@@ -30,6 +31,7 @@ public class TelaInicial extends AppCompatActivity {
         setContentView(R.layout.activity_tela_inicial);
 
         btnnovacarona = findViewById(R.id.btnnovacarona);
+        buttonlistadecarona = findViewById(R.id.btnlista);
         buttonperfil = findViewById(R.id.buttonperfil);
         btnlista = findViewById(R.id.btnlista);
         btnsair = findViewById(R.id.btnsair);
@@ -57,6 +59,13 @@ public class TelaInicial extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TelaInicial.this, TelaPerfil.class));
+            }
+        });
+
+        buttonlistadecarona.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TelaInicial.this, ListaViagens.class));
             }
         });
 
