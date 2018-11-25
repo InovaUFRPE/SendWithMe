@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
+import com.example.emano.sendwithme.ViagemPackage.Viagem;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -33,6 +34,7 @@ public class ListarMotoristas extends AppCompatActivity {
     ListView lista;
     FirebaseOptions options;
     DatabaseReference databaseReference;
+    DatabaseReference databaseReference2;
     LatLng latLng;
     LatLng latLng1;
 
@@ -49,8 +51,8 @@ public class ListarMotoristas extends AppCompatActivity {
 
         criarMotoristaBanco();
         FirebaseApp bancoMotorista = FirebaseApp.initializeApp(getApplicationContext(), options, "appMotoristaBanco");
-        FirebaseDatabase motoristaBanco = FirebaseDatabase.getInstance(bancoMotorista);
-        databaseReference = motoristaBanco.getReference("usuario");
+        final FirebaseDatabase motoristaBanco = FirebaseDatabase.getInstance(bancoMotorista);
+        databaseReference = motoristaBanco.getReference("Viagens");
 
 
         lista = (ListView) findViewById(R.id.motoristas_view);
@@ -62,9 +64,28 @@ public class ListarMotoristas extends AppCompatActivity {
 
                 for(DataSnapshot dados: dataSnapshot.getChildren()){
 
-                    Motorista motorista = dados.getValue(Motorista.class);
+                    Viagem viagem = dados.getValue(Viagem.class);
 
-                    addOnMotoristaOnLista(motorista);
+                    databaseReference2 = motoristaBanco.getReference("usuarios").child(viagem.getUsuarioid());
+
+                    databaseReference2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                            Motorista motorista = dataSnapshot.getValue(Motorista.class);
+                            addOnMotoristaOnLista(motorista);
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
+                    //Motorista motorista = dados.getValue(Motorista.class);
+
+                    //addOnMotoristaOnLista(motorista);
 
                 }
 

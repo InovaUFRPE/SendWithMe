@@ -63,7 +63,8 @@
         <activity android:name=".pedidoPackage.InfoPedido" />
         <activity android:name=".motoristaPackage.ListarMotoristas" />
         <activity android:name=".homePackage.TelaInicial" />
-        <activity android:name=".caronaPackage.EnderecoCarona"></activity>
+        <activity android:name=".caronaPackage.EnderecoCarona" />
+        <activity android:name=".motoristaPackage.InfoMotorista"></activity>
     </application>
 
 </manifest>
