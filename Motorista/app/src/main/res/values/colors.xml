@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#0589e1</color>
+    <color name="colorAccent">#01234a</color>
     <color name="colorpreto">#212121</color>
-    <color name="laranja">#FF8C00</color>
+    <color name="laranja">#FFBA5C</color>
 </resources>
