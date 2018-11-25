@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".perfilPackage.Perfil"
+    android:background="@color/colorAccent"
     tools:layout_editor_absoluteY="81dp">
 
     <RelativeLayout
@@ -46,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
         android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/emailPerfilId"
@@ -60,16 +62,19 @@
         android:layout_marginStart="34dp"
         android:layout_marginBottom="57dp"
         android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/botaoEditarPerfilId"
         app:layout_constraintStart_toStartOf="@+id/nomePerfilId"
         app:layout_constraintTop_toBottomOf="@+id/nomePerfilId" />
 
     <Button
         android:id="@+id/botaoEditarPerfilId"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="84dp"
+        android:background="@drawable/button_style"
         android:text="Editar Perfil"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
