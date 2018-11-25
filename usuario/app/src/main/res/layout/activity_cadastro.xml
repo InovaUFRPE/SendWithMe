@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/swmbg"
+    android:background="@color/colorAccent"
     tools:context=".homePackage.Cadastro">
     <EditText
         android:id="@+id/edtNome"
@@ -128,7 +128,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/button_style"
-        android:hint="@string/salvar"
+        android:text="Cadastrar"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rbFeminino" />
