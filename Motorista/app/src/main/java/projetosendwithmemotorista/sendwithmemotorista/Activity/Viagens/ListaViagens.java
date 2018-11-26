@@ -1,9 +1,12 @@
 package projetosendwithmemotorista.sendwithmemotorista.Activity.Viagens;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +29,7 @@ public class ListaViagens extends AppCompatActivity {
     private TextView edtendereço;
     private TextView edtdata;
     private TextView edthora;
+    private Button btnvoltar;
     private ListView listaviagens;
     private ArrayList<String> lista;
     private ArrayAdapter<String> adapter;
@@ -37,6 +41,15 @@ public class ListaViagens extends AppCompatActivity {
         setContentView(R.layout.activity_lista_viagens);
         setardadoslistaviagem();
         listaviagens = findViewById(R.id.listaviagens);
+        btnvoltar = findViewById(R.id.Btnavanc);
+        btnvoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentvolta = new Intent(ListaViagens.this, TelaInicial.class);
+                startActivity(intentvolta);
+            }
+        });
+
 
 
     }
