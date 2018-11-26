@@ -113,6 +113,7 @@ public class ListarMotoristas extends AppCompatActivity {
                 intent1.putExtra("email", String.valueOf(motoristas.get(position).getEmail()));
                 intent1.putExtra("sexo", String.valueOf(motoristas.get(position).getSexo()));
 
+                intent1.putExtra("viagemId", String.valueOf(viagens.get(position).getViagemUID()));
                 intent1.putExtra("cidadedest", String.valueOf(viagens.get(position).getCidadedest()));
                 intent1.putExtra("enderecodest", String.valueOf(viagens.get(position).getEndereçodest()));
                 intent1.putExtra("endereco", String.valueOf(viagens.get(position).getEndereço()));

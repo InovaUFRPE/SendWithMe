@@ -8,6 +8,7 @@ import android.view.ViewDebug;
 
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.caronaPackage.EnderecoCarona;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class TelaInicial extends AppCompatActivity {
 
@@ -21,6 +22,14 @@ public class TelaInicial extends AppCompatActivity {
 
         Intent intent = new Intent(TelaInicial.this, EnderecoCarona.class);
         startActivity(intent);
+
+    }
+
+    public void sair(View view){
+
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(TelaInicial.this, Login.class));
+        TelaInicial.this.finish();
 
     }
 
