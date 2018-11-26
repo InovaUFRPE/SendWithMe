@@ -53,7 +53,8 @@ public class ListaViagens extends AppCompatActivity {
                     String userId = String.valueOf(usuario.getUsuarioid());
                     final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaViagens.this);
                     if (userId.equals(preferenciasAndroid.getIdentificador()))
-                        lista.add(ds.getValue().toString());
+                        lista.add(" Cidade Origem: " + usuario.getCidade() +"\n" + " Cidade Destino: "+ usuario.getCidadedest() + "\n"+ " Data:"+usuario.getData() + "\n" + " Hora: "+usuario.getHora());
+                       // lista.add(ds.getValue().toString());
 
                 }
 
