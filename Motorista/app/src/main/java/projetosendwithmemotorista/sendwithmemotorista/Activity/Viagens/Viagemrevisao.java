@@ -18,6 +18,7 @@ import org.w3c.dom.Text;
 import java.util.UUID;
 
 import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPerfil.TelaPerfil;
+import projetosendwithmemotorista.sendwithmemotorista.Helper.Base64Custom;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.PreferenciasAndroid;
 import projetosendwithmemotorista.sendwithmemotorista.R;
 
@@ -31,7 +32,6 @@ public class Viagemrevisao extends AppCompatActivity {
     private String hora;
     private String encomendas;
     private Integer assentos;
-
     private String usuarioid;
 
     private String qtassentos;
@@ -71,6 +71,7 @@ public class Viagemrevisao extends AppCompatActivity {
             endereçodest = extras.getString("endereçodest");
             assentos = extras.getInt("assentos");
             encomendas = extras.getString("encomendas");
+            usuarioid = extras.getString("usuarioid");
 
             qtassentos = assentos.toString();
 
@@ -130,6 +131,7 @@ public class Viagemrevisao extends AppCompatActivity {
 
     //
     private void abrecaixasalvar() {
+
         final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(Viagemrevisao.this);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Tem certeza que deseja salvar essa viagem?");
@@ -146,8 +148,9 @@ public class Viagemrevisao extends AppCompatActivity {
                 v.setData(data);
                 v.setHora(hora);
                 v.setEncomendas(encomendas);
-                v.setUsuarioid(usuarioid);
-                databaseReference.child("Viagens").child(preferenciasAndroid.getIdentificador()).setValue(v);
+                v.setUsuarioid(preferenciasAndroid.getIdentificador());
+                String idAleatorio = Base64Custom.codificarBase64(v.getViagemUID());
+                databaseReference.child("Viagens").child(idAleatorio).setValue(v);
 
             }
         });
@@ -174,6 +177,7 @@ public class Viagemrevisao extends AppCompatActivity {
         i.putExtra("endereçodest",endereçodest);
         i.putExtra("assentos",assentos);
         i.putExtra("encomendas",encomendas);
+        i.putExtra("usuarioid",usuarioid);
         startActivity(i);
     }
 
