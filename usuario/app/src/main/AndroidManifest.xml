@@ -56,12 +56,12 @@
 
         <activity android:name=".perfilPackage.EditarPerfil" />
         <activity
-            android:name=".pedidoPackage.CadastrarPedido"
+            android:name=".PedidoPackage.CadastrarPedido"
             android:label="@string/title_activity_maps2" />
-        <activity android:name=".pedidoPackage.ListarPedidos" />
-        <activity android:name=".pedidoPackage.ConfirmarPedido" />
-        <activity android:name=".pedidoPackage.InfoPedido" />
-        <activity android:name=".motoristaPackage.ListarMotoristas" />
+        <activity android:name=".PedidoPackage.ListarPedidos" />
+        <activity android:name=".PedidoPackage.ConfirmarPedido" />
+        <activity android:name=".PedidoPackage.InfoPedido" />
+        <activity android:name=".MotoristaPackage.ListarMotoristas" />
         <activity android:name=".homePackage.TelaInicial" />
         <activity android:name=".caronaPackage.EnderecoCarona" />
         <activity android:name=".motoristaPackage.InfoMotoristaViagem"></activity>

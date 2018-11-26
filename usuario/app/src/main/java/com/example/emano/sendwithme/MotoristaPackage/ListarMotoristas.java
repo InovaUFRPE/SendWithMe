@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.motoristaPackage;
+package com.example.emano.sendwithme.MotoristaPackage;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.example.emano.sendwithme.motoristaPackage.InfoMotoristaViagem;
 
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.viagemPackage.Viagem;
@@ -55,7 +56,7 @@ public class ListarMotoristas extends AppCompatActivity {
         criarMotoristaBanco();
         FirebaseApp bancoMotorista = FirebaseApp.initializeApp(getApplicationContext(), options, "appMotoristaBanco");
         final FirebaseDatabase motoristaBanco = FirebaseDatabase.getInstance(bancoMotorista);
-        databaseReference = motoristaBanco.getReference("Viagens");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario");
 
 
         lista = (ListView) findViewById(R.id.motoristas_view);
@@ -67,28 +68,10 @@ public class ListarMotoristas extends AppCompatActivity {
 
                 for(DataSnapshot dados: dataSnapshot.getChildren()){
 
-                    Viagem viagem = dados.getValue(Viagem.class);
 
-                    databaseReference2 = motoristaBanco.getReference("usuarios").child(viagem.getUsuarioid());
+                    Motorista motorista = dados.getValue(Motorista.class);
 
-                    databaseReference2.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                            Motorista motorista = dataSnapshot.getValue(Motorista.class);
-                            addOnMotoristaOnLista(motorista);
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
-
-                    //Motorista motorista = dados.getValue(Motorista.class);
-
-                    //addOnMotoristaOnLista(motorista);
+                    addOnMotoristaOnLista(motorista);
 
                 }
 
