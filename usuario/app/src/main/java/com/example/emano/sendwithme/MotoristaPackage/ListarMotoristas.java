@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.maps.android.SphericalUtil;
 
 
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class ListarMotoristas extends AppCompatActivity {
     DatabaseReference databaseReference;
     DatabaseReference databaseReference2;
     LatLng latLng;
-    LatLng latLng1;
+    LatLng latLngDestinoUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,17 +52,18 @@ public class ListarMotoristas extends AppCompatActivity {
         String origem = intent.getStringExtra("origem");
         String destino = intent.getStringExtra("destino");
         latLng = getLocationFromAddress(ListarMotoristas.this, origem);
-        latLng1 = getLocationFromAddress(ListarMotoristas.this, destino);
+        latLngDestinoUsuario = getLocationFromAddress(ListarMotoristas.this, destino);
 
         criarMotoristaBanco();
         FirebaseApp bancoMotorista = FirebaseApp.initializeApp(getApplicationContext(), options, "appMotoristaBanco");
         final FirebaseDatabase motoristaBanco = FirebaseDatabase.getInstance(bancoMotorista);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario");
+        databaseReference2 = FirebaseDatabase.getInstance().getReference().child("Viagens");
 
 
         lista = (ListView) findViewById(R.id.motoristas_view);
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -69,9 +71,14 @@ public class ListarMotoristas extends AppCompatActivity {
                 for(DataSnapshot dados: dataSnapshot.getChildren()){
 
 
-                    Motorista motorista = dados.getValue(Motorista.class);
+                    Viagem viagem = dados.getValue(Viagem.class);
 
-                    addOnMotoristaOnLista(motorista);
+                    LatLng latLngDestinoViagem = getLocationFromAddress(ListarMotoristas.this, viagem.getCidadedest());
+
+                    if(SphericalUtil.computeDistanceBetween(latLngDestinoUsuario, latLngDestinoViagem) > 60000){
+                        addMotoristaListaById(viagem.getUsuarioid());
+                    }
+                    //addOnMotoristaOnLista(motorista);
 
                 }
 
@@ -135,6 +142,33 @@ public class ListarMotoristas extends AppCompatActivity {
 
     }
 
+    private void addMotoristaListaById(final String id){
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot dados: dataSnapshot.getChildren()) {
+
+                    Motorista motorista = dados.getValue(Motorista.class);
+
+                    if (motorista.getId().equals(id) && !(motoristas.contains(motorista))){
+                        addOnMotoristaOnLista(motorista);
+                    }
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
     private void addOnViagemOnLista(Viagem viagem){
         this.viagens.add(viagem);
 
@@ -150,8 +184,8 @@ public class ListarMotoristas extends AppCompatActivity {
 
         for (Motorista motorista:listaMotorista) {
             //condições de chacagem pra add em listaFiltrada
-            //if(SphericalUtil.computeDistanceBetween(latLng, latLng1) < 70000){
-            ///add latLng e latLng1 como as posições a serem comparadas
+            //if(SphericalUtil.computeDistanceBetween(latLng, latLngDestinoUsuario) < 70000){
+            ///add latLng e latLngDestinoUsuario como as posições a serem comparadas
 
         }
 
