@@ -71,6 +71,7 @@ public class ListarMotoristas extends AppCompatActivity {
 
 
                     Viagem viagem = dados.getValue(Viagem.class);
+                    viagem.setViagemUID(dados.getKey());
                     addOnViagemOnLista(viagem);
 
                     LatLng latLngDestinoViagem = getLocationFromAddress(ListarMotoristas.this, viagem.getCidadedest());
