@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.HomePackage;
+package com.example.emano.sendwithme.homePackage;
 
 import android.Manifest;
 import android.content.Intent;
@@ -21,7 +21,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.emano.sendwithme.PedidoPackage.ListarPedidos;
-import com.example.emano.sendwithme.PerfilPackage.Perfil;
+import com.example.emano.sendwithme.perfilPackage.Perfil;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +31,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.example.emano.sendwithme.HomePackage.HomeFragmentMap;
 
 public class HomeDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

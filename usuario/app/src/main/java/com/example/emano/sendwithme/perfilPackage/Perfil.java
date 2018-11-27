@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.PerfilPackage;
+package com.example.emano.sendwithme.perfilPackage;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;

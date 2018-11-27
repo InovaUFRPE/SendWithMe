@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.maps.android.SphericalUtil;
+import com.example.emano.sendwithme.motoristaPackage.InfoMotoristaViagem;
 
 
 import java.io.IOException;
@@ -53,8 +54,8 @@ public class ListarMotoristas extends AppCompatActivity {
         latLng = getLocationFromAddress(ListarMotoristas.this, origem);
         latLngDestinoUsuario = getLocationFromAddress(ListarMotoristas.this, destino);
 
-        FirebaseApp bancoMotorista = FirebaseApp.initializeApp(getApplicationContext(), options, "appMotoristaBanco");
-        final FirebaseDatabase motoristaBanco = FirebaseDatabase.getInstance(bancoMotorista);
+        //FirebaseApp bancoMotorista = FirebaseApp.initializeApp(getApplicationContext(), options, "appMotoristaBanco");
+        //final FirebaseDatabase motoristaBanco = FirebaseDatabase.getInstance(bancoMotorista);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario");
         databaseReference2 = FirebaseDatabase.getInstance().getReference().child("Viagens");
 
@@ -74,7 +75,7 @@ public class ListarMotoristas extends AppCompatActivity {
 
                     LatLng latLngDestinoViagem = getLocationFromAddress(ListarMotoristas.this, viagem.getCidadedest());
 
-                    if(SphericalUtil.computeDistanceBetween(latLngDestinoUsuario, latLngDestinoViagem) > 60000){
+                    if(SphericalUtil.computeDistanceBetween(latLngDestinoUsuario, latLngDestinoViagem) < 60000){
                         addMotoristaListaById(viagem.getUsuarioid());
                     }
                     //addOnMotoristaOnLista(motorista);

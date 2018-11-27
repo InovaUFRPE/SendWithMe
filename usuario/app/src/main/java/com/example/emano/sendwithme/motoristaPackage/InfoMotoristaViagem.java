@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.MotoristaPackage;
+package com.example.emano.sendwithme.motoristaPackage;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.CaronaPackage.SolicitacaoCarona;
-import com.google.firebase.FirebaseApp;
+import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
