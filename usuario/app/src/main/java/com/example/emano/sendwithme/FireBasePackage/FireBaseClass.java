@@ -1,8 +1,8 @@
-package com.example.emano.sendwithme.fireBasePackage;
+package com.example.emano.sendwithme.FireBasePackage;
 
 import android.support.annotation.NonNull;
 
-import com.example.emano.sendwithme.usuarioPackage.Usuario;
+import com.example.emano.sendwithme.UsuarioPackage.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

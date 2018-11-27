@@ -1,13 +1,12 @@
-package com.example.emano.sendwithme.homePackage;
+package com.example.emano.sendwithme.HomePackage;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewDebug;
 
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.caronaPackage.EnderecoCarona;
+import com.example.emano.sendwithme.CaronaPackage.EnderecoCarona;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class TelaInicial extends AppCompatActivity {

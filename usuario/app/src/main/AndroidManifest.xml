@@ -20,19 +20,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".homePackage.Login" />
-        <activity android:name=".homePackage.Cadastro" />
-        <activity android:name=".perfilPackage.Perfil">
+        <activity android:name=".HomePackage.Login" />
+        <activity android:name=".HomePackage.Cadastro" />
+        <activity android:name=".PerfilPackage.Perfil">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".homePackage.HomeDrawer" />
+                android:value=".HomePackage.HomeDrawer" />
         </activity>
         <activity
-            android:name=".homePackage.HomeDrawer"
+            android:name=".HomePackage.HomeDrawer"
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".homePackage.Splashscreen"
+            android:name=".HomePackage.Splashscreen"
             android:label="@string/app_name"
             android:theme="@style/AppCompat.TelaCheia">
             <intent-filter>
@@ -54,7 +54,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".perfilPackage.EditarPerfil" />
+        <activity android:name=".PerfilPackage.EditarPerfil" />
         <activity
             android:name=".PedidoPackage.CadastrarPedido"
             android:label="@string/title_activity_maps2" />
@@ -62,9 +62,9 @@
         <activity android:name=".PedidoPackage.ConfirmarPedido" />
         <activity android:name=".PedidoPackage.InfoPedido" />
         <activity android:name=".MotoristaPackage.ListarMotoristas" />
-        <activity android:name=".homePackage.TelaInicial" />
-        <activity android:name=".caronaPackage.EnderecoCarona" />
-        <activity android:name=".motoristaPackage.InfoMotoristaViagem"></activity>
+        <activity android:name=".HomePackage.TelaInicial" />
+        <activity android:name=".CaronaPackage.EnderecoCarona" />
+        <activity android:name=".MotoristaPackage.InfoMotoristaViagem"></activity>
     </application>
 
 </manifest>

@@ -19,7 +19,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.emano.sendwithme.homePackage.HomeDrawer;
+import com.example.emano.sendwithme.HomePackage.HomeDrawer;
 import com.example.emano.sendwithme.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;

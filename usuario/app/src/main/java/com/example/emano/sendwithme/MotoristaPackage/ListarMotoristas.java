@@ -12,10 +12,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-import com.example.emano.sendwithme.motoristaPackage.InfoMotoristaViagem;
 
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.viagemPackage.Viagem;
+import com.example.emano.sendwithme.ViagemPackage.Viagem;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -54,7 +53,6 @@ public class ListarMotoristas extends AppCompatActivity {
         latLng = getLocationFromAddress(ListarMotoristas.this, origem);
         latLngDestinoUsuario = getLocationFromAddress(ListarMotoristas.this, destino);
 
-        criarMotoristaBanco();
         FirebaseApp bancoMotorista = FirebaseApp.initializeApp(getApplicationContext(), options, "appMotoristaBanco");
         final FirebaseDatabase motoristaBanco = FirebaseDatabase.getInstance(bancoMotorista);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario");
@@ -72,6 +70,7 @@ public class ListarMotoristas extends AppCompatActivity {
 
 
                     Viagem viagem = dados.getValue(Viagem.class);
+                    addOnViagemOnLista(viagem);
 
                     LatLng latLngDestinoViagem = getLocationFromAddress(ListarMotoristas.this, viagem.getCidadedest());
 
@@ -119,21 +118,6 @@ public class ListarMotoristas extends AppCompatActivity {
 
             }
         });
-
-    }
-
-    private void criarMotoristaBanco() {
-
-        String apiKeyMotorista = "AIzaSyC5XE_TNOJkzEf0ek4BXXCtO7zHP6qptWg";
-        String appIdMotorista = "1:243051234707:android:6e217be4168ac264";
-        String dataBaseUrlMotorista = "https://sendwithme-login-motorista.firebaseio.com";
-
-        options = new FirebaseOptions.Builder()
-                .setApiKey(apiKeyMotorista)
-                .setApplicationId(appIdMotorista)
-                .setDatabaseUrl(dataBaseUrlMotorista)
-                .build();
-
 
     }
 

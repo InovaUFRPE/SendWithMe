@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.homePackage;
+package com.example.emano.sendwithme.HomePackage;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.usuarioPackage.Usuario;
+import com.example.emano.sendwithme.UsuarioPackage.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".motoristaPackage.InfoMotoristaViagem">
+    tools:context=".MotoristaPackage.InfoMotoristaViagem">
 
     <TextView
         android:id="@+id/textInfoNomeMotorista"

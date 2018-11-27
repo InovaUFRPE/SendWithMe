@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.perfilPackage;
+package com.example.emano.sendwithme.PerfilPackage;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.emano.sendwithme.homePackage.Login;
+import com.example.emano.sendwithme.HomePackage.Login;
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.usuarioPackage.Usuario;
+import com.example.emano.sendwithme.UsuarioPackage.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;

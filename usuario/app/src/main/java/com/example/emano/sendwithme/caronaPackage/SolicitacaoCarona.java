@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.caronaPackage;
+package com.example.emano.sendwithme.CaronaPackage;
 
 public class SolicitacaoCarona {
 

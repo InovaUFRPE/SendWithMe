@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.homePackage;
+package com.example.emano.sendwithme.HomePackage;
 
 
 import android.content.pm.PackageManager;

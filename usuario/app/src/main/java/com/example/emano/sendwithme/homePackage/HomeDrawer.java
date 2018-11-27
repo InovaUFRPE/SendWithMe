@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.homePackage;
+package com.example.emano.sendwithme.HomePackage;
 
 import android.Manifest;
 import android.content.Intent;
@@ -21,10 +21,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.emano.sendwithme.PedidoPackage.ListarPedidos;
-import com.example.emano.sendwithme.HomePackage.HomeFragmentMap;
-import com.example.emano.sendwithme.perfilPackage.Perfil;
+import com.example.emano.sendwithme.PerfilPackage.Perfil;
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.usuarioPackage.Usuario;
+import com.example.emano.sendwithme.UsuarioPackage.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

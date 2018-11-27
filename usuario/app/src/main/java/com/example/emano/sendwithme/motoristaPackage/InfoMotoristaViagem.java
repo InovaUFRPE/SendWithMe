@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.motoristaPackage;
+package com.example.emano.sendwithme.MotoristaPackage;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,14 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.caronaPackage.SolicitacaoCarona;
+import com.example.emano.sendwithme.CaronaPackage.SolicitacaoCarona;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
 
 public class InfoMotoristaViagem extends AppCompatActivity {
 
@@ -64,10 +63,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
         hora.setText(hora1);
         encomenda.setText(encomendas1);
 
-        criarMotoristaBanco();
-        FirebaseApp bancoMotorista = FirebaseApp.initializeApp(getApplicationContext(), options, "appMotoristaBanco");
-        final FirebaseDatabase motoristaBanco = FirebaseDatabase.getInstance(bancoMotorista);
-        databaseReference = motoristaBanco.getReference(viagemId).child("solicitacoes");
+        databaseReference = FirebaseDatabase.getInstance().getReference(viagemId).child("solicitacoes");
 
         solicitaViagem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,22 +107,5 @@ public class InfoMotoristaViagem extends AppCompatActivity {
         startActivity(intent2);
 
     }
-
-    private void criarMotoristaBanco() {
-
-        String apiKeyMotorista = "AIzaSyC5XE_TNOJkzEf0ek4BXXCtO7zHP6qptWg";
-        String appIdMotorista = "1:243051234707:android:6e217be4168ac264";
-        String dataBaseUrlMotorista = "https://sendwithme-login-motorista.firebaseio.com";
-
-        options = new FirebaseOptions.Builder()
-                .setApiKey(apiKeyMotorista)
-                .setApplicationId(appIdMotorista)
-                .setDatabaseUrl(dataBaseUrlMotorista)
-                .build();
-
-
-    }
-
-
-
+    
 }

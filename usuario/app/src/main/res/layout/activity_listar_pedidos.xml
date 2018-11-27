@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".pedidoPackage.ListarPedidos">
+    tools:context=".PedidoPackage.ListarPedidos">
 
     <ListView
         android:id="@+id/lista_pedidos_view"
