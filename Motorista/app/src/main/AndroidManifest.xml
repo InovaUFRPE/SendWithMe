@@ -28,13 +28,16 @@
         </activity>
         <activity android:name=".Activity.LoginMotorista.LoginActivity" />
         <activity android:name=".Activity.CadastroMotorista.CadastroActivity" />
-        <activity android:name=".Activity.TelaPerfil.TelaPerfil"/>
+        <activity android:name=".Activity.TelaPerfil.TelaPerfil" />
         <activity android:name=".Activity.Viagens.TelaInicial" />
-        <activity android:name=".Activity.Viagens.InicioViagem"/>
-        <activity android:name=".Activity.Viagens.DestinoViagem"/>
-        <activity android:name=".Activity.Viagens.ListaViagens"/>
+        <activity android:name=".Activity.Viagens.InicioViagem" />
+        <activity android:name=".Activity.Viagens.DestinoViagem" />
+        <activity android:name=".Activity.Viagens.ListaViagens" />
         <activity android:name=".Activity.Viagens.Viagemconfig" />
-        <activity android:name=".Activity.Viagens.Viagemrevisao"></activity>
+        <activity android:name=".Activity.Viagens.Viagemrevisao" />
+        <activity
+            android:name=".Activity.LoginMotorista.ResetActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

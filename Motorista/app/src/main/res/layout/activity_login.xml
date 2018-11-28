@@ -47,17 +47,36 @@
         app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
     <TextView
-        android:id="@+id/tvAbreCadastro"
-        android:layout_width="207dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/callReset"
+        android:layout_width="201dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginLeft="95dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
         android:gravity="center"
-        android:hint="@string/nao_tem_cadastro"
-        android:textColorLink="@color/colorAccent"
-        android:textSize="15sp"
+        android:text="Recuperar Senha? Clique aqui"
+        android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogar" />
+
+    <TextView
+        android:id="@+id/tvAbreCadastro"
+        android:layout_width="207dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:gravity="center"
+        android:hint="@string/nao_tem_cadastro"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/callReset" />
 
     <ImageView
         android:id="@+id/imageView4"

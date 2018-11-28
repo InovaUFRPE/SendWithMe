@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogar;
     private FirebaseAuth autenticacao;
     private Usuarios usuarios;
+    private TextView callReset;
 
 
 
@@ -43,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtSenha = (EditText) findViewById(R.id.edtSenha);
         tvAbreCadastro = (TextView) findViewById(R.id.tvAbreCadastro);
+        callReset = (TextView) findViewById(R.id.callReset);
         btnLogar = (Button) findViewById(R.id.btnLogar);
 
         btnLogar.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +69,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 abreCadastroUsuario();
+            }
+        });
+        callReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callReset();
             }
         });
 
@@ -111,5 +119,10 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+    }
+
+    public void callReset(){
+        Intent intent = new Intent(this, ResetActivity.class);
+        startActivity(intent);
     }
 }

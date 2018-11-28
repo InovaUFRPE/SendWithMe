@@ -2,6 +2,7 @@ package projetosendwithmemotorista.sendwithmemotorista.Activity.Viagens;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,11 +25,23 @@ public class TelaInicial extends AppCompatActivity {
     private Button btnsair;
     private String titulo;
     private String cont;
+    private FirebaseAuth.AuthStateListener authStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial);
+
+        authStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth authData) {
+                if(authData == null){
+                    Intent intent = new Intent(TelaInicial.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
 
         btnnovacarona = findViewById(R.id.btnnovacarona);
         buttonlistadecarona = findViewById(R.id.btnlista);
