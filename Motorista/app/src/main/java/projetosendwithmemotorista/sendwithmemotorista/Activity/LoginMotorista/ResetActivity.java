@@ -89,7 +89,7 @@ public class ResetActivity extends AppCompatActivity {
                         else{
                             Toast.makeText(
                                     ResetActivity.this,
-                                    "Falhou! Tente novamente.",
+                                    "Falhou! Tente novamente." + "Verifique se o email informado está correto!",
                                     Toast.LENGTH_SHORT
                             ).show();
 

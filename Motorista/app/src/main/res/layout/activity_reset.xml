@@ -63,10 +63,20 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-
-
-
-
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginRight="137dp"
+        android:textColor="@color/colorAccent"
+        android:text="Digite abaixo seu email já cadastrado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
