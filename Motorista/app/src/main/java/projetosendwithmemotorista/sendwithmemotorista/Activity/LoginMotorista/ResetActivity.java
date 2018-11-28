@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+import projetosendwithmemotorista.sendwithmemotorista.Activity.Viagens.InicioViagem;
 import projetosendwithmemotorista.sendwithmemotorista.Activity.Viagens.TelaInicial;
 import projetosendwithmemotorista.sendwithmemotorista.R;
 
@@ -71,6 +72,8 @@ public class ResetActivity extends AppCompatActivity {
     }
 
     public void reset(){
+        Intent i = new Intent(ResetActivity.this, TelaInicial.class);
+        startActivity(i);
         firebaseAuth
                 .sendPasswordResetEmail(email.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
