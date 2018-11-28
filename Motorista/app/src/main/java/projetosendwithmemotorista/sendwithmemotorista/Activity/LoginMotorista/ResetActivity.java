@@ -72,7 +72,7 @@ public class ResetActivity extends AppCompatActivity {
     }
 
     public void reset(){
-        Intent i = new Intent(ResetActivity.this, TelaInicial.class);
+        Intent i = new Intent(ResetActivity.this, LoginActivity.class);
         startActivity(i);
         finish();
         firebaseAuth
