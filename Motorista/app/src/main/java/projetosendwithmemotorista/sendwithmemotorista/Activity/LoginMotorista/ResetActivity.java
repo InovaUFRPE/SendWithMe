@@ -100,4 +100,21 @@ public class ResetActivity extends AppCompatActivity {
                     }
                 });
     }
+    public boolean validarcampos(){
+        boolean erro = true;
+        if(validaremail()){
+            erro = false;
+        }
+        return erro;
+    }
+    private boolean validaremail() {
+        boolean erro = false;
+        String emailString = email.getText().toString().trim();
+        if (emailString.isEmpty()) {
+            erro = true;
+            email.setError("Campo vazio!");
+
+        }
+        return erro;
+    }
 }
