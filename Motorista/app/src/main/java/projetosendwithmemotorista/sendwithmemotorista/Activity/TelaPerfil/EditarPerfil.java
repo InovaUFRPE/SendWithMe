@@ -58,6 +58,7 @@ public class EditarPerfil extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentvoltaPerfil = new Intent(EditarPerfil.this, TelaPerfil.class);
                 startActivity(intentvoltaPerfil);
+                finish();
             }
         });
 

@@ -65,6 +65,7 @@ public class TelaInicial extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(TelaInicial.this, LoginActivity.class));
                 TelaInicial.this.finish();
+                finish();
 
             }
         });

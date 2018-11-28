@@ -67,6 +67,7 @@ public class CadastroActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentvolta = new Intent(CadastroActivity.this, LoginActivity.class);
                 startActivity(intentvolta);
+                finish();
             }
         });
 
