@@ -74,6 +74,7 @@ public class ResetActivity extends AppCompatActivity {
     public void reset(){
         Intent i = new Intent(ResetActivity.this, TelaInicial.class);
         startActivity(i);
+        finish();
         firebaseAuth
                 .sendPasswordResetEmail(email.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -84,8 +85,7 @@ public class ResetActivity extends AppCompatActivity {
                             email.setText("");
                             Toast.makeText(
                                     ResetActivity.this,
-                                    "Recuperação de acesso iniciado. Email enviado." +
-                                            "Aperte o botão Voltar para o retornar a tela de Login",
+                                    "Recuperação de acesso iniciado. Email enviado.",
                                     Toast.LENGTH_SHORT
                             ).show();
                         }

@@ -4,9 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     android:background="@color/laranja"
     tools:context=".Activity.LoginMotorista.ResetActivity">
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:text='Depois de digitar seu email, clique no botão "Enviar"'
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <AutoCompleteTextView
         android:id="@+id/email"
@@ -14,12 +29,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="87dp"
-        android:layout_marginBottom="212dp"
-        app:layout_constraintBottom_toTopOf="@+id/appBarLayout"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -37,43 +50,49 @@
 
     <Button
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="147dp"
+        android:layout_width="222dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
         android:background="@drawable/button_style"
-        android:text="Enviar para o email"
+        android:text="Enviar"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <Button
         android:id="@+id/volta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="224dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
         android:background="@drawable/button_style"
         android:text="Voltar"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="wrap_content"
+        android:layout_width="231dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="43dp"
         android:layout_marginEnd="137dp"
         android:layout_marginRight="137dp"
-        android:textColor="@color/colorAccent"
         android:text="Digite abaixo seu email já cadastrado"
+        android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
