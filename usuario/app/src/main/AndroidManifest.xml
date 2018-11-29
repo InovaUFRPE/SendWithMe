@@ -67,7 +67,8 @@
         <activity android:name=".motoristaPackage.InfoMotoristaViagem" />
         <activity android:name=".EncomendaPackage.CadastrarEncomenda" />
         <activity android:name=".EncomendaPackage.CadastrarEncomendaDestino" />
-        <activity android:name=".EncomendaPackage.CadastrarEncomendaDescricao"></activity>
+        <activity android:name=".EncomendaPackage.CadastrarEncomendaDescricao" />
+        <activity android:name=".EncomendaPackage.CadastrarEncomendaConfirmar"></activity>
     </application>
 
 </manifest>
