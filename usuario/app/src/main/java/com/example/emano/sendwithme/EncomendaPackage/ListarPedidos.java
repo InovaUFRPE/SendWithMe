@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.PedidoPackage;
+package com.example.emano.sendwithme.EncomendaPackage;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
