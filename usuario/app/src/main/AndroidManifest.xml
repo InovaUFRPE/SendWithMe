@@ -69,7 +69,8 @@
         <activity android:name=".EncomendaPackage.CadastrarEncomendaDestino" />
         <activity android:name=".EncomendaPackage.CadastrarEncomendaDescricao" />
         <activity android:name=".EncomendaPackage.CadastrarEncomendaConfirmar" />
-        <activity android:name=".ChatPackage.ChatActivity"></activity>
+        <activity android:name=".ChatPackage.ChatActivity" />
+        <activity android:name=".ChatPackage.ListaChatActivity"></activity>
     </application>
 
 </manifest>
