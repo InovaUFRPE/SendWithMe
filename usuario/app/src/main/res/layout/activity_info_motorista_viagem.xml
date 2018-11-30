@@ -5,23 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".MotoristaPackage.InfoMotoristaViagem">
+    tools:context=".MotoristaPackage.InfoMotoristaViagem"
+    tools:layout_editor_absoluteY="25dp">
 
     <TextView
         android:id="@+id/textInfoNomeMotorista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Maria José"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toStartOf="@+id/btnMaisInfoMotorista"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/txtNomeMotorista"
+        app:layout_constraintTop_toTopOf="@+id/btnMaisInfoMotorista" />
 
     <Button
         android:id="@+id/btnMaisInfoMotorista"
-        android:layout_width="122dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="16dp"
@@ -30,6 +32,7 @@
         android:text="Mais informações"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textInfoNomeMotorista"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -38,13 +41,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="52dp"
         android:text="Origem"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/textDestinoViagem"
+        app:layout_constraintBottom_toBottomOf="@+id/textOrigemViagemInfo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeMotorista" />
+        app:layout_constraintTop_toTopOf="@+id/textOrigemViagemInfo" />
 
     <TextView
         android:id="@+id/textDestinoViagem"
@@ -64,11 +65,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginBottom="44dp"
         android:text="Data"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/textHoraViagem"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnChatId" />
 
     <TextView
         android:id="@+id/textHoraViagem"
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="23dp"
         android:text="Hora"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/textEncomendasViagem"
@@ -88,26 +88,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginBottom="32dp"
         android:text="Disponibilidade para encomendas"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/btnVoltarInfoMotorista"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textEncomendasViagemInfo"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textOrigemViagemInfo"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="38dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="40dp"
         android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/textdestinoViagemInfo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMaisInfoMotorista"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMaisInfoMotorista" />
 
     <TextView
         android:id="@+id/textdestinoViagemInfo"
@@ -115,47 +111,47 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="56dp"
         android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/textDataViagemInfo"
+        app:layout_constraintBottom_toTopOf="@+id/btnChatId"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textDataViagemInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="189dp"
         android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/textHoraViagemInfo"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnChatId" />
 
     <TextView
         android:id="@+id/textHoraViagemInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="24dp"
         android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/textEncomendasViagemInfo"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnChatId" />
 
     <TextView
         android:id="@+id/textEncomendasViagemInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
         android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/btnSolicitarCarona"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHoraViagemInfo" />
 
     <Button
         android:id="@+id/btnSolicitarCarona"
@@ -177,13 +173,25 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/button_style"
         android:onClick="voltarListaMotorista"
         android:text="Voltar"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnSolicitarCarona"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnChatId"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:onClick="voltarListaMotorista"
+        android:text="CHAT"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/textDataViagemInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDataViagemInfo" />
 
     <TextView
         android:id="@+id/txtNomeMotorista"
@@ -191,9 +199,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:text="Motorista"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textInfoNomeMotorista"
+        app:layout_constraintEnd_toStartOf="@+id/textInfoNomeMotorista"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
