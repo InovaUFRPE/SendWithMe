@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".HomePackage.HomeFragmentMap">
 
     <android.support.constraint.ConstraintLayout
@@ -16,8 +17,10 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_style"
             android:text="FAZER PEDIDO"
+            android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toTopOf="@+id/botaoAchaCidadeId"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -31,6 +34,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Carpina"
+            android:background="@drawable/edit_text_style"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -43,6 +47,7 @@
             android:layout_marginBottom="8dp"
             android:ems="10"
             android:inputType="textPersonName"
+            android:background="@drawable/edit_text_style"
             android:text="Tracunhaém"
             app:layout_constraintBottom_toTopOf="@+id/txtNomeObjeto"
             app:layout_constraintStart_toStartOf="parent" />
@@ -54,7 +59,9 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="4dp"
+            android:background="@drawable/button_style"
             android:text="FIND ROUTE"
+            android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

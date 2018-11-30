@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".EncomendaPackage.CadastrarEncomendaConfirmar">
 
     <TextView
@@ -16,6 +17,7 @@
         android:layout_marginRight="6dp"
         android:layout_marginBottom="44dp"
         android:text="Origem da encomenda:"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/txtDestinoEncomenda"
         app:layout_constraintEnd_toStartOf="@+id/txtOrigemEncomendaInfo"
         app:layout_constraintHorizontal_bias="0.0"
@@ -29,6 +31,7 @@
         android:layout_marginRight="116dp"
         android:layout_marginBottom="44dp"
         android:text="Rua A, 01, Recife"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/txtDestinoEncomendaInfo"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -40,6 +43,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="40dp"
         android:text="Destino da encomenda:"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/txtDescricaoEncomenda"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -53,6 +57,7 @@
         android:layout_marginRight="116dp"
         android:layout_marginBottom="40dp"
         android:text="Rua b, 02, Olinda"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/txtDescricaoEncomenda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -67,6 +72,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginBottom="8dp"
         android:text="Nome do objeto:"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/txtOrigemEncomenda"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -80,12 +86,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="212dp"
         android:text="Descrição"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="214dp" />
 
     <TextView
         android:id="@+id/txtNomeObjetoInfo"
@@ -98,6 +104,7 @@
         android:layout_marginRight="146dp"
         android:layout_marginBottom="8dp"
         android:text="Livro"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/txtOrigemEncomendaInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.034"
@@ -107,27 +114,31 @@
 
     <Button
         android:id="@+id/btnVoltarCadastroEncomendaDescricao"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_style"
         android:text="Voltar"
-        app:layout_constraintEnd_toStartOf="@+id/btnCadastrarEncomenda"
-        app:layout_constraintHorizontal_bias="0.462"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescricaoEncomenda" />
+        android:drawableLeft="@drawable/voltar"
+        android:paddingLeft="16dp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnCadastrarEncomenda"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_style"
         android:text="Cadastrar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescricaoEncomenda" />
+        android:drawableRight="@drawable/cadastrar"
+        android:paddingRight="12dp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>

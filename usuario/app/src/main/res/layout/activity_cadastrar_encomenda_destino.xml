@@ -54,6 +54,8 @@
         android:layout_marginRight="8dp"
         android:background="@drawable/button_style"
         android:text="Avançar"
+        android:drawableRight="@drawable/avancar"
+        android:paddingRight="32dp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"

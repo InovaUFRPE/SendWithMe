@@ -16,6 +16,8 @@
         android:background="@drawable/button_style"
         android:onClick="avancarCarona"
         android:text="Avançar"
+        android:drawableLeft="@drawable/avancar"
+        android:paddingLeft="32dp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
