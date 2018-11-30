@@ -51,6 +51,8 @@ public class ListarMotoristas extends AppCompatActivity {
         Intent intent = getIntent();
         String origem = intent.getStringExtra("origem");
         String destino = intent.getStringExtra("destino");
+        //String origem = "Recife";
+        //String destino = "Recife";
         latLng = getLocationFromAddress(ListarMotoristas.this, origem);
         latLngDestinoUsuario = getLocationFromAddress(ListarMotoristas.this, destino);
 

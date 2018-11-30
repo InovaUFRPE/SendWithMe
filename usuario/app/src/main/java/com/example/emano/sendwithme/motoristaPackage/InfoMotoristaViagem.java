@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.emano.sendwithme.ChatPackage.ChatActivity;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.CaronaPackage.SolicitacaoCarona;
 import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
@@ -33,6 +34,8 @@ public class InfoMotoristaViagem extends AppCompatActivity {
     TextView encomenda;
 
     Button solicitaViagem;
+    Button botaoChat;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +46,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String nome1 = intent.getStringExtra("nome") + " " + intent.getStringExtra("sobrenome");
+        final String nome1 = intent.getStringExtra("nome") + " " + intent.getStringExtra("sobrenome");
         String email = intent.getStringExtra("email");
         String sexo = intent.getStringExtra("sexo");
 
@@ -54,6 +57,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
         String hora1 = intent.getStringExtra("hora");
         String encomendas1 = intent.getStringExtra("encomendas");
         final String usuarioid = intent.getStringExtra("usuarioid");
+        final String idPassageiro = "VhEBDyqKOmhvK0sDh4rf15ddghn2";
 
         nome.setText(nome1);
 
@@ -86,6 +90,25 @@ public class InfoMotoristaViagem extends AppCompatActivity {
             }
         });
 
+        botaoChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(InfoMotoristaViagem.this, ChatActivity.class);
+
+                // recupera dados a serem passados
+
+
+                // enviando dados para conversa activity
+                intent.putExtra("nome", nome1 );
+                intent.putExtra("id", usuarioid );
+                intent.putExtra("idcurrentuser", idPassageiro);
+
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     public void setview(){
@@ -98,6 +121,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
        hora = (TextView) findViewById(R.id.textHoraViagemInfo);
        encomenda = (TextView) findViewById(R.id.textEncomendasViagemInfo);
        solicitaViagem = (Button) findViewById(R.id.btnSolicitarCarona);
+       botaoChat = findViewById(R.id.btnChatId);
 
     }
 

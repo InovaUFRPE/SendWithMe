@@ -38,7 +38,7 @@ public class ChatActivity extends AppCompatActivity {
     private String idEnviador;
 
     private DatabaseReference firebase;
-    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private FirebaseDatabase firebase2;
 
     private ValueEventListener valueEventListenerMensagem;
 
@@ -60,9 +60,12 @@ public class ChatActivity extends AppCompatActivity {
         idDestinatario = extra.getString("id");
         idEnviador = extra.getString("idcurrentuser");
 
-        firebase = FirebaseDatabase.getInstance().getReference().child("mensagens")
+        firebase2 = FirebaseDatabase.getInstance();
+
+        firebase = firebase2.getReference().child("mensagens")
                 .child(idDestinatario)
                 .child(idEnviador);
+
 
         valueEventListenerMensagem = new ValueEventListener() {
             @Override
