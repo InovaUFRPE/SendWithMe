@@ -80,8 +80,8 @@ public class ListarPedidos extends AppCompatActivity {
 
     public void setaAdapter(){
 
-        adapter = new ListarPedidosAdapter(getApplicationContext(),this.pedidos);
-        lista.setAdapter(adapter);
+        //adapter = new ListarPedidosAdapter(getApplicationContext(),this.pedidos);
+        //lista.setAdapter(adapter);
 
     }
 

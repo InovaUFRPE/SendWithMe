@@ -15,9 +15,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ConfirmarPedido extends AppCompatActivity {
+public class ConfirmarPedido extends AppCompatActivity { //apaga
+}
 
-    Button confirma;
+    /*Button confirma;
     EditText titulo;
     EditText nome;
     String titulo1;
@@ -80,4 +81,4 @@ public class ConfirmarPedido extends AppCompatActivity {
        nome1 = nome.getText().toString();
     }
 
-}
+}*/

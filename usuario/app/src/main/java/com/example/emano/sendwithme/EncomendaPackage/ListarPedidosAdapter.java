@@ -11,9 +11,11 @@ import com.example.emano.sendwithme.R;
 
 import java.util.ArrayList;
 
-public class ListarPedidosAdapter extends ArrayAdapter<Pedido> {
+public class ListarPedidosAdapter /*extends ArrayAdapter<Pedido>*/ {
 
-    private final ArrayList<Pedido> pedidos;
+}
+
+    /*private final ArrayList<Pedido> pedidos;
     private final Context context;
 
     public ListarPedidosAdapter(Context context, ArrayList<Pedido> pedidos){
@@ -39,4 +41,4 @@ public class ListarPedidosAdapter extends ArrayAdapter<Pedido> {
 
     }
 
-}
+}*/

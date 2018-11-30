@@ -16,7 +16,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CadastrarEncomenda extends AppCompatActivity {
 
-    private DatabaseReference databaseReference;
+}
+
+    /*private DatabaseReference databaseReference;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     private EditText cidadeOrigemEncomenda;
@@ -98,3 +100,4 @@ public class CadastrarEncomenda extends AppCompatActivity {
 
         }
     }
+*/
