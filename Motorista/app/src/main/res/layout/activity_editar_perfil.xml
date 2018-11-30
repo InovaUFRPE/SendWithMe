@@ -19,7 +19,6 @@
         android:background="@drawable/button_style"
         android:text="Excluir Conta"
         android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/voltaPerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -36,7 +35,6 @@
         android:background="@drawable/button_style"
         android:text="Voltar para o Perfil"
         android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
