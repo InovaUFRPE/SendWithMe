@@ -41,36 +41,34 @@
 
     <Button
         android:id="@+id/toolbar"
-        android:layout_width="200dp"
+        android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
         android:background="@drawable/button_style"
+        android:drawableRight="@drawable/enviar"
+        android:paddingRight="16dp"
         android:text="Enviar"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <Button
         android:id="@+id/volta"
-        android:layout_width="200dp"
+        android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/button_style"
+        android:drawableLeft="@drawable/voltar"
+        android:paddingLeft="16dp"
         android:text="Voltar"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <TextView
