@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3b9eea"
+    android:background="@color/colorAccent"
     tools:context=".ChatPackage.ListaChatActivity">
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_marginBottom="40dp"
         android:gravity="center_horizontal"
         android:text="LISTA COM SUAS CONVERSAS INICIADAS:"
-        android:textColor="#fff589"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         app:fontFamily="sans-serif"
@@ -37,7 +37,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="51dp"
-        android:background="#fff589"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
