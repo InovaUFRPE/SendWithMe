@@ -64,9 +64,13 @@ public class ListarMotoristas extends AppCompatActivity {
 
         lista = (ListView) findViewById(R.id.motoristas_view);
 
+        //pega todas as viagens q atendem ao requisito
+
         databaseReference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                motoristas.clear();
+                viagens.clear();
 
 
                 for(DataSnapshot dados: dataSnapshot.getChildren()){
@@ -74,18 +78,46 @@ public class ListarMotoristas extends AppCompatActivity {
 
                     Viagem viagem = dados.getValue(Viagem.class);
                     viagem.setViagemUID(dados.getKey());
-                    addOnViagemOnLista(viagem);
+
 
                     LatLng latLngDestinoViagem = getLocationFromAddress(ListarMotoristas.this, viagem.getCidadedest());
 
                     if(SphericalUtil.computeDistanceBetween(latLngDestinoUsuario, latLngDestinoViagem) < 60000){
-                        addMotoristaListaById(viagem.getUsuarioid());
+                        //addMotoristaListaById(viagem.getUsuarioid());
+                        addOnViagemOnLista(viagem);
+
+                        final String idUsuario = viagem.getUsuarioid();
+                        databaseReference.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                for(DataSnapshot dados: dataSnapshot.getChildren()) {
+
+                                    Motorista motorista = dados.getValue(Motorista.class);
+
+                                    if (motorista.getId().equals(idUsuario)){
+                                        addOnMotoristaOnLista(motorista);
+                                    }
+
+                                }
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
                     }
                     //addOnMotoristaOnLista(motorista);
 
                 }
+                //deois do for
+                //incrementarListaMotorista(viagens);
 
-                setAdapter();
+                ///depis do for
+                // setAdapter();
 
             }
 
@@ -94,6 +126,41 @@ public class ListarMotoristas extends AppCompatActivity {
 
             }
         });
+
+        /*for (final Viagem viagem : viagens){
+
+            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    for(DataSnapshot dados: dataSnapshot.getChildren()) {
+
+                        Motorista motorista = dados.getValue(Motorista.class);
+
+                        if (motorista.getId().equals(viagem.getUsuarioid())){
+                            addOnMotoristaOnLista(motorista);
+                        }
+
+                    }
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }*/
+
+        if(viagens.size() == 0){
+            Toast.makeText(ListarMotoristas.this, "oka", Toast.LENGTH_SHORT).show();
+        }
+
+        setAdapter();
+
+
+
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -125,6 +192,15 @@ public class ListarMotoristas extends AppCompatActivity {
 
     }
 
+    private void incrementarListaMotorista(ArrayList<Viagem> viagens){
+
+        for(Viagem viagem: viagens){
+            addMotoristaListaById(viagem.getUsuarioid());
+
+        }
+
+    }
+
     private void addOnMotoristaOnLista(Motorista motorista){
         this.motoristas.add(motorista);
 
@@ -140,7 +216,7 @@ public class ListarMotoristas extends AppCompatActivity {
 
                     Motorista motorista = dados.getValue(Motorista.class);
 
-                    if (motorista.getId().equals(id) && !(motoristas.contains(motorista))){
+                    if (motorista.getId().equals(id)){
                         addOnMotoristaOnLista(motorista);
                     }
 
@@ -157,6 +233,7 @@ public class ListarMotoristas extends AppCompatActivity {
 
     }
 
+
     private void addOnViagemOnLista(Viagem viagem){
         this.viagens.add(viagem);
 
@@ -164,6 +241,7 @@ public class ListarMotoristas extends AppCompatActivity {
 
     private void setAdapter(){
         adapter = new ListarMotoristasAdapter(getApplicationContext(), this.motoristas);
+        adapter.notifyDataSetChanged();
         lista.setAdapter(adapter);
     }
 
