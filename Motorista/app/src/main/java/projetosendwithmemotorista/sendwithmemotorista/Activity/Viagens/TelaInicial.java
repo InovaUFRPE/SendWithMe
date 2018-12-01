@@ -38,7 +38,7 @@ public class TelaInicial extends AppCompatActivity {
                 if(authData == null){
                     Intent intent = new Intent(TelaInicial.this, LoginActivity.class);
                     startActivity(intent);
-                    finish();
+
                 }
             }
         };
@@ -56,6 +56,7 @@ public class TelaInicial extends AppCompatActivity {
                 cont = "teste";
                 Intent i = new Intent(TelaInicial.this, InicioViagem.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -72,6 +73,7 @@ public class TelaInicial extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TelaInicial.this, TelaPerfil.class));
+                finish();
             }
         });
 
@@ -79,6 +81,7 @@ public class TelaInicial extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TelaInicial.this, ListaViagens.class));
+                finish();
             }
         });
 

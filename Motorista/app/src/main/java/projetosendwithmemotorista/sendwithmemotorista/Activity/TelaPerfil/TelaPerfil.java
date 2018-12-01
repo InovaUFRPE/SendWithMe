@@ -62,7 +62,7 @@ public class TelaPerfil extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentvolta = new Intent(TelaPerfil.this, TelaInicial.class);
                 startActivity(intentvolta);
-                finish();
+                TelaPerfil.this.finish();
             }
         });
     }

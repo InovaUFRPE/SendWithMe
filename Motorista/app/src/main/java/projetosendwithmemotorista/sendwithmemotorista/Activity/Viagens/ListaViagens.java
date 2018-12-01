@@ -47,6 +47,7 @@ public class ListaViagens extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentvolta = new Intent(ListaViagens.this, TelaInicial.class);
                 startActivity(intentvolta);
+                ListaViagens.this.finish();
             }
         });
 
