@@ -15,6 +15,12 @@ public class CadastrarEncomendaDescricao extends AppCompatActivity {
     private EditText descricaoEncomenda;
     private Button avancar;
     private Button voltar;
+    private String cidadeOrigem;
+    private String enderecoOrigem;
+    private String cidadeDestino;
+    private String enderecoDestino;
+    private String nomeObjeto1;
+    private String descricaoEncomenda1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,26 +29,29 @@ public class CadastrarEncomendaDescricao extends AppCompatActivity {
 
         setView();
 
-        Intent intent = getIntent();
+        Bundle extras = getIntent().getExtras();
 
-        final String cidadeOrigem = intent.getStringExtra("cidadeOrigem");
-        final String enderecoOrigem = intent.getStringExtra("enderecoOrigem");
-        final String cidadeDestino = intent.getStringExtra("cidadeDestino");
-        final String enderecoDestino = intent.getStringExtra("enderecoDestino");
-        final String nomeObjeto1 = nomeObjeto.getText().toString();
-        final String descricaoEncomenda1 = descricaoEncomenda.getText().toString();
+        cidadeOrigem = extras.getString("cidadeOrigem");
+        enderecoOrigem = extras.getString("enderecoOrigem");
+        cidadeDestino = extras.getString("cidadeDestino");
+        enderecoDestino = extras.getString("enderecoDestino");
 
         avancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                nomeObjeto1 = nomeObjeto.getText().toString();
+                descricaoEncomenda1 = descricaoEncomenda.getText().toString();
+
                 Intent intent1 = new Intent(CadastrarEncomendaDescricao.this, CadastrarEncomendaConfirmar.class);
-                intent1.putExtra("cidadeOrigem",cidadeOrigem);
-                intent1.putExtra("cidadeDestino", cidadeDestino);
-                intent1.putExtra("enderecoOrigem", enderecoOrigem);
-                intent1.putExtra("enderecoDestino", enderecoDestino);
-                intent1.putExtra("nomeObjeto", nomeObjeto1);
-                intent1.putExtra("descricaoEncomenda", descricaoEncomenda1);
+
+                intent1.putExtra("cidadeOrigem",String.valueOf(cidadeOrigem));
+                intent1.putExtra("cidadeDestino", String.valueOf(cidadeDestino));
+                intent1.putExtra("enderecoOrigem", String.valueOf(enderecoOrigem));
+                intent1.putExtra("enderecoDestino", String.valueOf(enderecoDestino));
+                intent1.putExtra("nomeObjeto", String.valueOf(nomeObjeto1));
+                intent1.putExtra("descricaoEncomenda", String.valueOf(descricaoEncomenda1));
+
                 startActivity(intent1);
 
             }
@@ -64,7 +73,7 @@ public class CadastrarEncomendaDescricao extends AppCompatActivity {
 
         nomeObjeto = (EditText) findViewById(R.id.editNomeObjeto);
         descricaoEncomenda = (EditText) findViewById(R.id.editDescricaoEncomenda);
-        avancar = (Button) findViewById(R.id.btnAvancarCadastro2);
+        avancar = (Button) findViewById(R.id.btnAvancarConfirmaEncomenda);
         voltar = (Button) findViewById(R.id.btnVoltarCadastroDestinoEncomenda);
 
     }

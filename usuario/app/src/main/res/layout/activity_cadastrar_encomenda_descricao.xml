@@ -35,14 +35,14 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
         android:hint="Descrição"
         android:inputType="textPersonName"
         android:singleLine="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnAvancarConfirmaEncomenda"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="180dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnVoltarCadastroDestinoEncomenda"

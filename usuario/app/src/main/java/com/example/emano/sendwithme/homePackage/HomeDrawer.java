@@ -31,7 +31,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.example.emano.sendwithme.HomePackage.HomeFragmentMap;
 
 public class HomeDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

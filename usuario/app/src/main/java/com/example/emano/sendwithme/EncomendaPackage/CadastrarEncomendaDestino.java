@@ -13,6 +13,10 @@ public class CadastrarEncomendaDestino extends AppCompatActivity {
 
     private EditText cidadeDestinoEncomenda;
     private EditText enderecoDestinoencomenda;
+    private String cidade1;
+    private String endereco1;
+    private String cidade;
+    private String endereco;
 
     private Button avancar;
 
@@ -23,22 +27,23 @@ public class CadastrarEncomendaDestino extends AppCompatActivity {
 
         setView();
 
-        Intent intent = getIntent();
+        Bundle extras = getIntent().getExtras();
 
-        final String cidade1 = intent.getStringExtra("cidadeOrigem");
-        final String endereco1 = intent.getStringExtra("enderecoOrigem");
-        final String cidade = cidadeDestinoEncomenda.getText().toString();
-        final String endereco = enderecoDestinoencomenda.getText().toString();
+        cidade1 = extras.getString("cidadeOrigem");
+        endereco1 = extras.getString("enderecoOrigem");
 
         avancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(CadastrarEncomendaDestino.this, CadastrarEncomendaDestino.class);
-                intent.putExtra("cidadeDestino", cidade);
-                intent.putExtra("enderecoDestino", endereco);
-                intent.putExtra("enderecoOrigem", endereco1);
-                intent.putExtra("cidadeOrigem",cidade1);
+                cidade = cidadeDestinoEncomenda.getText().toString();
+                endereco = enderecoDestinoencomenda.getText().toString();
+
+                Intent intent = new Intent(CadastrarEncomendaDestino.this, CadastrarEncomendaDescricao.class);
+                intent.putExtra("cidadeDestino", String.valueOf(cidade));
+                intent.putExtra("enderecoDestino", String.valueOf(endereco));
+                intent.putExtra("enderecoOrigem", String.valueOf(endereco1));
+                intent.putExtra("cidadeOrigem",String.valueOf(cidade1));
 
                 startActivity(intent);
             }
@@ -52,7 +57,7 @@ public class CadastrarEncomendaDestino extends AppCompatActivity {
 
         cidadeDestinoEncomenda = (EditText) findViewById(R.id.editCidadeDestinoEncomenda);
         enderecoDestinoencomenda = (EditText) findViewById(R.id.editEnderecoDestinoEncomenda);
-        avancar = (Button) findViewById(R.id.btnAvancarCadastro1);
+        avancar = (Button) findViewById(R.id.btnAvancarCadastro2);
 
     }
 

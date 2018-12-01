@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class ListarPedidos extends AppCompatActivity {
 
     DatabaseReference databaseReference;
-    ArrayList<Pedido> pedidos = new ArrayList<>();
+    ArrayList<Encomenda> encomendas = new ArrayList<>();
     ArrayAdapter adapter;
     ListView lista;
 
@@ -40,7 +40,7 @@ public class ListarPedidos extends AppCompatActivity {
 
                 for(DataSnapshot dados: dataSnapshot.getChildren()){
 
-                    Pedido dado = dados.getValue(Pedido.class);
+                    Encomenda dado = dados.getValue(Encomenda.class);
 
                     addOnLista(dado);
 
@@ -72,9 +72,9 @@ public class ListarPedidos extends AppCompatActivity {
 
     }
 
-    public void addOnLista(Pedido pedido){
+    public void addOnLista(Encomenda encomenda){
 
-        this.pedidos.add(pedido);
+        this.encomendas.add(encomenda);
 
     }
 

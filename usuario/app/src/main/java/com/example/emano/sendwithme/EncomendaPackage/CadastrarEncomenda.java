@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
+import com.example.emano.sendwithme.homePackage.TelaInicial;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -16,13 +17,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CadastrarEncomenda extends AppCompatActivity {
 
-}
-
-    /*private DatabaseReference databaseReference;
-    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
     private EditText cidadeOrigemEncomenda;
     private EditText enderecoOrigemencomenda;
+    private String cidade;
+    private String endereco;
 
     private Button avancar;
 
@@ -33,16 +31,18 @@ public class CadastrarEncomenda extends AppCompatActivity {
 
         setView();
 
-        final String cidade = cidadeOrigemEncomenda.getText().toString();
-        final String endereco = enderecoOrigemencomenda.getText().toString();
-
         avancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                Toast.makeText(CadastrarEncomenda.this,"Funcionando",Toast.LENGTH_SHORT).show();
+
+                cidade = cidadeOrigemEncomenda.getText().toString();
+                endereco = enderecoOrigemencomenda.getText().toString();
+
                 Intent intent = new Intent(CadastrarEncomenda.this, CadastrarEncomendaDestino.class);
-                intent.putExtra("cidadeOrigem", cidade);
-                intent.putExtra("enderecoOrigem", endereco);
+                intent.putExtra("cidadeOrigem", String.valueOf(cidade));
+                intent.putExtra("enderecoOrigem", String.valueOf(endereco));
                 startActivity(intent);
             }
         });
@@ -50,7 +50,7 @@ public class CadastrarEncomenda extends AppCompatActivity {
 
 
     }
-}
+
 
     public void setView(){
 
@@ -60,7 +60,7 @@ public class CadastrarEncomenda extends AppCompatActivity {
 
     }
 
-    public void fazerPedido(View view){
+    /*public void fazerPedido(View view){
 
         EditText origem = (EditText) findViewById(R.id.editOrigemPedido);
         EditText destino = (EditText) findViewById(R.id.edtDestinoPedido);
@@ -82,12 +82,7 @@ public class CadastrarEncomenda extends AppCompatActivity {
             nome.setError("Campo em branco");
         }else {
 
-            Pedido pedido = new Pedido();
-            pedido.setTitulo(titulo1);
-            pedido.setObjeto(nome1);
-            pedido.setOrigem(origem1);
-            pedido.setDestino(destino1);
-            pedido.setIdUsuario(user.getUid());
+
 
             databaseReference = FirebaseDatabase.getInstance().getReference(user.getUid()).child("Encomendas");
 
@@ -96,8 +91,6 @@ public class CadastrarEncomenda extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), com.example.emano.sendwithme.homePackage.HomeDrawer.class);
             startActivity(intent);
 
-            Toast.makeText(getApplicationContext(), "Pedido Salvo", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Pedido Salvo", Toast.LENGTH_LONG).show();*/
 
         }
-    }
-*/

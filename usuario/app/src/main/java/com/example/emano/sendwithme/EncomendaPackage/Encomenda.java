@@ -1,6 +1,6 @@
 package com.example.emano.sendwithme.EncomendaPackage;
 
-public class Pedido {
+public class Encomenda {
 
     private String id;
     private String idUsuario;
