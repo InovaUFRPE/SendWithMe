@@ -8,8 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas2;
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.motoristaPackage.ListarMotoristas;
+import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
@@ -90,7 +91,7 @@ public class EnderecoCarona extends AppCompatActivity {
 
     public void avancarCarona(){
 
-        Intent intent = new Intent(EnderecoCarona.this, ListarMotoristas.class);
+        Intent intent = new Intent(EnderecoCarona.this, ListarMotoristas2.class);
         intent.putExtra("origem", enderecoOrigem);
         intent.putExtra("destino", enderecoDestino);
         startActivity(intent);
