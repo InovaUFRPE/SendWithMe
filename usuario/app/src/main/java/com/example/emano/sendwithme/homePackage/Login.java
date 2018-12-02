@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        startActivity(new Intent(Login.this, ListarMotoristas2.class));
+        startActivity(new Intent(Login.this, TelaInicial.class));
     }
 
     public void fazerLogin(String email, String senha){

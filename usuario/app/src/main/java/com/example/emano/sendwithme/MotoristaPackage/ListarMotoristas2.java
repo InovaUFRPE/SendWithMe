@@ -183,15 +183,15 @@ public class ListarMotoristas2 extends AppCompatActivity {
     public void setView(){
 
         Intent intent = getIntent();
-        //String origem = intent.getStringExtra("origem");
-        //String destino = intent.getStringExtra("destino");
-        String origem = "Recife";
-        String destino = "Recife";
+        String origem = intent.getStringExtra("origem");
+        String destino = intent.getStringExtra("destino");
+        ///String origem = "Recife";
+        ///String destino = "Recife";
 
         origemUsuario = getLocationFromAddress(getApplicationContext(), origem);
         destinoUsuario = getLocationFromAddress(getApplicationContext(), destino);
         lista = findViewById(R.id.motoristas_view);
-        adapter = new ListarMotoristasAdapter(getApplicationContext(), listaMotoristaDef);
+        adapter = new ListarMotoristasAdapter2(getApplicationContext(), listaMotoristaDef, viagem);
         lista.setAdapter(adapter);
 
 
