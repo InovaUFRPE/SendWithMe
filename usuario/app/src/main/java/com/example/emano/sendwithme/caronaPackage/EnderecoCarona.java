@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
+import com.example.emano.sendwithme.motoristaPackage.ListarMotoristas;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;

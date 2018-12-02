@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
 
@@ -43,17 +44,23 @@ public class CadastrarEncomendaDescricao extends AppCompatActivity {
                 nomeObjeto1 = nomeObjeto.getText().toString();
                 descricaoEncomenda1 = descricaoEncomenda.getText().toString();
 
-                Intent intent1 = new Intent(CadastrarEncomendaDescricao.this, CadastrarEncomendaConfirmar.class);
+                if(nomeObjeto1.isEmpty() || descricaoEncomenda1.isEmpty()){
 
-                intent1.putExtra("cidadeOrigem",String.valueOf(cidadeOrigem));
-                intent1.putExtra("cidadeDestino", String.valueOf(cidadeDestino));
-                intent1.putExtra("enderecoOrigem", String.valueOf(enderecoOrigem));
-                intent1.putExtra("enderecoDestino", String.valueOf(enderecoDestino));
-                intent1.putExtra("nomeObjeto", String.valueOf(nomeObjeto1));
-                intent1.putExtra("descricaoEncomenda", String.valueOf(descricaoEncomenda1));
+                    Toast.makeText(CadastrarEncomendaDescricao.this,"Preencha todos os campos!",Toast.LENGTH_SHORT).show();
 
-                startActivity(intent1);
+                }else {
 
+                    Intent intent1 = new Intent(CadastrarEncomendaDescricao.this, CadastrarEncomendaConfirmar.class);
+
+                    intent1.putExtra("cidadeOrigem", String.valueOf(cidadeOrigem));
+                    intent1.putExtra("cidadeDestino", String.valueOf(cidadeDestino));
+                    intent1.putExtra("enderecoOrigem", String.valueOf(enderecoOrigem));
+                    intent1.putExtra("enderecoDestino", String.valueOf(enderecoDestino));
+                    intent1.putExtra("nomeObjeto", String.valueOf(nomeObjeto1));
+                    intent1.putExtra("descricaoEncomenda", String.valueOf(descricaoEncomenda1));
+
+                    startActivity(intent1);
+                }
             }
         });
 

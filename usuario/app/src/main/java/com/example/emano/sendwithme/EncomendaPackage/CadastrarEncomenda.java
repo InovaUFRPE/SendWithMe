@@ -35,15 +35,20 @@ public class CadastrarEncomenda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(CadastrarEncomenda.this,"Funcionando",Toast.LENGTH_SHORT).show();
-
                 cidade = cidadeOrigemEncomenda.getText().toString();
                 endereco = enderecoOrigemencomenda.getText().toString();
 
-                Intent intent = new Intent(CadastrarEncomenda.this, CadastrarEncomendaDestino.class);
-                intent.putExtra("cidadeOrigem", String.valueOf(cidade));
-                intent.putExtra("enderecoOrigem", String.valueOf(endereco));
-                startActivity(intent);
+                if(cidade.isEmpty() || endereco.isEmpty()){
+
+                    Toast.makeText(CadastrarEncomenda.this,"Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+
+                }else {
+
+                    Intent intent = new Intent(CadastrarEncomenda.this, CadastrarEncomendaDestino.class);
+                    intent.putExtra("cidadeOrigem", String.valueOf(cidade));
+                    intent.putExtra("enderecoOrigem", String.valueOf(endereco));
+                    startActivity(intent);
+                }
             }
         });
 
@@ -60,37 +65,4 @@ public class CadastrarEncomenda extends AppCompatActivity {
 
     }
 
-    /*public void fazerPedido(View view){
-
-        EditText origem = (EditText) findViewById(R.id.editOrigemPedido);
-        EditText destino = (EditText) findViewById(R.id.edtDestinoPedido);
-        String origem1 = origem.getText().toString();
-        String destino1 = destino.getText().toString();
-
-        EditText titulo = (EditText) findViewById(R.id.editTítuloPedido);
-        EditText nome = (EditText) findViewById(R.id.editNomeItem);
-        String titulo1 = titulo.getText().toString();
-        String nome1 = nome.getText().toString();
-
-        if(origem1.isEmpty()){
-            origem.setError("Campo em branco");
-        }else if(destino1.isEmpty()){
-            destino.setError("Campo em branco");
-        }else if(titulo1.isEmpty()){
-            titulo.setError("Campo em branco");
-        }else if(nome1.isEmpty()){
-            nome.setError("Campo em branco");
-        }else {
-
-
-
-            databaseReference = FirebaseDatabase.getInstance().getReference(user.getUid()).child("Encomendas");
-
-            databaseReference.push().setValue(pedido);
-
-            Intent intent = new Intent(getApplicationContext(), com.example.emano.sendwithme.homePackage.HomeDrawer.class);
-            startActivity(intent);
-
-            Toast.makeText(getApplicationContext(), "Pedido Salvo", Toast.LENGTH_LONG).show();*/
-
-        }
+}

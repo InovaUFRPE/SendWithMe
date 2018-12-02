@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.emano.sendwithme.ChatPackage.ListaChatActivity;
+import com.example.emano.sendwithme.EncomendaPackage.CadastrarEncomenda;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.caronaPackage.EnderecoCarona;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,6 +38,13 @@ public class TelaInicial extends AppCompatActivity {
 
         Intent intent = new Intent(TelaInicial.this, EnderecoCarona.class);
         startActivity(intent);
+
+    }
+
+    public void novaEncomenda(View view){
+
+        Intent intent1 = new Intent(TelaInicial.this, CadastrarEncomenda.class);
+        startActivity(intent1);
 
     }
 

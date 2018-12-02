@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.MotoristaPackage;
+package com.example.emano.sendwithme.motoristaPackage;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.ViagemPackage.Viagem;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,7 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.maps.android.SphericalUtil;
-import com.example.emano.sendwithme.motoristaPackage.InfoMotoristaViagem;
 
 
 import java.io.IOException;

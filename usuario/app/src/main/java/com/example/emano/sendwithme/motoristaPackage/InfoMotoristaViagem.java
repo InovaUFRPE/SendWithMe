@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.example.emano.sendwithme.ChatPackage.ChatActivity;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.caronaPackage.SolicitacaoCarona;
-import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

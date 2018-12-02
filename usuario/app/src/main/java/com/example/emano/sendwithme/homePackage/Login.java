@@ -11,8 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.emano.sendwithme.EncomendaPackage.CadastrarEncomenda;
-import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
 import com.example.emano.sendwithme.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -65,7 +63,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        startActivity(new Intent(Login.this, CadastrarEncomenda.class));
+        startActivity(new Intent(Login.this, TelaInicial.class));
     }
 
     public void fazerLogin(String email, String senha){

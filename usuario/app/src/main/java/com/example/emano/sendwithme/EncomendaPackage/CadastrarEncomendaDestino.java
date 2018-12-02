@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
 
@@ -39,13 +40,21 @@ public class CadastrarEncomendaDestino extends AppCompatActivity {
                 cidade = cidadeDestinoEncomenda.getText().toString();
                 endereco = enderecoDestinoencomenda.getText().toString();
 
-                Intent intent = new Intent(CadastrarEncomendaDestino.this, CadastrarEncomendaDescricao.class);
-                intent.putExtra("cidadeDestino", String.valueOf(cidade));
-                intent.putExtra("enderecoDestino", String.valueOf(endereco));
-                intent.putExtra("enderecoOrigem", String.valueOf(endereco1));
-                intent.putExtra("cidadeOrigem",String.valueOf(cidade1));
+                if(cidade.isEmpty() || endereco.isEmpty()){
 
-                startActivity(intent);
+                    Toast.makeText(CadastrarEncomendaDestino.this,"Preencha todos os campos!",Toast.LENGTH_SHORT).show();
+
+                }else {
+
+                    Intent intent = new Intent(CadastrarEncomendaDestino.this, CadastrarEncomendaDescricao.class);
+                    intent.putExtra("cidadeDestino", String.valueOf(cidade));
+                    intent.putExtra("enderecoDestino", String.valueOf(endereco));
+                    intent.putExtra("enderecoOrigem", String.valueOf(endereco1));
+                    intent.putExtra("cidadeOrigem", String.valueOf(cidade1));
+
+                    startActivity(intent);
+
+                }
             }
         });
 
