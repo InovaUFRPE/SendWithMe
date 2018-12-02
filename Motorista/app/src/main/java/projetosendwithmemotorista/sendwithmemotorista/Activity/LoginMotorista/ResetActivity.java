@@ -32,6 +32,7 @@ public class ResetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset);
+        email = (AutoCompleteTextView) findViewById(R.id.email);
 
         volta = (Button) findViewById(R.id.volta);
         volta.setOnClickListener(new View.OnClickListener() {
@@ -47,15 +48,12 @@ public class ResetActivity extends AppCompatActivity {
         toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reset();
-            }
-        });
-
-        email = (AutoCompleteTextView) findViewById(R.id.email);
-        email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                init();
+                String emailString = email.getText().toString().trim();
+                if (emailString.isEmpty()) {
+                    email.setError("Campo vazio!");
+                }else {
+                    reset();
+                }
             }
         });
 
@@ -64,12 +62,6 @@ public class ResetActivity extends AppCompatActivity {
 
     }
 
-
-
-
-    private void init(){
-        email = (AutoCompleteTextView) findViewById(R.id.email);
-    }
 
     public void reset(){
         Intent i = new Intent(ResetActivity.this, LoginActivity.class);
@@ -80,6 +72,7 @@ public class ResetActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
+
 
                         if(task.isSuccessful() ){
                             email.setText("");
