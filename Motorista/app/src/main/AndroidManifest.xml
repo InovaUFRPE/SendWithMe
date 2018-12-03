@@ -35,8 +35,8 @@
         <activity android:name=".Activity.Viagens.ListaViagens" />
         <activity android:name=".Activity.Viagens.Viagemconfig" />
         <activity android:name=".Activity.Viagens.Viagemrevisao" />
-        <activity
-            android:name=".Activity.LoginMotorista.ResetActivity"></activity>
+        <activity android:name=".Activity.LoginMotorista.ResetActivity" />
+        <activity android:name=".Activity.Viagens.ListaEncomendas"></activity>
     </application>
 
 </manifest>

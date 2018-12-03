@@ -106,21 +106,30 @@ public class Viagemconfig extends AppCompatActivity {
         else{
             if (encomendabox.isChecked()){
                 encomendas = "Y";
+                Intent i = new Intent(Viagemconfig.this, ListaEncomendas.class);
+                i.putExtra("cidade", cidade);
+                i.putExtra("endereço",endereço);
+                i.putExtra("data",data);
+                i.putExtra("hora",hora);
+                i.putExtra("cidadedest",cidadedest);
+                i.putExtra("endereçodest",endereçodest);
+                i.putExtra("assentos",assentos);
+                i.putExtra("encomendas",encomendas);
+                startActivity(i);
             }
             else {
                 encomendas = "N";
+                Intent i = new Intent(Viagemconfig.this, Viagemrevisao.class);
+                i.putExtra("cidade", cidade);
+                i.putExtra("endereço", endereço);
+                i.putExtra("data", data);
+                i.putExtra("hora", hora);
+                i.putExtra("cidadedest", cidadedest);
+                i.putExtra("endereçodest", endereçodest);
+                i.putExtra("assentos", assentos);
+                i.putExtra("encomendas", encomendas);
+                startActivity(i);
             }
-            //
-            Intent i = new Intent(Viagemconfig.this, Viagemrevisao.class);
-            i.putExtra("cidade", cidade);
-            i.putExtra("endereço",endereço);
-            i.putExtra("data",data);
-            i.putExtra("hora",hora);
-            i.putExtra("cidadedest",cidadedest);
-            i.putExtra("endereçodest",endereçodest);
-            i.putExtra("assentos",assentos);
-            i.putExtra("encomendas",encomendas);
-            startActivity(i);
         }
 
     }
