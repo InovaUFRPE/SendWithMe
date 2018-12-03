@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.HomePackage;
+package com.example.emano.sendwithme.homePackage;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
+import com.example.emano.sendwithme.homePackage.TelaInicial;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -36,7 +37,7 @@ public class Login extends AppCompatActivity {
         botaoCadastrarHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, com.example.emano.sendwithme.HomePackage.Cadastro.class));
+                startActivity(new Intent(Login.this, Cadastro.class));
 
             }
         });

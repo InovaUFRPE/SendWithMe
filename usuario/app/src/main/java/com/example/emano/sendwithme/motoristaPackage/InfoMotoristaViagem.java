@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.emano.sendwithme.ChatPackage.ChatActivity;
 import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
+import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas2;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.caronaPackage.SolicitacaoCarona;
 import com.google.firebase.FirebaseOptions;
@@ -82,9 +83,8 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
                 databaseReference.push().setValue(novaSolicitacao);
 
-                Intent intent1 = new Intent(InfoMotoristaViagem.this, ListarMotoristas.class);
-                startActivity(intent1);
                 Toast.makeText(InfoMotoristaViagem.this,"Solicitação efetuada com sucesso!",Toast.LENGTH_SHORT).show();
+                finish();
 
 
             }

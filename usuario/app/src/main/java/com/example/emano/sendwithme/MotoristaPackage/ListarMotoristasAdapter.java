@@ -29,8 +29,8 @@ public class ListarMotoristasAdapter extends ArrayAdapter<Motorista> {
     public View getView(int position, View convertView, ViewGroup parent){
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.linha_lista_motoristas, parent, false);
-        TextView nome = (TextView) rowView.findViewById(R.id.txtNomeMotorista);
+        View rowView = inflater.inflate(R.layout.linha_motorista_nome_simples_nova, parent, false);
+        TextView nome = (TextView) rowView.findViewById(R.id.nomeMotorista);
 
         nome.setText(motoristas.get(position).getNome()+ " "+ motoristas.get(position).getSobrenome());
 
