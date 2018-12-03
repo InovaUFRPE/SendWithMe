@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.homePackage;
+package com.example.emano.sendwithme.HomePackage;
 
 import android.Manifest;
 import android.content.Intent;
@@ -21,7 +21,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.emano.sendwithme.EncomendaPackage.ListarPedidos;
-import com.example.emano.sendwithme.HomePackage.HomeFragmentMap;
 import com.example.emano.sendwithme.perfilPackage.Perfil;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.Usuario;

@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.homePackage.Login;
 
 public class Splashscreen extends AppCompatActivity{
 

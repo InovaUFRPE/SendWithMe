@@ -20,15 +20,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".homePackage.Login" />
-        <activity android:name=".homePackage.Cadastro" />
+        <activity android:name=".HomePackage.Login" />
+        <activity android:name=".HomePackage.Cadastro" />
         <activity android:name=".perfilPackage.Perfil">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".homePackage.HomeDrawer" />
+                android:value=".HomePackage.HomeDrawer" />
         </activity>
         <activity
-            android:name=".homePackage.HomeDrawer"
+            android:name=".HomePackage.HomeDrawer"
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -62,7 +62,7 @@
         <activity android:name=".EncomendaPackage.ConfirmarPedido" />
         <activity android:name=".EncomendaPackage.InfoPedido" />
         <activity android:name=".MotoristaPackage.ListarMotoristas" />
-        <activity android:name=".homePackage.TelaInicial" />
+        <activity android:name=".HomePackage.TelaInicial" />
         <activity android:name=".caronaPackage.EnderecoCarona" />
         <activity android:name=".motoristaPackage.InfoMotoristaViagem" />
         <activity android:name=".EncomendaPackage.CadastrarEncomenda" />

@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.homePackage;
+package com.example.emano.sendwithme.HomePackage;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas2;
 import com.example.emano.sendwithme.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,7 +36,7 @@ public class Login extends AppCompatActivity {
         botaoCadastrarHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, com.example.emano.sendwithme.homePackage.Cadastro.class));
+                startActivity(new Intent(Login.this, com.example.emano.sendwithme.HomePackage.Cadastro.class));
 
             }
         });
@@ -64,7 +63,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        startActivity(new Intent(Login.this, TelaInicial.class));
+        //startActivity(new Intent(Login.this, TelaInicial.class));
     }
 
     public void fazerLogin(String email, String senha){
@@ -77,7 +76,7 @@ public class Login extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {//sucesso ao logar
                                 Log.i("Login","Deu certo!");
-                                startActivity(new Intent(Login.this, HomeDrawer.class));
+                                startActivity(new Intent(Login.this, TelaInicial.class));
                             }else{
                                 Toast.makeText(Login.this, "Erro ao fazer login", Toast.LENGTH_SHORT).show();
 

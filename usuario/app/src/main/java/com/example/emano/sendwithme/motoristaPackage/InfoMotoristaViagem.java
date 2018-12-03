@@ -57,7 +57,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
         String hora1 = intent.getStringExtra("hora");
         String encomendas1 = intent.getStringExtra("encomendas");
         final String usuarioid = intent.getStringExtra("usuarioid");
-        final String idPassageiro = "VhEBDyqKOmhvK0sDh4rf15ddghn2";
+        final String idPassageiro = user.getUid();
 
         nome.setText(nome1);
 

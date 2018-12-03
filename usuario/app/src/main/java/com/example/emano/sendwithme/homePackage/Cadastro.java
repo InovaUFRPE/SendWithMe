@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.homePackage;
+package com.example.emano.sendwithme.HomePackage;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;

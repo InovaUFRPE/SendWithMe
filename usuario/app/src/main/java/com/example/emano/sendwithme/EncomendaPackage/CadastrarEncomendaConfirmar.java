@@ -59,10 +59,10 @@ public class CadastrarEncomendaConfirmar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-               database = FirebaseDatabase.getInstance().getReference("Encomendas").child("VhEBDyqKOmhvK0sDh4rf15ddghn2");
+               database = FirebaseDatabase.getInstance().getReference("Encomendas").child(user.getUid());
 
                 Encomenda encomenda = new Encomenda();
-                encomenda.setIdUsuario("VhEBDyqKOmhvK0sDh4rf15ddghn2");
+                encomenda.setIdUsuario(user.getUid());
                 encomenda.setNomeObjeto(nomeObjeto1);
                 encomenda.setDescricao(descricaoEncomenda1);
                 encomenda.setCidadeOrigem(cidadeOrigem1);
