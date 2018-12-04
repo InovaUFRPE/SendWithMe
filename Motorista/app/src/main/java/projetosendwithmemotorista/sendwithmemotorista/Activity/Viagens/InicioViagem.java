@@ -22,10 +22,19 @@ public class InicioViagem extends AppCompatActivity {
     private String encomendas;
     private Integer assentos;
 
+    private String dia;
+    private String mes;
+    private String ano;
+    private String horario;
+    private String min;
+
     private EditText edtcidade;
     private EditText edtendereço;
-    private EditText edtdata;
+    private EditText edtdia;
+    private EditText edtmes;
+    private EditText edtano;
     private EditText edthora;
+    private EditText edtmin;
 
     private Button btnavançar;
     private Button btnvoltar;
@@ -39,8 +48,14 @@ public class InicioViagem extends AppCompatActivity {
         //
         edtcidade = findViewById(R.id.Edtcity);
         edtendereço = findViewById(R.id.Edtend);
-        edtdata = findViewById(R.id.Edtdata);
-        edthora = findViewById(R.id.Edthora);
+
+        //
+        edtdia = findViewById(R.id.datadia);
+        edtmes = findViewById(R.id.datames);
+        edtano = findViewById(R.id.dataano);
+
+        edthora = findViewById(R.id.datahora);
+        edtmin = findViewById(R.id.datamin);
 
         //
         Bundle extras = getIntent().getExtras();
@@ -49,12 +64,29 @@ public class InicioViagem extends AppCompatActivity {
             endereço = extras.getString("endereço");
             data = extras.getString("data");
             hora = extras.getString("hora");
+            cidadedest = extras.getString("cidadedest");
+            endereçodest = extras.getString("endereçodest");
+            assentos = extras.getInt("assentos");
+            encomendas = extras.getString("encomendas");
 
-            //
-            edtcidade.setText(cidade);
-            edtendereço.setText(endereço);
-            edtdata.setText(data);
-            edthora.setText(hora);
+            if(!data.equals("")||!hora.equals("")){
+
+                String[] partsd = data.split("/");
+                dia = partsd[0];
+                mes = partsd[1];
+                ano = partsd[2];
+
+                String[] partsh = hora.split(":");
+                horario = partsh[0];
+                min = partsh[1];
+
+                edtdia.setText(dia);
+                edtmes.setText(mes);
+                edtano.setText(ano);
+                edthora.setText(horario);
+                edtmin.setText(min);
+            }
+
         }
 
         btnavançar = findViewById(R.id.Btnavanc);
@@ -89,13 +121,35 @@ public class InicioViagem extends AppCompatActivity {
     private void funcavanc() {
         cidade = edtcidade.getText().toString();
         endereço = edtendereço.getText().toString();
-        data = edtdata.getText().toString();
-        hora = edthora.getText().toString();
+        dia = edtdia.getText().toString();
+        mes = edtmes.getText().toString();
+        ano = edtano.getText().toString();
+        horario = edthora.getText().toString();
+        min = edtmin.getText().toString();
 
-        if (cidade.equals("")||endereço.equals("")||data.equals("")||hora.equals("")){
+        if (dia.equals("00")||mes.equals("00")||horario.equals("00")||min.equals("00")||ano.equals("0000")){
+            Toast.makeText(this,"0000 é invalido!",Toast.LENGTH_SHORT).show();
+        }
+
+        if (cidade.equals("")||endereço.equals("")||dia.equals("")||mes.equals("")||ano.equals("")||horario.equals("")||min.equals("")){
             Toast.makeText(this,"Preencha todos os campos!",Toast.LENGTH_SHORT).show();
         }
         else {
+            if(dia.length()<2){
+                dia = "0" + dia;
+            }
+            if(mes.length()<2){
+                mes = "0" + mes;
+            }
+            if(horario.length()<2){
+                horario = "0" + horario;
+            }
+            if(min.length()<2){
+                min = "0" + min;
+            }
+
+            data = dia + "/" + mes + "/" + ano;
+            hora = horario + ":" + min;
             Intent i = new Intent(InicioViagem.this, DestinoViagem.class);
             i.putExtra("cidade", cidade);
             i.putExtra("endereço",endereço);
@@ -108,22 +162,4 @@ public class InicioViagem extends AppCompatActivity {
             startActivity(i);
         }
     }
-
-    public String getcidade() {return cidade; }
-
-    public void setcidade(String cidade){this.cidade = cidade;}
-
-    public String getendereco() {return endereço;}
-
-    public void setendereco(String endereço) {this.endereço = endereço;}
-
-    public String getdata() {return data;}
-
-    public void setdata(String data) {this.data = data;}
-
-    public String gethora() {return hora;}
-
-    public void sethora(String hora) {this.hora = hora;}
-
-
 }
