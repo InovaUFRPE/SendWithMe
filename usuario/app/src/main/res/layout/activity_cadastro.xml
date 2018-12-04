@@ -6,21 +6,22 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     tools:context=".HomePackage.Cadastro">
+
     <EditText
         android:id="@+id/edtNome"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_style"
         android:hint="@string/nome"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
         android:id="@+id/edtCadSobrenome"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_style"
@@ -32,7 +33,7 @@
 
     <EditText
         android:id="@+id/edtCpf"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_style"
@@ -44,7 +45,7 @@
 
     <EditText
         android:id="@+id/edtCadDataNascimento"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_style"
@@ -56,7 +57,7 @@
 
     <EditText
         android:id="@+id/edtCadEmail"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_style"
@@ -68,7 +69,7 @@
 
     <EditText
         android:id="@+id/senhaId"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_style"
@@ -80,14 +81,12 @@
 
     <EditText
         android:id="@+id/edtSenhaCompara"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/edit_text_style"
         android:hint="@string/confirmar_senha"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/rbFeminino"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/senhaId" />
@@ -124,15 +123,48 @@
 
     <Button
         android:id="@+id/btnCadastro"
-        android:layout_width="200dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
         android:background="@drawable/button_style"
+        android:drawableRight="@drawable/registrar"
+        android:paddingRight="10dp"
         android:text="Cadastrar"
-        android:drawableLeft="@drawable/registrar"
-        android:paddingLeft="25dp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbMasculino" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="Cadastro"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_style"
+        android:drawableLeft="@drawable/voltar"
+        android:paddingLeft="16dp"
+        android:text="Voltar"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rbFeminino" />
 </android.support.constraint.ConstraintLayout>
