@@ -9,10 +9,10 @@
 
     <TextView
         android:id="@+id/txtOrigemEncomenda"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
         android:text="Origem da encomenda:"
         android:textColor="@color/colorPrimaryDark"
@@ -21,22 +21,22 @@
 
     <TextView
         android:id="@+id/txtOrigemEncomendaInfo"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:text="Rua A, 01, Recife"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintStart_toEndOf="@+id/txtOrigemEncomenda"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeObjeto" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeObjetoInfo" />
 
     <TextView
         android:id="@+id/txtDestinoEncomenda"
-        android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
         android:text="Destino da encomenda:"
         android:textColor="@color/colorPrimaryDark"
@@ -45,22 +45,22 @@
 
     <TextView
         android:id="@+id/txtDestinoEncomendaInfo"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:text="Rua b, 02, Olinda"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintStart_toEndOf="@+id/txtDestinoEncomenda"
-        app:layout_constraintTop_toBottomOf="@+id/txtOrigemEncomenda" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrigemEncomendaInfo" />
 
     <TextView
         android:id="@+id/txtNomeObjeto"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:text="Nome do objeto:"
         android:textColor="@color/colorPrimaryDark"
@@ -73,25 +73,27 @@
         android:layout_height="200dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Descrição"
         android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastrarEncomenda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDestinoEncomenda" />
 
     <TextView
         android:id="@+id/txtNomeObjetoInfo"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:text="Livro"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeObjeto"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
@@ -128,11 +130,11 @@
         android:id="@+id/textView6"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="Confirmar cadastro de encomenda?"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
