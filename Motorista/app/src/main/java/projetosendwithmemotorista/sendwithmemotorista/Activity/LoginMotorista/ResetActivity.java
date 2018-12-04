@@ -51,6 +51,7 @@ public class ResetActivity extends AppCompatActivity {
                 String emailString = email.getText().toString().trim();
                 if (emailString.isEmpty()) {
                     email.setError("Campo vazio!");
+                    Toast.makeText(ResetActivity.this, "Campo Email vazio! Preencha corretamente!",Toast.LENGTH_SHORT ).show();
                 }else {
                     reset();
                 }
@@ -64,9 +65,7 @@ public class ResetActivity extends AppCompatActivity {
 
 
     public void reset(){
-        Intent i = new Intent(ResetActivity.this, LoginActivity.class);
-        startActivity(i);
-        finish();
+
         firebaseAuth
                 .sendPasswordResetEmail(email.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -75,10 +74,13 @@ public class ResetActivity extends AppCompatActivity {
 
 
                         if(task.isSuccessful() ){
+                            Intent i = new Intent(ResetActivity.this, LoginActivity.class);
+                            startActivity(i);
+                            finish();
                             email.setText("");
                             Toast.makeText(
                                     ResetActivity.this,
-                                    "Recuperação de acesso iniciado. Email enviado.",
+                                    "Recuperação de senha iniciado. Verifique no seu Email na Caixa de Entrada ou no Spam.",
                                     Toast.LENGTH_SHORT
                             ).show();
                         }
