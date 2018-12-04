@@ -67,7 +67,7 @@ public class ListaViagens extends AppCompatActivity {
                     String userId = String.valueOf(usuario.getUsuarioid());
                     final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaViagens.this);
                     if (userId.equals(preferenciasAndroid.getIdentificador()))
-                        lista.add(" Cidade Origem: " + usuario.getCidade() +"\n" + " Cidade Destino: "+ usuario.getCidadedest() + "\n"+ " Data:"+usuario.getData() + "\n" + " Hora: "+usuario.getHora());
+                        lista.add(" Cidade Origem: " + usuario.getCidade() +"\n" + " Cidade Destino: "+ usuario.getCidadedest() + "\n"+ " Data:"+usuario.getData() + "\n" + " Hora: "+usuario.getHora() );
                        // lista.add(ds.getValue().toString());
 
                 }
@@ -85,7 +85,7 @@ public class ListaViagens extends AppCompatActivity {
     private void setView(){
         edtcidade = findViewById(R.id.Edtcity);
         edtendereço = findViewById(R.id.Edtend);
-        edtdata = findViewById(R.id.Edtdata);
-        edthora = findViewById(R.id.Edthora);
+      //  edtdata = findViewById(R.id.Edtdata);
+      //  edthora = findViewById(R.id.Edthora);
     }
 }

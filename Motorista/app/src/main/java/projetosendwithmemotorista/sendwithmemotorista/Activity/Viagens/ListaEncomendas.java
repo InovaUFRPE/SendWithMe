@@ -45,6 +45,7 @@ public class ListaEncomendas extends AppCompatActivity {
     private ListView listaencomendas;
     private ArrayList<String> lista;
     private ArrayAdapter<String> adapter;
+    private ArrayList<String>listaIdUsuario;
 
 
 
@@ -53,7 +54,7 @@ public class ListaEncomendas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_encomendas);
         btnavancar = findViewById(R.id.btnavancar);
-        listaencomendas = findViewById(R.id.listaviagens);
+        listaencomendas = findViewById(R.id.listaencomendas);
         setardadoslistaencomendas();
 
         Bundle extras = getIntent().getExtras();
@@ -86,17 +87,16 @@ public class ListaEncomendas extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds: dataSnapshot.getChildren()){
+                for (DataSnapshot ds: dataSnapshot.getChildren()) {
                     Encomendas encomendas = ds.getValue(Encomendas.class);
-                   // String userId = String.valueOf(encomendas.getUsuarioid());
-                   // final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaEncomendas.this);
-                   // if (userId.equals(preferenciasAndroid.getIdentificador()))
-                    lista.add(" Cidade Origem: " + encomendas.getCidadeOrigem() +"\n" + " Cidade Destino: "+ encomendas.getCidadeDestino());
-                    // lista.add(ds.getValue().toString());
+                    // String userId = String.valueOf(encomendas.getUsuarioid());
+                    // final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaEncomendas.this);
+                    // if (userId.equals(preferenciasAndroid.getIdentificador()))
+                    lista.add(ds.getKey());
+                    setardadoslistaencomendas2();
 
                 }
 
-                listaencomendas.setAdapter(adapter);
 
             }
 
@@ -107,20 +107,54 @@ public class ListaEncomendas extends AppCompatActivity {
         });
     }
 
+
+    private void setardadoslistaencomendas2() {
+
+        for (String lista1 : lista) {
+
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Encomendas").child(lista1);
+            lista = new ArrayList<>();
+            adapter = new ArrayAdapter<String>(this, R.layout.infoviagens, R.id.textView8, lista);
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        Encomendas encomendas = ds.getValue(Encomendas.class);
+                        String cidadeDestino = String.valueOf(encomendas.getCidadeDestino());
+                        // final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaEncomendas.this);
+                        if (cidadeDestino.equals(cidadedest))
+                            lista.add(" Cidade Origem: " + encomendas.getCidadeOrigem() + "\n" + " Cidade Destino: " + encomendas.getCidadeDestino() + "\n" + " Objeto da encomenda:" + encomendas.getNomeObjeto() + "\n" + " Descrição do objeto:" + encomendas.getDescricao());
+
+                    }
+
+                    listaencomendas.setAdapter(adapter);
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+    }
+
+
+
     private void funcacanvar() {
 
 
-                Intent i = new Intent(ListaEncomendas.this, Viagemrevisao.class);
-                i.putExtra("cidade", cidade);
-                i.putExtra("endereço", endereço);
-                i.putExtra("data", data);
-                i.putExtra("hora", hora);
-                i.putExtra("cidadedest", cidadedest);
-                i.putExtra("endereçodest", endereçodest);
-                i.putExtra("assentos", assentos);
-                i.putExtra("encomendas", encomendas);
-                startActivity(i);
-            }
+        Intent i = new Intent(ListaEncomendas.this, Viagemrevisao.class);
+        i.putExtra("cidade", cidade);
+        i.putExtra("endereço", endereço);
+        i.putExtra("data", data);
+        i.putExtra("hora", hora);
+        i.putExtra("cidadedest", cidadedest);
+        i.putExtra("endereçodest", endereçodest);
+        i.putExtra("assentos", assentos);
+        i.putExtra("encomendas", encomendas);
+        startActivity(i);
+    }
 
 
 
