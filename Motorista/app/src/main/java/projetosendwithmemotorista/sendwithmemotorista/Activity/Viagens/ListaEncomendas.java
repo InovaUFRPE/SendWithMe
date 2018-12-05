@@ -190,6 +190,7 @@ public class ListaEncomendas extends AppCompatActivity {
                     //Intent iou = new Intent(ListaEncomendas.this, Viagemrevisao.class);
                     //startActivity(iou);
                     funcacanvar();
+                    finish();
 
                 } else if (opcao.equals(("Não"))) {
 
