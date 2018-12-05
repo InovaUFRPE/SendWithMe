@@ -18,7 +18,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center"
-        android:text='Depois de digitar seu email, clique no botão "Enviar"'
+        android:text="@string/instrucoes_reset"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,7 @@
 
     <AutoCompleteTextView
         android:id="@+id/email"
-        android:hint="Email"
+        android:hint="@string/email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -82,7 +82,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center"
-        android:text="Digite abaixo seu email já cadastrado"
+        android:text="@string/email_reset"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

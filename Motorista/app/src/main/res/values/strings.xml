@@ -22,6 +22,26 @@
     <string name="title_activity_principal">PrincipalActivity</string>
     <string name="title_activity_mapa">Map</string>
     <string name="titulo">Send With Me Motorista</string>
+    <string name="endereco_destino">Qual será o destino da viagem?</string>
+    <string name="endereco_inicio">Onde será o início da viagem?</string>
+    <string name="excluir_conta">Excluir Conta</string>
+    <string name="voltar_perfil">Voltar para o Perfil</string>
+    <string name="exemplo_data">Ex:  01  /  04  /  2019</string>
+    <string name="exemplo_hora">Ex:  19  :  45</string>
+    <string name="encomendas">Encomendas</string>
+    <string name="encomendas_disponiveis">Segue abaixo as encomendas disponíveis.</string>
+    <string name="historico_carona">Histórico de caronas</string>
+    <string name="texto_historico">Segue abaixo o histórico de suas viagens.</string>
+    <string name="entrar">Entrar</string>
+    <string name="esqueceu_senha">Esqueceu sua Senha? Clique aqui</string>
+    <string name="email_reset">Digite abaixo seu email já cadastrado</string>
+    <string name="instrucoes_reset">Depois de digitar seu email, clique no botão "Enviar"</string>
+    <string name="viagem_revisao">Revise os dados da viagem!</string>
+    <string name="salvar_viagem">Salvar viagem</string>
+    <string name="voltar">Voltar</string>
+    <string name="editar">Editar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="edicao">Edição</string>
 
     //
     <string name="cidade">Cidade</string>

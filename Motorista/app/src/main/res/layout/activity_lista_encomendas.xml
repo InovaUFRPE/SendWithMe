@@ -9,21 +9,18 @@
 
     <Button
         android:id="@+id/Btnavanc"
-        android:layout_width="145dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
-        android:layout_marginLeft="49dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_style"
         android:drawableLeft="@drawable/voltar"
-        android:paddingLeft="32dp"
+        android:paddingLeft="16dp"
         android:text="Voltar"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toStartOf="@+id/btnavancar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listaencomendas" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -35,9 +32,10 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center"
-        android:text="Encomendas"
+        android:text="@string/encomendas"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,9 +50,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center"
-        android:text="Segue abaixo as encomendas disponivéis."
+        android:text="@string/encomendas_disponiveis"
         android:textColor="@color/colorAccent"
-        android:textSize="13sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -63,19 +61,16 @@
         android:id="@+id/btnavancar"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_style"
         android:drawableRight="@drawable/avancar"
         android:paddingRight="16dp"
         android:text="Avançar"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Btnavanc"
-        app:layout_constraintTop_toBottomOf="@+id/listaencomendas" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <ListView
