@@ -1,10 +1,13 @@
 package projetosendwithmemotorista.sendwithmemotorista.Activity.Viagens;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -128,8 +131,23 @@ public class ListaEncomendas extends AppCompatActivity {
                     }
 
                     listaencomendas.setAdapter(adapter);
+                    listaencomendas.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                        @Override
+                        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            Encomendas s = (Encomendas) parent.getAdapter().getItem(position);
+
+                            adicionarencomendas();
+
+                            return true;
+
+                        }
+                    });
+
 
                 }
+
+
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -157,5 +175,37 @@ public class ListaEncomendas extends AppCompatActivity {
     }
 
 
+    private void adicionarencomendas() {
 
+        final CharSequence[] escolha = {"Sim", "Não"};
+        AlertDialog.Builder alerta = new AlertDialog.Builder(ListaEncomendas.this);
+        alerta.setItems(escolha, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String opcao = (String) escolha[i];
+                if (opcao.equals(("Sim"))) {
+
+
+                    Toast.makeText(getApplicationContext(),"Encomenda Adicionada", Toast.LENGTH_SHORT).show();
+                    //Intent iou = new Intent(ListaEncomendas.this, Viagemrevisao.class);
+                    //startActivity(iou);
+                    funcacanvar();
+
+                } else if (opcao.equals(("Não"))) {
+
+                    Toast.makeText(getApplicationContext(),"Solicitação excluída", Toast.LENGTH_SHORT).show();
+                    // dialogInterface.cancel();
+
+
+                }
+            }
+        });
+        alerta.setTitle("Adicionar Encomenda ?");
+        AlertDialog aviso = alerta.create();
+        aviso.show();
+
+
+
+
+    }
 }
