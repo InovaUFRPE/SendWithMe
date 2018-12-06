@@ -223,7 +223,7 @@ public class ListaEncomendas extends AppCompatActivity {
                     v.setIdUsuario(s.getIdUsuario());
                     v.setIdMotorista(preferenciasAndroid.getIdentificador());
                     String idAleatorio = Base64Custom.codificarBase64(preferenciasAndroid.getIdentificador());
-                    databaseReference.child("EncomendasSelecionadas").child(idAleatorio).setValue(v);
+                    //databaseReference.child("EncomendasSelecionadas").child(idAleatorio).setValue(v);
 
 
                     //PARA APAGAR USAR IDENCOMENDA
