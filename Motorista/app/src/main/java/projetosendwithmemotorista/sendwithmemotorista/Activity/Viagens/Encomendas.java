@@ -12,6 +12,17 @@ public class Encomendas {
     private String enderecoOrigem;
     private String cidadeDestino;
     private String endrerecoDestino;
+    private String idEncomenda;
+
+    public String getIdEncomenda() {
+        return idEncomenda;
+    }
+
+    public void setIdEncomenda(String idEncomenda) {
+        this.idEncomenda = idEncomenda;
+    }
+
+
 
     public String getId() {
         return id;

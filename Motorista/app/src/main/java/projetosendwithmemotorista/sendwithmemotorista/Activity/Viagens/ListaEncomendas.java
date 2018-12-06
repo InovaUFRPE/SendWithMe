@@ -23,8 +23,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
+import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPerfil.TelaPerfil;
+import projetosendwithmemotorista.sendwithmemotorista.Helper.Base64Custom;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.PreferenciasAndroid;
+import projetosendwithmemotorista.sendwithmemotorista.Helper.preferencias;
 import projetosendwithmemotorista.sendwithmemotorista.R;
 
 public class ListaEncomendas extends AppCompatActivity {
@@ -126,7 +130,7 @@ public class ListaEncomendas extends AppCompatActivity {
                         String nomeObjeto = String.valueOf(encomendas.getNomeObjeto());
                         String descrObjeto = String.valueOf(encomendas.getDescricao());
                         String idUsuario = String.valueOf(encomendas.getIdUsuario());
-                        String idFirebase = ds.getKey();
+                        String idEncomenda = ds.getKey();
 
                         if (cidadeDest.equals(cidadedest)) {
 
@@ -136,6 +140,7 @@ public class ListaEncomendas extends AppCompatActivity {
                             encomendas1.setNomeObjeto(nomeObjeto);
                             encomendas1.setDescricao(descrObjeto);
                             encomendas1.setIdUsuario(idUsuario);
+                            encomendas1.setIdEncomenda(idEncomenda);
 
 
                             listaEncomendasSel.add(encomendas1);
@@ -201,18 +206,30 @@ public class ListaEncomendas extends AppCompatActivity {
 
         final CharSequence[] escolha = {"Sim", "Não"};
         AlertDialog.Builder alerta = new AlertDialog.Builder(ListaEncomendas.this);
+        final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaEncomendas.this);
         alerta.setItems(escolha, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 String opcao = (String) escolha[i];
                 if (opcao.equals(("Sim"))) {
-                    //ADICIONAR ANTES
+                    //ADICIONAR no firebase ANTES
+                    EncomendasSelecionadas v = new EncomendasSelecionadas();
+                    // v.setViagemUID(UUID.randomUUID().toString());
+                    v.setCidadeDest(s.getCidadeDestino());
+                    v.setCidadeOri(s.getCidadeOrigem());
+                    v.setNomeObjeto(s.getNomeObjeto());
+                    v.setDescricao(s.getDescricao());
+                    v.setIdEncomenda(s.getIdEncomenda());
+                    v.setIdUsuario(s.getIdUsuario());
+                    v.setIdMotorista(preferenciasAndroid.getIdentificador());
+                    String idAleatorio = Base64Custom.codificarBase64(preferenciasAndroid.getIdentificador());
+                    databaseReference.child("EncomendasSelecionadas").child(idAleatorio).setValue(v);
+
+
+                    //PARA APAGAR USAR IDENCOMENDA
                     // databaseReference = FirebaseDatabase.getInstance().getReference().child("Encomendas").child(s.getIdUsuario());
                     // databaseReference.removeValue();
-
-
-
-                    Toast.makeText(getApplicationContext(),"Encomenda aceita", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),s.getIdEncomenda(), Toast.LENGTH_SHORT).show();
 
 
                 } else if (opcao.equals(("Não"))) {
