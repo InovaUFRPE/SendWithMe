@@ -5,83 +5,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".EncomendaPackage.CadastrarEncomenda">
+    tools:context=".EncomendaPackage.CadastrarEncomenda"
+    tools:layout_editor_absoluteY="25dp">
 
-    <EditText
-        android:id="@+id/editCidadeDestinoEncomenda"
-        android:layout_width="300dp"
+    <fragment
+        android:id="@+id/place_autocomplete_fragment"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/edit_text_style"
-        android:ems="10"
-        android:hint="Cidade Origem"
-        android:inputType="textPersonName"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/editEnderecoDestinoEncomenda"
-        android:layout_width="300dp"
+    <fragment
+        android:id="@+id/place_autocomplete_fragment2"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/edit_text_style"
-        android:ems="10"
-        android:hint="Endereço Origem"
-        android:inputType="textPersonName"
+        android:layout_marginTop="233dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCidadeDestinoEncomenda" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnAvancarCadastro1"
-        android:layout_width="140dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
         android:background="@drawable/button_style"
         android:drawableRight="@drawable/avancar"
         android:paddingRight="16dp"
         android:text="Avançar"
         android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnVoltarCadastro1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEnderecoDestinoEncomenda" />
+        app:layout_constraintStart_toEndOf="@+id/btnVoltarCadastro1" />
 
     <Button
         android:id="@+id/btnVoltarCadastro1"
-        android:layout_width="140dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
         android:layout_marginLeft="43dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="38dp"
         android:background="@drawable/button_style"
         android:drawableLeft="@drawable/voltar"
         android:paddingLeft="16dp"
         android:text="Voltar"
         android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/btnAvancarCadastro1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEnderecoDestinoEncomenda" />
+        app:layout_constraintTop_toBottomOf="@+id/place_autocomplete_fragment2" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginRight="41dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
         android:gravity="center"
         android:text="Qual o endereço de origem?"
         android:textColor="@color/colorPrimaryDark"
@@ -89,4 +75,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="Cidade:"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/place_autocomplete_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginBottom="11dp"
+        android:gravity="center"
+        android:text="Endereço:"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/place_autocomplete_fragment2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
