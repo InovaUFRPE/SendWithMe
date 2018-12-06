@@ -135,7 +135,7 @@ public class Viagemrevisao extends AppCompatActivity {
         final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(Viagemrevisao.this);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Tem certeza que deseja salvar essa viagem?");
-        builder.setMessage("mimimi");
+        builder.setMessage("A viagem será listada para ser selecionada por passageiros e/ou pessoas enviando encomendas");
         builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
                 //
@@ -152,6 +152,9 @@ public class Viagemrevisao extends AppCompatActivity {
                 v.setUsuarioid(preferenciasAndroid.getIdentificador());
                 String idAleatorio = Base64Custom.codificarBase64(v.getViagemUID());
                 databaseReference.child("Viagens").child(idAleatorio).setValue(v);
+
+                Intent i = new Intent(Viagemrevisao.this, TelaInicial.class);
+                startActivity(i);
 
             }
         });
