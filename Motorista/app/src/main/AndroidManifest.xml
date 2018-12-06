@@ -38,7 +38,7 @@
         <activity android:name=".Activity.LoginMotorista.ResetActivity" />
         <activity android:name=".Activity.Chat.ChatActivity" />
         <activity android:name=".Activity.Viagens.ListaEncomendas" />
-        <activity android:name=".Activity.Viagens.StatusViagem"></activity>
+        <activity android:name=".Activity.Viagens.StatusViagem" />
     </application>
 
 </manifest>

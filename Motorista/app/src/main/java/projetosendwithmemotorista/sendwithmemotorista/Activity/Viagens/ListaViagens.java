@@ -40,6 +40,8 @@ public class ListaViagens extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_viagens);
+
+
         setardadoslistaviagem();
         listaviagens = findViewById(R.id.listaviagens);
         btnvoltar = findViewById(R.id.Btnavanc);
