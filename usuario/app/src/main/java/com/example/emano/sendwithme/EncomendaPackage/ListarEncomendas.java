@@ -33,6 +33,7 @@ public class ListarEncomendas extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Encomendas").child(user.getUid());
 
         lista = (ListView) findViewById(R.id.encomenda_view);
+        setAdapter();
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -46,6 +47,7 @@ public class ListarEncomendas extends AppCompatActivity {
                     addOnEncomendaOnLista(encomenda);
 
                 }
+                adapter.notifyDataSetChanged();
 
             }
 
@@ -55,7 +57,7 @@ public class ListarEncomendas extends AppCompatActivity {
             }
         });
 
-        setAdapter();
+
 
     }
 
@@ -65,7 +67,6 @@ public class ListarEncomendas extends AppCompatActivity {
 
     private void setAdapter(){
         adapter = new ListarEncomendasAdapter(getApplicationContext(), this.encomendas);
-        adapter.notifyDataSetChanged();
         lista.setAdapter(adapter);
     }
 
