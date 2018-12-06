@@ -41,7 +41,6 @@ public class ListaViagens extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_viagens);
 
-
         setardadoslistaviagem();
         listaviagens = findViewById(R.id.listaviagens);
         btnvoltar = findViewById(R.id.Btnavanc);
@@ -51,6 +50,14 @@ public class ListaViagens extends AppCompatActivity {
                 Intent intentvolta = new Intent(ListaViagens.this, TelaInicial.class);
                 startActivity(intentvolta);
                 ListaViagens.this.finish();
+            }
+        });
+
+        listaviagens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(ListaViagens.this, StatusViagem.class);
+                startActivity(i);
             }
         });
     }
