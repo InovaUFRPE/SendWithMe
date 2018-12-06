@@ -71,7 +71,8 @@
         <activity android:name=".EncomendaPackage.CadastrarEncomendaConfirmar" />
         <activity android:name=".ChatPackage.ChatActivity" />
         <activity android:name=".ChatPackage.ListaChatActivity" />
-        <activity android:name=".MotoristaPackage.ListarMotoristas2"></activity>
+        <activity android:name=".MotoristaPackage.ListarMotoristas2" />
+        <activity android:name=".EncomendaPackage.ListarEncomendas"></activity>
     </application>
 
 </manifest>
