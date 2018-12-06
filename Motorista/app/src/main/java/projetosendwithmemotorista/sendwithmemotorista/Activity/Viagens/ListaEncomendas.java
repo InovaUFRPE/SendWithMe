@@ -37,18 +37,20 @@ public class ListaEncomendas extends AppCompatActivity {
     private String data;
     private String hora;
     private String encomendas;
-
     private Integer assentos;
-
     private TextView encomendainfo;
-
     private EditText edtassdisp;
-
     private CheckBox encomendabox;
-    private ListView listaencomendas;
+
+
+    private ListView listaencomendasListView;
     private ArrayList<String> lista;
+    private ArrayList<Encomendas>listaEncomendas;
+    private ArrayList<Encomendas> listaEncomendasSel = new ArrayList<>();
     private ArrayAdapter<String> adapter;
     private ArrayList<String>listaIdUsuario;
+    private DatabaseReference databaseReference;
+    private AdapterEncomendas adapterEncomendas;
 
 
 
@@ -57,7 +59,7 @@ public class ListaEncomendas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_encomendas);
         btnavancar = findViewById(R.id.btnavancar);
-        listaencomendas = findViewById(R.id.listaencomendas);
+        listaencomendasListView = findViewById(R.id.listaencomendas);
         setardadoslistaencomendas();
 
         Bundle extras = getIntent().getExtras();
@@ -86,15 +88,12 @@ public class ListaEncomendas extends AppCompatActivity {
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Encomendas");
         lista = new ArrayList<>();
-        adapter = new ArrayAdapter<String>(this,R.layout.infoviagens,R.id.textView8, lista);
+        //  adapter = new ArrayAdapter<String>(this,R.layout.infoviagens,R.id.textView8, lista);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds: dataSnapshot.getChildren()) {
-                    Encomendas encomendas = ds.getValue(Encomendas.class);
-                    // String userId = String.valueOf(encomendas.getUsuarioid());
-                    // final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaEncomendas.this);
-                    // if (userId.equals(preferenciasAndroid.getIdentificador()))
+                    // Encomendas encomendas = ds.getValue(Encomendas.class);
                     lista.add(ds.getKey());
                     setardadoslistaencomendas2();
 
@@ -117,35 +116,55 @@ public class ListaEncomendas extends AppCompatActivity {
 
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Encomendas").child(lista1);
             lista = new ArrayList<>();
-            adapter = new ArrayAdapter<String>(this, R.layout.infoviagens, R.id.textView8, lista);
-            databaseReference.addValueEventListener(new ValueEventListener() {
+            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         Encomendas encomendas = ds.getValue(Encomendas.class);
-                        String cidadeDestino = String.valueOf(encomendas.getCidadeDestino());
-                        // final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaEncomendas.this);
-                        if (cidadeDestino.equals(cidadedest))
-                            lista.add(" Cidade Origem: " + encomendas.getCidadeOrigem() + "\n" + " Cidade Destino: " + encomendas.getCidadeDestino() + "\n" + " Objeto da encomenda:" + encomendas.getNomeObjeto() + "\n" + " Descrição do objeto:" + encomendas.getDescricao());
+                        String cidadeDest = String.valueOf(encomendas.getCidadeDestino());
+                        String cidadeOri = String.valueOf(encomendas.getCidadeOrigem());
+                        String nomeObjeto = String.valueOf(encomendas.getNomeObjeto());
+                        String descrObjeto = String.valueOf(encomendas.getDescricao());
+                        String idUsuario = String.valueOf(encomendas.getIdUsuario());
+                        String idFirebase = ds.getKey();
+
+                        if (cidadeDest.equals(cidadedest)) {
+
+                            Encomendas encomendas1 = new Encomendas();
+                            encomendas1.setCidadeOrigem(cidadeOri);
+                            encomendas1.setCidadeDestino(cidadeDest);
+                            encomendas1.setNomeObjeto(nomeObjeto);
+                            encomendas1.setDescricao(descrObjeto);
+                            encomendas1.setIdUsuario(idUsuario);
+
+
+                            listaEncomendasSel.add(encomendas1);
+
+
+                            adapterEncomendas = new AdapterEncomendas(listaEncomendasSel, ListaEncomendas.this);
+                            listaencomendasListView.setAdapter(adapterEncomendas);
+
+
+                            listaencomendasListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                                @Override
+                                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                                    Encomendas s = (Encomendas) parent.getAdapter().getItem(position);
+
+                                    adicionarEncomendas(s);
+
+                                    return true;
+
+                                }
+                            });
+
+                        }
 
                     }
 
-                    listaencomendas.setAdapter(adapter);
-                    listaencomendas.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-                        @Override
-                        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
-                            Encomendas s = (Encomendas) parent.getAdapter().getItem(position);
-
-                            adicionarencomendas();
-
-                            return true;
-
-                        }
-                    });
-
-
                 }
+
+
 
 
 
@@ -155,6 +174,7 @@ public class ListaEncomendas extends AppCompatActivity {
                 }
             });
         }
+
     }
 
 
@@ -174,8 +194,10 @@ public class ListaEncomendas extends AppCompatActivity {
         startActivity(i);
     }
 
+    private void adicionarEncomendas(final Encomendas s) {
+        // String emaildoamiginho = s.getEmail();
+        // final String emaiamiguinhocodificado = Codificador.codificador(emaildoamiginho);
 
-    private void adicionarencomendas() {
 
         final CharSequence[] escolha = {"Sim", "Não"};
         AlertDialog.Builder alerta = new AlertDialog.Builder(ListaEncomendas.this);
@@ -184,24 +206,23 @@ public class ListaEncomendas extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 String opcao = (String) escolha[i];
                 if (opcao.equals(("Sim"))) {
+                    //ADICIONAR ANTES
+                    // databaseReference = FirebaseDatabase.getInstance().getReference().child("Encomendas").child(s.getIdUsuario());
+                    // databaseReference.removeValue();
 
 
-                    Toast.makeText(getApplicationContext(),"Encomenda Adicionada", Toast.LENGTH_SHORT).show();
-                    //Intent iou = new Intent(ListaEncomendas.this, Viagemrevisao.class);
-                    //startActivity(iou);
-                    funcacanvar();
-                    finish();
+
+                    Toast.makeText(getApplicationContext(),"Encomenda aceita", Toast.LENGTH_SHORT).show();
+
 
                 } else if (opcao.equals(("Não"))) {
-
-                    Toast.makeText(getApplicationContext(),"Solicitação excluída", Toast.LENGTH_SHORT).show();
+                    finish();
+                    Toast.makeText(getApplicationContext(),"Encomenda não aceita", Toast.LENGTH_SHORT).show();
                     // dialogInterface.cancel();
-
-
                 }
             }
         });
-        alerta.setTitle("Adicionar Encomenda ?");
+        alerta.setTitle("Aceitar Encomenda ?");
         AlertDialog aviso = alerta.create();
         aviso.show();
 
@@ -209,4 +230,7 @@ public class ListaEncomendas extends AppCompatActivity {
 
 
     }
+
+
+
 }
