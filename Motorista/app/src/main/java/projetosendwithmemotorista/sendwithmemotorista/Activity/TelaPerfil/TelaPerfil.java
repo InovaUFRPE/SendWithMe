@@ -120,7 +120,7 @@ public class TelaPerfil extends AppCompatActivity {
                 Button buttonConfirmar = alertview.findViewById(R.id.bttEdicao);
                 Button buttonCancelar = alertview.findViewById(R.id.bttCancelarEdicao);
 
-                alertTitulo.setText("Digite um novo Nome: ");
+                alertTitulo.setText("Digite um novo nome: ");
                 buttonConfirmar.setText("Editar");
                 buttonCancelar.setText("Cancelar");
                 alertDialog.setView(alertview);
@@ -176,7 +176,7 @@ public class TelaPerfil extends AppCompatActivity {
                 Button buttonConfirmar = alertview.findViewById(R.id.bttEdicao);
                 Button buttonCancelar = alertview.findViewById(R.id.bttCancelarEdicao);
 
-                alertTitulo.setText("Digite um novo Sobrenome: ");
+                alertTitulo.setText("Digite um novo sobrenome: ");
                 buttonConfirmar.setText("Editar");
                 buttonCancelar.setText("Cancelar");
                 alertDialog.setView(alertview);
