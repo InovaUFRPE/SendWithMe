@@ -20,7 +20,7 @@ public class ListarEncomendasAdapter extends ArrayAdapter<Encomenda> {
 
     public ListarEncomendasAdapter(Context context, ArrayList<Encomenda> encomendas){
 
-        super(context, R.layout.linha_encomenda, encomendas);
+        super(context, R.layout.linha_encomenda2, encomendas);
         this.context = context;
         this.encomendas = encomendas;
 
@@ -29,7 +29,7 @@ public class ListarEncomendasAdapter extends ArrayAdapter<Encomenda> {
     public View getView(int position, View convertView, ViewGroup parent){
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.linha_encomenda, parent, false);
+        View rowView = inflater.inflate(R.layout.linha_encomenda2, parent, false);
         TextView nome = (TextView) rowView.findViewById(R.id.txtNomeEncomendaLista);
         TextView origem = (TextView) rowView.findViewById(R.id.txtOrigemEncomendaLista);
         TextView destino = (TextView) rowView.findViewById(R.id.txtDestinoEncomendaLista);
