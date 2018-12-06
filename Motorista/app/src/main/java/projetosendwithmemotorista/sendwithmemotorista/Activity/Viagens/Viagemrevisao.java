@@ -148,6 +148,7 @@ public class Viagemrevisao extends AppCompatActivity {
                 v.setData(data);
                 v.setHora(hora);
                 v.setEncomendas(encomendas);
+                v.setAssentos(assentos);
                 v.setUsuarioid(preferenciasAndroid.getIdentificador());
                 String idAleatorio = Base64Custom.codificarBase64(v.getViagemUID());
                 databaseReference.child("Viagens").child(idAleatorio).setValue(v);

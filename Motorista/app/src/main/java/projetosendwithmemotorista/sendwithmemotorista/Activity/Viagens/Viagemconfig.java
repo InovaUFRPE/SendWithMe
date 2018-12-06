@@ -21,6 +21,7 @@ public class Viagemconfig extends AppCompatActivity {
     private String data;
     private String hora;
     private String encomendas;
+    private String Qassentos;
 
     private Integer assentos;
 
@@ -40,19 +41,6 @@ public class Viagemconfig extends AppCompatActivity {
         setContentView(R.layout.activity_viagem_config);
 
         //
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            cidade = extras.getString("cidade");
-            endereço = extras.getString("endereço");
-            data = extras.getString("data");
-            hora = extras.getString("hora");
-            cidadedest = extras.getString("cidadedest");
-            endereçodest = extras.getString("endereçodest");
-            assentos = extras.getInt("assentos");
-            encomendas = extras.getString("encomendas");
-        }
-
-        //
         encomendainfo = findViewById(R.id.Txtbtnenc);
 
         //
@@ -64,6 +52,24 @@ public class Viagemconfig extends AppCompatActivity {
         btnvoltar = findViewById(R.id.Btnvolt);
 
         //
+
+        //
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            cidade = extras.getString("cidade");
+            endereço = extras.getString("endereço");
+            data = extras.getString("data");
+            hora = extras.getString("hora");
+            cidadedest = extras.getString("cidadedest");
+            endereçodest = extras.getString("endereçodest");
+            assentos = extras.getInt("assentos");
+            encomendas = extras.getString("encomendas");
+
+            Qassentos = assentos.toString();
+        }
+
+        edtassdisp.setText(Qassentos);
+
         btnavançar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

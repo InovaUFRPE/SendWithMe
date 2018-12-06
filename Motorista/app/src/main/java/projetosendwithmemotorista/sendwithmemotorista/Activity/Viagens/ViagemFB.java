@@ -16,11 +16,22 @@ public class ViagemFB {
     private String usuarioid;
     private ArrayList listapass;
 
+    private Integer assentos;
+
 
     public ViagemFB(){
 
 
     }
+
+    public Integer getAssentos() {
+        return assentos;
+    }
+
+    public void setAssentos(Integer assentos) {
+        this.assentos = assentos;
+    }
+
     public ArrayList getListapass() {
         return listapass;
     }

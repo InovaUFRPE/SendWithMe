@@ -53,6 +53,9 @@ public class DestinoViagem extends AppCompatActivity {
             encomendas = extras.getString("encomendas");
         }
 
+        edtcidadedest.setText(cidadedest);
+        edtendereçodest.setText(endereçodest);
+
         //
         btnavançar.setOnClickListener(new View.OnClickListener() {
             @Override
