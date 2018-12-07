@@ -14,8 +14,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import org.w3c.dom.Text;
-
 public class CadastrarEncomendaConfirmar extends AppCompatActivity {
 
     private TextView nomeObjeto;
@@ -69,6 +67,7 @@ public class CadastrarEncomendaConfirmar extends AppCompatActivity {
                 encomenda.setEnderecoOrigem(enderecoOrigem1);
                 encomenda.setCidadeDestino(cidadeDestino1);
                 encomenda.setEndrerecoDestino(enderecoDestino1);
+                encomenda.setStatus("Aguardando entregador");
 
                 database.push().setValue(encomenda);
 
@@ -92,8 +91,8 @@ public class CadastrarEncomendaConfirmar extends AppCompatActivity {
 
     public void setView(){
 
-        nomeObjeto = (TextView) findViewById(R.id.txtNomeObjetoInfo);
-        origemEncomenda = (TextView) findViewById(R.id.txtOrigemEncomendaInfo);
+        nomeObjeto = (TextView) findViewById(R.id.txtNomeObjetoInfoLista);
+        origemEncomenda = (TextView) findViewById(R.id.txtOrigemEncomendaInfoLista);
         destinoEncomenda = (TextView) findViewById(R.id.txtDestinoEncomendaInfo);
         descricaoEncomenda = (TextView) findViewById(R.id.txtDescricaoEncomenda);
         voltar = (Button) findViewById(R.id.btnVoltarCadastroEncomendaDescricao);

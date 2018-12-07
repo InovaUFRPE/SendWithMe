@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.HomePackage;
+package com.example.emano.sendwithme.homePackage;
 
 
 import android.content.Context;
@@ -59,7 +59,7 @@ public class HomeFragmentMap extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_home_fragment_map, container, false);
 
-        cidadeDigitada1 = rootView.findViewById(R.id.txtNomeObjeto);
+        cidadeDigitada1 = rootView.findViewById(R.id.txtNomeObjetoLista);
         cidadeDigitada2 = rootView.findViewById(R.id.txtTituloPedido);
 
         mapa = rootView.findViewById(R.id.mapaId);

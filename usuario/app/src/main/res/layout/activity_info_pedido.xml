@@ -13,7 +13,7 @@
 
 
         <TextView
-            android:id="@+id/txtNomeObjeto"
+            android:id="@+id/txtNomeObjetoLista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -35,7 +35,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Tracunhaém"
-            app:layout_constraintBottom_toTopOf="@+id/txtNomeObjeto"
+            app:layout_constraintBottom_toTopOf="@+id/txtNomeObjetoLista"
             app:layout_constraintStart_toStartOf="parent" />
 
 

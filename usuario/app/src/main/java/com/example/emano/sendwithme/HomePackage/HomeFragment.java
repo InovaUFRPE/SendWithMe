@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.HomePackage;
+package com.example.emano.sendwithme.homePackage;
 
 
 import android.content.Context;
@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment {
 
         listPoints = new ArrayList<>();
 
-        cidadeDigitada1 = rootView.findViewById(R.id.txtNomeObjeto);
+        cidadeDigitada1 = rootView.findViewById(R.id.txtNomeObjetoLista);
         cidadeDigitada2 = rootView.findViewById(R.id.txtTituloPedido);
 
 

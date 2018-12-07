@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
-    tools:context=".EncomendaPackage.CadastrarEncomendaConfirmar">
+    tools:context=".EncomendaPackage.InfoEncomenda">
 
     <TextView
         android:id="@+id/txtOrigemEncomendaLista"
@@ -44,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtOrigemEncomendaLista" />
 
     <TextView
-        android:id="@+id/txtDestinoEncomendaInfo"
+        android:id="@+id/txtDestinoEncomendaInfoLista"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -68,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtConfirmaEncomenda" />
 
     <TextView
-        android:id="@+id/txtDescricaoEncomenda"
+        android:id="@+id/txtDescricaoEncomendaLista"
         android:layout_width="330dp"
         android:layout_height="200dp"
         android:layout_marginStart="8dp"
@@ -76,10 +75,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Descrição"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastrarEncomenda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDestinoEncomendaLista" />
@@ -97,34 +94,22 @@
         app:layout_constraintTop_toBottomOf="@+id/txtConfirmaEncomenda" />
 
     <Button
-        android:id="@+id/btnVoltarCadastroEncomendaDescricao"
+        android:id="@+id/btnVoltarListaEncomenda"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/button_style"
-        android:text="Voltar"
         android:drawableLeft="@drawable/voltar"
         android:paddingLeft="16dp"
+        android:text="Voltar"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnCadastrarEncomenda"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/button_style"
-        android:text="Cadastrar"
-        android:drawableRight="@drawable/cadastrar"
-        android:paddingRight="12dp"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/txtConfirmaEncomenda"
@@ -135,10 +120,11 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Confirmar cadastro de encomenda?"
+        android:text="Informações da encomenda"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

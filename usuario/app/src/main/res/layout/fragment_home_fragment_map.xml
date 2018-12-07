@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".HomePackage.HomeFragmentMap">
+    tools:context=".homePackage.HomeFragmentMap">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <EditText
-            android:id="@+id/txtNomeObjeto"
+            android:id="@+id/txtNomeObjetoLista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -49,7 +49,7 @@
             android:inputType="textPersonName"
             android:background="@drawable/edit_text_style"
             android:text="Tracunhaém"
-            app:layout_constraintBottom_toTopOf="@+id/txtNomeObjeto"
+            app:layout_constraintBottom_toTopOf="@+id/txtNomeObjetoLista"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button

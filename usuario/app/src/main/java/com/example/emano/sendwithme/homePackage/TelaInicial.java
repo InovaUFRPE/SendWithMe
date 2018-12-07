@@ -42,7 +42,7 @@ public class TelaInicial extends AppCompatActivity {
 
     }
 
-    public void novaEncomenda(View view){
+    public void encomendas(View view){
         ///
 
         Intent intent1 = new Intent(TelaInicial.this, ListarEncomendas.class);

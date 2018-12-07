@@ -1,8 +1,11 @@
 package com.example.emano.sendwithme.EncomendaPackage;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -57,7 +60,20 @@ public class ListarEncomendas extends AppCompatActivity {
             }
         });
 
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
+                Intent intent = new Intent(ListarEncomendas.this, InfoEncomenda.class);
+                intent.putExtra("nomeObjeto", String.valueOf(encomendas.get(position).getNomeObjeto()));
+                intent.putExtra("origem", String.valueOf(encomendas.get(position).getEnderecoOrigem()));
+                intent.putExtra("destino", String.valueOf(encomendas.get(position).getEndrerecoDestino()));
+                intent.putExtra("descricao", String.valueOf(encomendas.get(position).getDescricao()));
+
+                startActivity(intent);
+
+            }
+        });
 
     }
 
@@ -68,6 +84,13 @@ public class ListarEncomendas extends AppCompatActivity {
     private void setAdapter(){
         adapter = new ListarEncomendasAdapter(getApplicationContext(), this.encomendas);
         lista.setAdapter(adapter);
+    }
+
+    public void novaEncomenda(View view){
+        ///
+        Intent intent1 = new Intent(ListarEncomendas.this, CadastrarEncomenda.class);
+        startActivity(intent1);
+
     }
 
 

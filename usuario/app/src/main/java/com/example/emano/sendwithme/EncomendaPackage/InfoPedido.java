@@ -66,7 +66,7 @@ public class InfoPedido extends AppCompatActivity {
 
         mapa = (MapView) findViewById(R.id.mapaIdInfo);
         titulo = (TextView) findViewById(R.id.txtTituloPedido);
-        nome = (TextView) findViewById(R.id.txtNomeObjeto);
+        nome = (TextView) findViewById(R.id.txtNomeObjetoLista);
 
     }
 
