@@ -46,6 +46,7 @@ public class ListaEncomendas extends AppCompatActivity {
     private TextView encomendainfo;
     private EditText edtassdisp;
     private CheckBox encomendabox;
+    private Button btnVoltar;
 
 
     private ListView listaencomendasListView;
@@ -64,6 +65,7 @@ public class ListaEncomendas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_encomendas);
         btnavancar = findViewById(R.id.btnavancar);
+        btnVoltar = findViewById(R.id.Btnavanc);
         listaencomendasListView = findViewById(R.id.listaencomendas);
         setardadoslistaencomendas();
 
@@ -87,7 +89,19 @@ public class ListaEncomendas extends AppCompatActivity {
 
         });
 
-    }
+
+
+         btnVoltar.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent voltar = new Intent(ListaEncomendas.this, Viagemconfig.class);
+            startActivity(voltar);
+            finish();
+        }
+
+    });
+
+}
 
     private void setardadoslistaencomendas(){
 
@@ -223,6 +237,9 @@ public class ListaEncomendas extends AppCompatActivity {
                     v.setIdEncomenda(s.getIdEncomenda());
                     v.setIdUsuario(s.getIdUsuario());
                     v.setIdMotorista(preferenciasAndroid.getIdentificador());
+                    v.setCidadeOrigemViagem(cidade);
+                    v.setDataViagem(data);
+                    v.setHoraViagem(hora);
                     String idAleatorio = Base64Custom.codificarBase64(UUID.randomUUID().toString());
                     DatabaseReference referenceFirebase = ConfiguracaoFirebase.getReferenceFirebase();
                     referenceFirebase.child("EncomendasSelecionadas").child(idAleatorio).setValue(v);

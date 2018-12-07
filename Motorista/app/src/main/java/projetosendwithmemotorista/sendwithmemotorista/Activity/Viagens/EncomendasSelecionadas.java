@@ -74,4 +74,34 @@ public class EncomendasSelecionadas {
     }
 
     private  String idUsuario;
+
+    public String getDataViagem() {
+        return dataViagem;
+    }
+
+    public void setDataViagem(String dataViagem) {
+        this.dataViagem = dataViagem;
+    }
+
+    private String dataViagem;
+
+    public String getHoraViagem() {
+        return horaViagem;
+    }
+
+    public void setHoraViagem(String horaViagem) {
+        this.horaViagem = horaViagem;
+    }
+
+    private String horaViagem;
+
+    public String getCidadeOrigemViagem() {
+        return cidadeOrigemViagem;
+    }
+
+    public void setCidadeOrigemViagem(String cidadeOrigemViagem) {
+        this.cidadeOrigemViagem = cidadeOrigemViagem;
+    }
+
+    private String cidadeOrigemViagem;
 }
