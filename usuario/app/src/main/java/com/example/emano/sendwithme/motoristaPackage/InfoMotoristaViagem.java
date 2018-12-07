@@ -81,7 +81,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
         hora.setText(hora1);
         encomenda.setText(encomendas1);
 
-        databaseReferenceViagem = FirebaseDatabase.getInstance().getReference().child("Viagens").child(viagemId);
+        databaseReferenceViagem = FirebaseDatabase.getInstance().getReference().child("Viagens");
 
         //databaseReference = FirebaseDatabase.getInstance().getReference(viagemId).child("solicitacoes");
 
