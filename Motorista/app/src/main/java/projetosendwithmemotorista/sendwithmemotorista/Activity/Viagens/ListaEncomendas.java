@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPerfil.TelaPerfil;
+import projetosendwithmemotorista.sendwithmemotorista.DAO.ConfiguracaoFirebase;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.Base64Custom;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.PreferenciasAndroid;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.preferencias;
@@ -222,14 +223,15 @@ public class ListaEncomendas extends AppCompatActivity {
                     v.setIdEncomenda(s.getIdEncomenda());
                     v.setIdUsuario(s.getIdUsuario());
                     v.setIdMotorista(preferenciasAndroid.getIdentificador());
-                    String idAleatorio = Base64Custom.codificarBase64(preferenciasAndroid.getIdentificador());
-                    //databaseReference.child("EncomendasSelecionadas").child(idAleatorio).setValue(v);
+                    String idAleatorio = Base64Custom.codificarBase64(UUID.randomUUID().toString());
+                    DatabaseReference referenceFirebase = ConfiguracaoFirebase.getReferenceFirebase();
+                    referenceFirebase.child("EncomendasSelecionadas").child(idAleatorio).setValue(v);
 
 
                     //PARA APAGAR USAR IDENCOMENDA
-                    // databaseReference = FirebaseDatabase.getInstance().getReference().child("Encomendas").child(s.getIdUsuario());
-                    // databaseReference.removeValue();
-                    //Toast.makeText(getApplicationContext(),s.getIdEncomenda(), Toast.LENGTH_SHORT).show();
+                     databaseReference = FirebaseDatabase.getInstance().getReference().child("Encomendas").child(v.getIdUsuario()).child(v.getIdEncomenda());
+                     databaseReference.removeValue();
+                    Toast.makeText(getApplicationContext(),"Encomenda aceita", Toast.LENGTH_SHORT).show();
 
 
                 } else if (opcao.equals(("Não"))) {
