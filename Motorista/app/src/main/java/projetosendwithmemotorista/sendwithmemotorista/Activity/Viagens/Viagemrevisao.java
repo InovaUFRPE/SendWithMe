@@ -15,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPerfil.TelaPerfil;
@@ -39,6 +40,8 @@ public class Viagemrevisao extends AppCompatActivity {
     private String PARTIDA;
     private String DESTINO;
     private String DATAHORA;
+
+    private ArrayList<String> lista =  new ArrayList<>();
 
 
     private TextView txtpartida;
@@ -75,10 +78,8 @@ public class Viagemrevisao extends AppCompatActivity {
 
             qtassentos = assentos.toString();
 
-            //
-
-
         }
+        lista.add(0,"Controle");
 
         //
         PARTIDA = endereço + " , " + cidade + ".";
@@ -149,6 +150,7 @@ public class Viagemrevisao extends AppCompatActivity {
                 v.setHora(hora);
                 v.setEncomendas(encomendas);
                 v.setAssentos(assentos);
+                v.setListapass(lista);
                 v.setUsuarioid(preferenciasAndroid.getIdentificador());
                 String idAleatorio = Base64Custom.codificarBase64(v.getViagemUID());
                 databaseReference.child("Viagens").child(idAleatorio).setValue(v);

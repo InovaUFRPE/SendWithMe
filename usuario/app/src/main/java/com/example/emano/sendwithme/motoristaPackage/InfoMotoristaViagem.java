@@ -1,6 +1,7 @@
-package com.example.emano.sendwithme.motoristaPackage;
+package com.example.emano.sendwithme.MotoristaPackage;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,12 +13,18 @@ import com.example.emano.sendwithme.ChatPackage.ChatActivity;
 import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
 import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas2;
 import com.example.emano.sendwithme.R;
+import com.example.emano.sendwithme.ViagemPackage.Viagem;
 import com.example.emano.sendwithme.caronaPackage.SolicitacaoCarona;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class InfoMotoristaViagem extends AppCompatActivity {
 
@@ -25,6 +32,11 @@ public class InfoMotoristaViagem extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private DatabaseReference databaseReference2;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+    private DatabaseReference databaseReferenceViagem;
+    private DatabaseReference teste;
+
+    private String viagemId;
 
     TextView nome;
 
@@ -47,11 +59,12 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+
         final String nome1 = intent.getStringExtra("nome") + " " + intent.getStringExtra("sobrenome");
         String email = intent.getStringExtra("email");
         String sexo = intent.getStringExtra("sexo");
 
-        final String viagemId = intent.getStringExtra("viagemId");
+        viagemId = intent.getStringExtra("viagemId");
         String origem1 = intent.getStringExtra("endereco") + ", " +intent.getStringExtra("cidade");
         String destino1 = intent.getStringExtra("enderecodest") + ", " + intent.getStringExtra("cidadedest");
         String data1 = intent.getStringExtra("data");
@@ -68,20 +81,23 @@ public class InfoMotoristaViagem extends AppCompatActivity {
         hora.setText(hora1);
         encomenda.setText(encomendas1);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference(viagemId).child("solicitacoes");
+        databaseReferenceViagem = FirebaseDatabase.getInstance().getReference().child("Viagens").child(viagemId);
+
+        //databaseReference = FirebaseDatabase.getInstance().getReference(viagemId).child("solicitacoes");
 
         solicitaViagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                SolicitacaoCarona novaSolicitacao = new SolicitacaoCarona();
+                //SolicitacaoCarona novaSolicitacao = new SolicitacaoCarona();
 
-                novaSolicitacao.setViagemId(viagemId);
-                novaSolicitacao.setStatus("Aguardando confirmação");
-                novaSolicitacao.setMotoristaId(usuarioid);
-                novaSolicitacao.setUsuarioId(user.getUid());
+               // novaSolicitacao.setViagemId(viagemId);
+                //novaSolicitacao.setStatus("Aguardando confirmação");
+               // novaSolicitacao.setMotoristaId(usuarioid);
+               // novaSolicitacao.setUsuarioId(user.getUid());
 
-                databaseReference.push().setValue(novaSolicitacao);
+               // databaseReference.push().setValue(novaSolicitacao);
+                incluiusuario();
 
                 Toast.makeText(InfoMotoristaViagem.this,"Solicitação efetuada com sucesso!",Toast.LENGTH_SHORT).show();
                 finish();
@@ -108,6 +124,51 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
             }
         });
+
+    }
+    public void incluiusuario(){
+        databaseReferenceViagem.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot dados:dataSnapshot.getChildren()){
+
+                    Viagem viagem = dados.getValue(Viagem.class);
+                    if (viagem.getViagemUID().equals(viagemId)){
+
+                        //
+                        Integer numpass = viagem.getAssentos();
+                        if(numpass==0){
+                            //não rola
+                            Toast.makeText(InfoMotoristaViagem.this,"Não há vagas nessa viagem!",Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            ArrayList<String> lista = new ArrayList<>();
+                            lista = viagem.getListapass();
+                            if(lista.contains(user.getUid())){
+                                //o usuario já ta na lista dos passageiros
+                                Toast.makeText(InfoMotoristaViagem.this,"Você já participa dessa viagem!",Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                if(lista.contains("Controle")){
+                                    lista.remove(0);
+                                }
+                                lista.add(user.getUid());
+                                viagem.setAssentos(numpass-1);
+                                viagem.setListapass(lista);
+                                databaseReference.child("Viagens").child(viagem.getViagemUID()).setValue(viagem);
+                            }
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
     }
 

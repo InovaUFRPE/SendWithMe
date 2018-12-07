@@ -16,6 +16,19 @@ public class Viagem {
     private String usuarioid;
     private ArrayList listapass;
 
+
+    private Integer assentos;
+
+
+
+    public Integer getAssentos() {
+        return assentos;
+    }
+
+    public void setAssentos(Integer assentos) {
+        this.assentos = assentos;
+    }
+
     public String getViagemUID() {
         return viagemUID;
     }
