@@ -42,7 +42,7 @@ public class CadastroActivity extends AppCompatActivity {
     private RadioButton rbFeminino;
     private Button btnSalvar;
     private Button btnVoltar;
-    private Usuarios Motoristas;
+    private Usuarios usuarios;
     private FirebaseAuth autenticacao;
 
     @Override
@@ -77,19 +77,19 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edtCadSenha.getText().toString().equals(edtCadConfirmarSenha.getText().toString()) && validarCampos()){
-                    Motoristas = new Usuarios();
-                    Motoristas.setNome(edtCadNome.getText().toString());
-                    Motoristas.setEmail(edtCadEmail.getText().toString());
-                    Motoristas.setCpf(edtCadCpf.getText().toString());
-                    Motoristas.setSenha(edtCadSenha.getText().toString());
-                    Motoristas.setNascimento(edtCadDataNascimento.getText().toString());
-                    Motoristas.setSobrenome(edtCadSobrenome.getText().toString());
+                    usuarios = new Usuarios();
+                    usuarios.setNome(edtCadNome.getText().toString());
+                    usuarios.setEmail(edtCadEmail.getText().toString());
+                    usuarios.setCpf(edtCadCpf.getText().toString());
+                    usuarios.setSenha(edtCadSenha.getText().toString());
+                    usuarios.setNascimento(edtCadDataNascimento.getText().toString());
+                    usuarios.setSobrenome(edtCadSobrenome.getText().toString());
 
 
                     if (rbFeminino.isChecked()) {
-                        Motoristas.setSexo("Feminino");
+                        usuarios.setSexo("Feminino");
                     } else {
-                        Motoristas.setSexo("Masculino");
+                        usuarios.setSexo("Masculino");
                     }
 
                     cadastrarUsuario();
@@ -105,21 +105,21 @@ public class CadastroActivity extends AppCompatActivity {
 
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
         autenticacao.createUserWithEmailAndPassword(
-                Motoristas.getEmail(),
-                Motoristas.getSenha()
+                usuarios.getEmail(),
+                usuarios.getSenha()
         ).addOnCompleteListener(CadastroActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(CadastroActivity.this, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show();
 
-                    String identificadorUsuario = Base64Custom.codificarBase64(Motoristas.getEmail());
+                    String identificadorUsuario = Base64Custom.codificarBase64(usuarios.getEmail());
                     FirebaseUser usuarioFirebase = task.getResult().getUser();
-                    Motoristas.setId(identificadorUsuario);
-                    Motoristas.salvar();
+                    usuarios.setId(identificadorUsuario);
+                    usuarios.salvar();
 
                     PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(CadastroActivity.this);
-                    preferenciasAndroid.salvarUsuarioPreferencias(identificadorUsuario, Motoristas.getNome());
+                    preferenciasAndroid.salvarUsuarioPreferencias(identificadorUsuario, usuarios.getNome());
 
                     abrirLoginUsuario();
                 }else {
