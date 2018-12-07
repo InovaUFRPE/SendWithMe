@@ -26,6 +26,7 @@ public class TelaInicial extends AppCompatActivity {
     private String titulo;
     private String cont;
     private FirebaseAuth.AuthStateListener authStateListener;
+    private Button historicoencomenda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,16 @@ public class TelaInicial extends AppCompatActivity {
                 }
             }
         };
+
+        historicoencomenda = findViewById(R.id.btnhistencomendas);
+        historicoencomenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent n = new Intent(TelaInicial.this, HistoricoEncomendas.class);
+                startActivity(n);
+                finish();
+            }
+        });
 
         btnnovacarona = findViewById(R.id.btnnovacarona);
         buttonlistadecarona = findViewById(R.id.btnlista);
