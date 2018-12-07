@@ -14,7 +14,6 @@ public class Viagem {
     private String hora;
     private String encomendas;
     private String usuarioid;
-    private ArrayList listapass;
 
 
     private Integer assentos;
@@ -101,12 +100,5 @@ public class Viagem {
         this.usuarioid = usuarioid;
     }
 
-    public ArrayList getListapass() {
-        return listapass;
-    }
-
-    public void setListapass(ArrayList listapass) {
-        this.listapass = listapass;
-    }
 }
 

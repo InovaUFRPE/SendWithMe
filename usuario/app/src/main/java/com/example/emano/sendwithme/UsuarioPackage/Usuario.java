@@ -1,6 +1,6 @@
 package com.example.emano.sendwithme.UsuarioPackage;
 
-import java.util.ArrayList;
+
 
 public class Usuario {
 
@@ -9,7 +9,7 @@ public class Usuario {
     private String email;
     private String cpf;
     private String senha;
-    private ArrayList<String> viagens;
+
 
     public Usuario() {
     }
@@ -21,13 +21,6 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public ArrayList<String> getViagens() {
-        return viagens;
-    }
-
-    public void setViagens(ArrayList<String> viagens) {
-        this.viagens = viagens;
-    }
 
     public String getNome() {
         return nome;
