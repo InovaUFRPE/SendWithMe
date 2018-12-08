@@ -63,7 +63,7 @@ public class HistoricoEncomendas extends AppCompatActivity {
                     final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(HistoricoEncomendas.this);
                     String idMotoristaLogado = preferenciasAndroid.getIdentificador();
                     if (userId.equals(idMotoristaLogado)) {
-                        lista.add(" Cidade de Origem da viagem :" + encomendasSelecionadas.getCidadeOrigemViagem()  +"\n" + " Cidade Destino da encomenda: "+ encomendasSelecionadas.getCidadeDest() + "\n"+ " Data da viagem: "+encomendasSelecionadas.getDataViagem() + "\n" + " Hora da viagem: "+encomendasSelecionadas.getHoraViagem());
+                        lista.add(" Cidade de Origem da viagem :" + encomendasSelecionadas.getCidadeOrigemViagem() +"\n" +"Cidade Origem da encomenda: "+encomendasSelecionadas.getCidadeOri() + "\n" + " Cidade Destino da encomenda: "+ encomendasSelecionadas.getCidadeDest() + "\n"+ " Data da viagem: "+encomendasSelecionadas.getDataViagem() + "\n" + " Hora da viagem: "+encomendasSelecionadas.getHoraViagem());
                         //setardadoslistaencomendas2();
                      //   Toast.makeText(HistoricoEncomendas.this, "TO NO IF" + userId + "logado"+ idMotoristaLogado, Toast.LENGTH_LONG).show();
                         listaencomendas.setAdapter(adapter);
