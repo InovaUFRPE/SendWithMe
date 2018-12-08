@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -59,6 +61,25 @@ public class ListarEncomendasSelecionadas extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                Intent intent = new Intent(ListarEncomendasSelecionadas.this, InfoEncomendaSelecionada.class);
+                intent.putExtra("nomeObjeto", String.valueOf(encomendaSelecionadas.get(position).getNomeObjeto()));
+                intent.putExtra("origem", String.valueOf(encomendaSelecionadas.get(position).getCidadeOri()));
+                intent.putExtra("destino", String.valueOf(encomendaSelecionadas.get(position).getCidadeDest()));
+                intent.putExtra("idUsuario", String.valueOf(encomendaSelecionadas.get(position).getIdUsuario()));
+                intent.putExtra("idMotorista", String.valueOf(encomendaSelecionadas.get(position).getIdMotorista()));
+                intent.putExtra("idEncomenda", String.valueOf(encomendaSelecionadas.get(position).getIdEncomenda()));
+                intent.putExtra("descricao", String.valueOf(encomendaSelecionadas.get(position).getDescricao()));
+                intent.putExtra("hora", String.valueOf(encomendaSelecionadas.get(position).getHoraViagem()));
+                intent.putExtra("data", String.valueOf(encomendaSelecionadas.get(position).getDataViagem()));
+                startActivity(intent);
 
             }
         });
