@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtOrigemEncomendaLista"
+        android:id="@+id/txtOrigemEncomendaListaInfo"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtNomeEncomendaLista" />
 
     <TextView
-        android:id="@+id/txtDestinoEncomendaLista"
+        android:id="@+id/txtDestinoEncomendaListaInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -49,6 +49,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtOrigemEncomendaLista"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrigemEncomendaListaInfo"
         tools:text="Destino" />
 </android.support.constraint.ConstraintLayout>

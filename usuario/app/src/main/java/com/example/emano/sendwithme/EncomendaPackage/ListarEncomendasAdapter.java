@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.example.emano.sendwithme.R;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class ListarEncomendasAdapter extends ArrayAdapter<Encomenda> {
@@ -31,8 +29,8 @@ public class ListarEncomendasAdapter extends ArrayAdapter<Encomenda> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.linha_encomenda2, parent, false);
         TextView nome = (TextView) rowView.findViewById(R.id.txtNomeEncomendaLista);
-        TextView origem = (TextView) rowView.findViewById(R.id.txtOrigemEncomendaLista);
-        TextView destino = (TextView) rowView.findViewById(R.id.txtDestinoEncomendaLista);
+        TextView origem = (TextView) rowView.findViewById(R.id.txtOrigemEncomendaListaInfo);
+        TextView destino = (TextView) rowView.findViewById(R.id.txtDestinoEncomendaListaInfo);
 
         nome.setText(encomendas.get(position).getNomeObjeto());
         origem.setText(encomendas.get(position).getEnderecoOrigem());

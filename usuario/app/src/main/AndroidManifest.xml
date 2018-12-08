@@ -61,7 +61,7 @@
         <activity android:name=".EncomendaPackage.ListarPedidos" />
         <activity android:name=".EncomendaPackage.ConfirmarPedido" />
         <activity android:name=".EncomendaPackage.InfoPedido" />
-        <activity android:name=".MotoristaPackage.ListarMotoristas" />
+        <activity android:name=".motoristaPackage.ListarMotoristas" />
         <activity android:name=".homePackage.TelaInicial" />
         <activity android:name=".caronaPackage.EnderecoCarona" />
         <activity android:name=".motoristaPackage.InfoMotoristaViagem" />
@@ -71,10 +71,11 @@
         <activity android:name=".EncomendaPackage.CadastrarEncomendaConfirmar" />
         <activity android:name=".ChatPackage.ChatActivity" />
         <activity android:name=".ChatPackage.ListaChatActivity" />
-        <activity android:name=".MotoristaPackage.ListarMotoristas2" />
+        <activity android:name=".motoristaPackage.ListarMotoristas2" />
         <activity android:name=".EncomendaPackage.ListarEncomendas" />
         <activity android:name=".EncomendaPackage.InfoEncomenda" />
-        <activity android:name=".EncomendaPackage.InfoEncomendaSelecionada"></activity>
+        <activity android:name=".EncomendaPackage.InfoEncomendaSelecionada" />
+        <activity android:name=".EncomendaPackage.ListarEncomendasSelecionadas"></activity>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.example.emano.sendwithme.ChatPackage.ListaChatActivity;
 import com.example.emano.sendwithme.EncomendaPackage.CadastrarEncomenda;
 import com.example.emano.sendwithme.EncomendaPackage.ListarEncomendas;
+import com.example.emano.sendwithme.EncomendaPackage.ListarEncomendasSelecionadas;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.caronaPackage.EnderecoCarona;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,7 +46,7 @@ public class TelaInicial extends AppCompatActivity {
     public void encomendas(View view){
         ///
 
-        Intent intent1 = new Intent(TelaInicial.this, ListarEncomendas.class);
+        Intent intent1 = new Intent(TelaInicial.this, ListarEncomendasSelecionadas.class);
         startActivity(intent1);
 
     }

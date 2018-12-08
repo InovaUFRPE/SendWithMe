@@ -1,10 +1,9 @@
-package com.example.emano.sendwithme.MotoristaPackage;
+package com.example.emano.sendwithme.motoristaPackage;
 
 import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,9 +15,7 @@ import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.ViagemPackage.Viagem;
-import com.example.emano.sendwithme.motoristaPackage.InfoMotoristaViagem;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.firebase.appindexing.builders.StickerBuilder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,9 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ListarMotoristas2 extends AppCompatActivity {
 

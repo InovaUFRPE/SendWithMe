@@ -2,8 +2,16 @@ package com.example.emano.sendwithme.EncomendaPackage;
 
 public class EncomendaSelecionada {
 
-    public EncomendaSelecionada() {
-    }
+    private String idEncomenda;
+    private String cidadeDest;
+    private String cidadeOri;
+    private String nomeObjeto;
+    private String descricao;
+    private String idMotorista;
+    private String idUsuario;
+    private String dataViagem;
+    private String horaViagem;
+    private String cidadeOrigemViagem;
 
     public String getIdEncomenda() {
         return idEncomenda;
@@ -13,8 +21,6 @@ public class EncomendaSelecionada {
         this.idEncomenda = idEncomenda;
     }
 
-    private String idEncomenda;
-
     public String getCidadeDest() {
         return cidadeDest;
     }
@@ -22,8 +28,6 @@ public class EncomendaSelecionada {
     public void setCidadeDest(String cidadeDest) {
         this.cidadeDest = cidadeDest;
     }
-
-    private String cidadeDest;
 
     public String getCidadeOri() {
         return cidadeOri;
@@ -33,8 +37,6 @@ public class EncomendaSelecionada {
         this.cidadeOri = cidadeOri;
     }
 
-    private String cidadeOri;
-
     public String getNomeObjeto() {
         return nomeObjeto;
     }
@@ -42,8 +44,6 @@ public class EncomendaSelecionada {
     public void setNomeObjeto(String nomeObjeto) {
         this.nomeObjeto = nomeObjeto;
     }
-
-    private String nomeObjeto;
 
     public String getDescricao() {
         return descricao;
@@ -53,8 +53,6 @@ public class EncomendaSelecionada {
         this.descricao = descricao;
     }
 
-    private String descricao;
-
     public String getIdMotorista() {
         return idMotorista;
     }
@@ -62,8 +60,6 @@ public class EncomendaSelecionada {
     public void setIdMotorista(String idMotorista) {
         this.idMotorista = idMotorista;
     }
-
-    private String idMotorista;
 
     public String getIdUsuario() {
         return idUsuario;
@@ -73,8 +69,6 @@ public class EncomendaSelecionada {
         this.idUsuario = idUsuario;
     }
 
-    private  String idUsuario;
-
     public String getDataViagem() {
         return dataViagem;
     }
@@ -82,8 +76,6 @@ public class EncomendaSelecionada {
     public void setDataViagem(String dataViagem) {
         this.dataViagem = dataViagem;
     }
-
-    private String dataViagem;
 
     public String getHoraViagem() {
         return horaViagem;
@@ -93,8 +85,6 @@ public class EncomendaSelecionada {
         this.horaViagem = horaViagem;
     }
 
-    private String horaViagem;
-
     public String getCidadeOrigemViagem() {
         return cidadeOrigemViagem;
     }
@@ -102,7 +92,5 @@ public class EncomendaSelecionada {
     public void setCidadeOrigemViagem(String cidadeOrigemViagem) {
         this.cidadeOrigemViagem = cidadeOrigemViagem;
     }
-
-    private String cidadeOrigemViagem;
 }
 

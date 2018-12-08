@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -22,7 +20,7 @@ import java.util.ArrayList;
 
 public class ListarEncomendasSelecionadas extends AppCompatActivity {
 
-    private ArrayList<EncomendaSelecionada> encomendas = new ArrayList<>();
+    private ArrayList<EncomendaSelecionada> encomendaSelecionadas = new ArrayList<>();
     private ArrayAdapter adapter;
     private ListView lista;
     private DatabaseReference databaseReference;
@@ -31,27 +29,30 @@ public class ListarEncomendasSelecionadas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listar_encomendas_selecionadas);
+        setContentView(R.layout.activity_listar_encomendas_selecionadas2);
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("EncomendasSelecionadas");
-
-        lista = (ListView) findViewById(R.id.encomendas_selecionadas_view);
+        lista = (ListView) findViewById(R.id.encomenda_selecionada_view);
         setAdapter();
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                encomendas.clear();
+                encomendaSelecionadas.clear();
 
                 for(DataSnapshot dados: dataSnapshot.getChildren()){
 
-                    EncomendaSelecionada encomenda = dados.getValue(EncomendaSelecionada.class);
+                    EncomendaSelecionada encomendaSelecionada = dados.getValue(EncomendaSelecionada.class);
 
-                    if(encomenda.getIdUsuario() == user.getUid()) {
-                        addOnEncomendaOnLista(encomenda);
+                    if(encomendaSelecionada.getIdUsuario().equals(user.getUid())) {
+
+                        addOnEncomendaSelecionadaOnLista(encomendaSelecionada);
+
                     }
+
                 }
+
                 adapter.notifyDataSetChanged();
 
             }
@@ -62,36 +63,19 @@ public class ListarEncomendasSelecionadas extends AppCompatActivity {
             }
         });
 
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-
-                Intent intent = new Intent(ListarEncomendasSelecionadas.this, InfoEncomendaSelecionada.class);
-                intent.putExtra("nomeObjeto", String.valueOf(encomendas.get(position).getNomeObjeto()));
-                intent.putExtra("origem", String.valueOf(encomendas.get(position).getCidadeOri()));
-                intent.putExtra("destino", String.valueOf(encomendas.get(position).getCidadeDest()));
-                intent.putExtra("descricao", String.valueOf(encomendas.get(position).getDescricao()));
-                intent.putExtra("data", String.valueOf(encomendas.get(position).getDataViagem()));
-                intent.putExtra("hora", String.valueOf(encomendas.get(position).getHoraViagem()));
-                intent.putExtra("idMotorista", String.valueOf(encomendas.get(position).getIdMotorista()));
-
-                startActivity(intent);
-
-            }
-        });
-
-
-    }
-
-    private void addOnEncomendaOnLista(EncomendaSelecionada encomenda){
-        this.encomendas.add(encomenda);
     }
 
     private void setAdapter(){
-        adapter = new ListarEncomendasSelecionadasAdapter(getApplicationContext(), this.encomendas);
+
+        adapter = new ListarEncomendasSelecionadasAdapter(getApplicationContext(), this.encomendaSelecionadas);
         lista.setAdapter(adapter);
+
     }
 
+    private void addOnEncomendaSelecionadaOnLista(EncomendaSelecionada encomendaSelecionada){
 
+        this.encomendaSelecionadas.add(encomendaSelecionada);
+
+    }
 
 }
