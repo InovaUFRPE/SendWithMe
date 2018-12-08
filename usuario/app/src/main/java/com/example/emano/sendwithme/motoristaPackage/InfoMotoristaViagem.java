@@ -15,6 +15,7 @@ import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristas;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.Usuario;
 import com.example.emano.sendwithme.ViagemPackage.Viagem;
+import com.example.emano.sendwithme.homePackage.TelaInicial;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,6 +37,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
     private DatabaseReference databaseReferenceViagem;
     private DatabaseReference databaseReferenceViagemUsuario;
     private DatabaseReference databaseReferenceUsuarioViagem;
+    private DatabaseReference databaseReferenceUsuario;
 
     private String viagemId;
 
@@ -88,6 +90,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
 
 
+
         databaseReferenceUsuarioViagem = FirebaseDatabase.getInstance().getReference().child("UsuarioViagem");
 
         //ESSE NO DE VIAGEM TEM TODOS OS USUARIOS Q JA SE CADASTRARAM AQUI
@@ -96,11 +99,47 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
         databaseReferenceViagem = FirebaseDatabase.getInstance().getReference().child("Viagens");
 
+        databaseReferenceUsuario = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+
+
+        databaseReferenceUsuario.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot dados:dataSnapshot.getChildren()){
+
+                    Usuario usuario = dados.getValue(Usuario.class);
+
+                    if(usuario.getId().equals(user.getUid())){
+                        esseUsuario = usuario;
+                    }
+
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
+
         databaseReferenceViagem.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dados:dataSnapshot.getChildren()){
-                    essaViagem = dados.getValue(Viagem.class);
+
+                    Viagem viagem = dados.getValue(Viagem.class);
+                    if(dados.getKey().equals(viagemId)){
+                        essaViagem = viagem;
+                    }
+
 
                 }
             }
@@ -121,11 +160,13 @@ public class InfoMotoristaViagem extends AppCompatActivity {
                 for (DataSnapshot dados:dataSnapshot.getChildren()){
 
                     Usuario usuario = dados.getValue(Usuario.class);
+                    if(usuario!=null){
+                        addusuariosCadastrados(usuario.getId());
 
-                    addusuariosCadastrados(usuario.getId());
-                    if (usuario.getId().equals(user.getUid())){
-                        esseUsuario = usuario;
                     }
+
+
+
 
 
                 }
@@ -154,8 +195,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
                 incluiusuario();
 
-                Toast.makeText(InfoMotoristaViagem.this,"Solicitação efetuada com sucesso!",Toast.LENGTH_SHORT).show();
-                finish();
+
 
 
             }
@@ -200,9 +240,12 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
         }else {
             essaViagem.setAssentos(numeropassageiros-1);
-            databaseReferenceViagem.setValue(essaViagem);
-            databaseReferenceViagemUsuario.setValue(esseUsuario);
-            databaseReferenceUsuarioViagem.child(user.getUid()).setValue(essaViagem);
+            databaseReferenceViagem.child(viagemId).setValue(essaViagem);
+            databaseReferenceViagemUsuario.child(esseUsuario.getId()).setValue(esseUsuario);
+            databaseReferenceUsuarioViagem.child(user.getUid()).child(viagemId).setValue(essaViagem);
+            Toast.makeText(InfoMotoristaViagem.this,"Solicitação efetuada com sucesso!",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(InfoMotoristaViagem.this, TelaInicial.class);
+            startActivity(intent);
 
         }
 
