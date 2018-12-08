@@ -27,26 +27,7 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="EncomendasSelecionadas.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Viagens/EncomendasSelecionadas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-355">
-              <caret line="31" column="28" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HistoricoEncomendas.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Viagens/HistoricoEncomendas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="65" column="193" selection-start-line="65" selection-start-column="193" selection-end-line="65" selection-end-column="193" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -2344,6 +2325,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Viagens/HistoricoEncomendas.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Viagens/ListaViagens.java" />
       </list>
     </option>
   </component>
@@ -2532,7 +2514,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Android Profiler" />
@@ -2548,7 +2529,7 @@
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18305598" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22541603" />
       <window_info anchor="bottom" id="Build" weight="0.32952693" />
       <window_info anchor="right" id="Gradle" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2569,6 +2550,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Viagens/HistoricoEncomendas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="65" column="193" selection-start-line="65" selection-start-column="193" selection-end-line="65" selection-end-column="193" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Viagens/EncomendasSelecionadas.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-355">
@@ -2576,10 +2564,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Viagens/HistoricoEncomendas.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/projetosendwithmemotorista/sendwithmemotorista/Activity/Viagens/ListaViagens.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="65" column="193" selection-start-line="65" selection-start-column="193" selection-end-line="65" selection-end-column="193" />
+        <state relative-caret-position="272">
+          <caret line="77" column="297" selection-start-line="77" selection-start-column="297" selection-end-line="77" selection-end-column="297" />
         </state>
       </provider>
     </entry>
