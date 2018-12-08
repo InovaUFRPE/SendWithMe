@@ -73,7 +73,8 @@
         <activity android:name=".ChatPackage.ListaChatActivity" />
         <activity android:name=".MotoristaPackage.ListarMotoristas2" />
         <activity android:name=".EncomendaPackage.ListarEncomendas" />
-        <activity android:name=".EncomendaPackage.InfoEncomenda"></activity>
+        <activity android:name=".EncomendaPackage.InfoEncomenda" />
+        <activity android:name=".EncomendaPackage.InfoEncomendaSelecionada"></activity>
     </application>
 
 </manifest>
