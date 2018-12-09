@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.emano.sendwithme.ChatPackage.ChatActivity;
 import com.example.emano.sendwithme.R;
 
 import com.example.emano.sendwithme.motoristaPackage.InfoMotorista;
@@ -99,6 +100,21 @@ public class InfoEncomendaSelecionada extends AppCompatActivity {
                 Intent intent1 = new Intent(InfoEncomendaSelecionada.this, ListarEncomendasSelecionadas.class);
                 startActivity(intent1);
                 Toast.makeText(InfoEncomendaSelecionada.this,"Encomenda finalizada com sucesso!",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        chatMotorista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent1 = new Intent(InfoEncomendaSelecionada.this, ChatActivity.class);
+
+                intent.putExtra("nome", motorista.getNome() + " " + motorista.getSobrenome() );
+                intent.putExtra("id", idMotorista );
+                intent.putExtra("idcurrentuser", idUsuario);
+
+                startActivity(intent1);
 
             }
         });
