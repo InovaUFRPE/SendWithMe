@@ -158,7 +158,10 @@ public class StatusViagem extends AppCompatActivity {
                     botaoStatus.setText("Finalizar");
                 }
                 if(status.equals("Viagem em andamento")){
-                    deletarViagemFinalizada();
+                    definirviagemcompleta();
+                }
+                if(status.equals("Viagem finalizada")){
+                    Toast.makeText(StatusViagem.this,"A viagem ja foi finalizada",Toast.LENGTH_SHORT) .show();
                 }
             }
 
@@ -176,6 +179,12 @@ public class StatusViagem extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ViagemFB vg = dataSnapshot.getValue(ViagemFB.class);
                 statusDaViagem.setText(vg.getStatus());
+                if(vg.getStatus().equals("Viagem em andamento")){
+                    botaoStatus.setText("Finalizar");
+                }
+                if(vg.getStatus().equals("Viagem finalizada")){
+                    botaoStatus.setText("--------");
+                }
             }
 
             @Override
@@ -185,22 +194,19 @@ public class StatusViagem extends AppCompatActivity {
         });
     }
 
-    private void deletarViagemFinalizada(){
-       /* DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Query applesQuery = ref.child("Viagens").orderByChild("viagemUID").equalTo("Olinda");
-
-        applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+    private void definirviagemcompleta(){
+        viagematual.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
-                    appleSnapshot.getRef().removeValue();
-                }
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ViagemFB viagem = dataSnapshot.getValue(ViagemFB.class);
+                viagem.setStatus("Viagem finalizada");
+                viagematual.setValue(viagem);
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(StatusViagem.this,"Algo deu errado",Toast.LENGTH_SHORT).show();
             }
         });
-    */}
+    }
 }
