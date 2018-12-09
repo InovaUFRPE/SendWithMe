@@ -12,6 +12,7 @@ import com.example.emano.sendwithme.EncomendaPackage.ListarEncomendasFinalizadas
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.ViagemPackage.ListarViagens;
 import com.example.emano.sendwithme.caronaPackage.EnderecoCarona;
+import com.example.emano.sendwithme.perfilPackage.Perfil;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class TelaInicial extends AppCompatActivity {
@@ -59,6 +60,13 @@ public class TelaInicial extends AppCompatActivity {
 
         Intent intent1 = new Intent(TelaInicial.this, AcompanhamentoEncomendas.class);
         startActivity(intent1);
+
+    }
+
+    public void perfil(View view){
+
+        Intent intent2 = new Intent(TelaInicial.this, Perfil.class);
+        startActivity(intent2);
 
     }
 
