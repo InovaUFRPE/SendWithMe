@@ -92,49 +92,20 @@
         app:layout_constraintTop_toBottomOf="@+id/senhaId" />
 
 
-    <RadioButton
-        android:id="@+id/rbFeminino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:checked="true"
-        android:hint="@string/feminino"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintEnd_toStartOf="@+id/rbMasculino"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenhaCompara" />
-
-    <RadioButton
-        android:id="@+id/rbMasculino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:checked="true"
-        android:hint="@string/masculino"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rbFeminino"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenhaCompara" />
-
-
     <Button
         android:id="@+id/btnCadastro"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:background="@drawable/button_style"
         android:drawableRight="@drawable/registrar"
         android:paddingRight="10dp"
         android:text="Cadastrar"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rbMasculino" />
+        app:layout_constraintTop_toBottomOf="@+id/edtSenhaCompara" />
 
     <TextView
         android:id="@+id/textView9"
@@ -157,14 +128,14 @@
         android:id="@+id/button2"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="76dp"
         android:background="@drawable/button_style"
         android:drawableLeft="@drawable/voltar"
         android:paddingLeft="16dp"
         android:text="Voltar"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rbFeminino" />
+        app:layout_constraintTop_toBottomOf="@+id/edtSenhaCompara" />
 </android.support.constraint.ConstraintLayout>

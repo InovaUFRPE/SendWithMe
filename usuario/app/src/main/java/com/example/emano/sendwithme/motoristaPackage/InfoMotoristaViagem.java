@@ -36,12 +36,14 @@ public class InfoMotoristaViagem extends AppCompatActivity {
     private DatabaseReference databaseReferenceViagemUsuario;
     private DatabaseReference databaseReferenceUsuarioViagem;
     private DatabaseReference databaseReferenceUsuario;
+    private DatabaseReference databaseReferenceMotorista;
 
     private String viagemId;
 
     private ArrayList<String> usuariosCadastrados = new ArrayList<>();
     private Viagem essaViagem;
     private Usuario esseUsuario;
+    private Motorista motorista;
 
     TextView nome;
 
@@ -53,6 +55,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
     Button solicitaViagem;
     Button botaoChat;
+    Button maaisInformacoes;
 
 
     @Override
@@ -62,7 +65,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
         setview();
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
 
 
         final String nome1 = intent.getStringExtra("nome") + " " + intent.getStringExtra("sobrenome");
@@ -218,6 +221,38 @@ public class InfoMotoristaViagem extends AppCompatActivity {
             }
         });
 
+        maaisInformacoes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                databaseReferenceMotorista = FirebaseDatabase.getInstance().getReference().child("usuario").child(usuarioid);
+
+                databaseReferenceMotorista.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        motorista = dataSnapshot.getValue(Motorista.class);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+                Intent intent1 = new Intent(InfoMotoristaViagem.this, InfoMotorista.class);
+                intent1.putExtra("nome", String.valueOf(motorista.getNome()));
+                intent1.putExtra("sobrenome", String.valueOf(motorista.getSobrenome()));
+                intent1.putExtra("sexo", String.valueOf(motorista.getSexo()));
+                intent1.putExtra("email", String.valueOf(motorista.getEmail()));
+                startActivity(intent1);
+
+            }
+        });
+
     }
 
     public void addusuariosCadastrados(String usuarioId){
@@ -262,6 +297,7 @@ public class InfoMotoristaViagem extends AppCompatActivity {
        encomenda = (TextView) findViewById(R.id.textEncomendasViagemInfo);
        solicitaViagem = (Button) findViewById(R.id.btnSolicitarCarona);
        botaoChat = findViewById(R.id.btnChatId);
+       maaisInformacoes = findViewById(R.id.btnMaisInfoMotorista);
 
     }
 

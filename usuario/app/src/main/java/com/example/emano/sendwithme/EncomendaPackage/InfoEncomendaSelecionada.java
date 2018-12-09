@@ -124,7 +124,7 @@ public class InfoEncomendaSelecionada extends AppCompatActivity {
 
     private void setView(){
 
-        nomeMotorista = (TextView) findViewById(R.id.txtnomeMotoristaEncomenda);
+        nomeMotorista = (TextView) findViewById(R.id.txtnomeMotoristaEncomendaInfo);
         nomeObjeto = (TextView) findViewById(R.id.txtNomeObjetoEncomendaInfo);
         data = (TextView) findViewById(R.id.txtDataEncomendaInfo);
         descricao = (TextView) findViewById(R.id.txtDescricaoEncomendaInfo);
