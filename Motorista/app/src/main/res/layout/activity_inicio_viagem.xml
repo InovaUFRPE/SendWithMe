@@ -12,20 +12,19 @@
         android:id="@+id/Btnavanc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="42dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="89dp"
         android:background="@drawable/button_style"
         android:drawableRight="@drawable/avancar"
         android:paddingRight="16dp"
         android:text="Avançar"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Btnvolt"
-        app:layout_constraintTop_toBottomOf="@+id/datamin"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/exemp" />
 
     <fragment
         android:id="@+id/place_autocomplete_fragment"
