@@ -181,6 +181,22 @@ public class InfoMotoristaViagem extends AppCompatActivity {
 
         //databaseReference = FirebaseDatabase.getInstance().getReference(viagemId).child("solicitacoes");
 
+        databaseReferenceMotorista = FirebaseDatabase.getInstance().getReference().child("usuario").child(usuarioid);
+
+        databaseReferenceMotorista.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                motorista = dataSnapshot.getValue(Motorista.class);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         solicitaViagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -224,24 +240,6 @@ public class InfoMotoristaViagem extends AppCompatActivity {
         maaisInformacoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
-                databaseReferenceMotorista = FirebaseDatabase.getInstance().getReference().child("usuario").child(usuarioid);
-
-                databaseReferenceMotorista.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        motorista = dataSnapshot.getValue(Motorista.class);
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
 
                 Intent intent1 = new Intent(InfoMotoristaViagem.this, InfoMotorista.class);
                 intent1.putExtra("nome", String.valueOf(motorista.getNome()));
