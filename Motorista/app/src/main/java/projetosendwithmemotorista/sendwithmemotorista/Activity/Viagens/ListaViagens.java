@@ -34,6 +34,7 @@ public class ListaViagens extends AppCompatActivity {
     private ListView listaviagens;
     private ArrayList<String> lista;
     private ArrayAdapter<String> adapter;
+    private String idviagemselect;
 
 
     @Override
@@ -56,8 +57,11 @@ public class ListaViagens extends AppCompatActivity {
         listaviagens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                idviagemselect = lista.get(position);
                 Intent i = new Intent(ListaViagens.this, StatusViagem.class);
+                i.putExtra("idviagem",idviagemselect);
                 startActivity(i);
+
             }
         });
     }
@@ -71,11 +75,11 @@ public class ListaViagens extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds: dataSnapshot.getChildren()){
-                    ViagemFB usuario = ds.getValue(ViagemFB.class);
-                    String userId = String.valueOf(usuario.getUsuarioid());
+                    ViagemFB viagem = ds.getValue(ViagemFB.class);
+                    String userId = String.valueOf(viagem.getUsuarioid());
                     final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaViagens.this);
                     if (userId.equals(preferenciasAndroid.getIdentificador()))
-                        lista.add(" Cidade Origem: " + usuario.getCidade() +"\n" + " Cidade Destino: "+ usuario.getCidadedest() + "\n"+ " Data:"+usuario.getData() + "\n" + " Hora: "+usuario.getHora() + "\n"+ "Assento(s): " +usuario.getAssentos() + "\n" + "Encomenda(s): " + usuario.getEncomendas() );
+                        lista.add(" Cidade Origem: " + viagem.getCidade() +"\n" + " Cidade Destino: "+ viagem.getCidadedest() + "\n"+ " Data:"+viagem.getData() + "\n" + " Hora: "+viagem.getHora() + "\n"+ "Assento(s): " +viagem.getAssentos() + "\n" + "Encomenda(s): " + viagem.getEncomendas() );
                        // lista.add(ds.getValue().toString());
 
                 }
