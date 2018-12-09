@@ -3,18 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorAccent"
     android:layout_height="match_parent"
     tools:context=".EncomendaPackage.AcompanhamentoEncomendas">
 
     <Button
         android:id="@+id/btnListaEncomendas"
-        android:layout_width="246dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="69dp"
+        android:layout_marginLeft="69dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginRight="69dp"
         android:background="@drawable/button_style"
         android:onClick="encomendasSemMotoristas"
         android:text="Encomendas aguardando motoristas"
@@ -25,11 +26,11 @@
 
     <Button
         android:id="@+id/btnListaEncomendasAndamento"
-        android:layout_width="242dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/button_style"
@@ -42,22 +43,18 @@
 
     <Button
         android:id="@+id/btnEncomendasFinalizadas"
-        android:layout_width="240dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/button_style"
         android:onClick="encomendasFinalizadas"
         android:text="Encomendas finalizadas"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnListaEncomendasAndamento"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintTop_toBottomOf="@+id/btnListaEncomendasAndamento" />
 </android.support.constraint.ConstraintLayout>

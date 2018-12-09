@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorAccent"
     android:layout_height="match_parent"
     tools:context=".EncomendaPackage.InfoEncomendaFinalizada">
 
@@ -10,41 +11,41 @@
         android:id="@+id/txtOrigemEncomendaFinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="16dp"
         android:text="Origem do objeto:"
-        app:layout_constraintEnd_toStartOf="@+id/txtOrigemEncomendaInfoFinalizada"
-        app:layout_constraintHorizontal_bias="0.74"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtnomeObjetoEncomendaFinalizada" />
 
     <Button
         android:id="@+id/btnInfoMotoristaEncomendaFinalizada"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="@drawable/button_style"
         android:text="Informações do motorista"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtnomeMotoristaEncomendaInfoFinalizada" />
+        app:layout_constraintTop_toBottomOf="@+id/txtnomeMotoristaEncomendaFinalizada" />
 
     <TextView
         android:id="@+id/txtnomeObjetoEncomendaFinalizada"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="52dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="32dp"
         android:text="Nome do objeto"
-        app:layout_constraintEnd_toStartOf="@+id/txtNomeObjetoEncomendaInfoFinalizada"
-        app:layout_constraintHorizontal_bias="0.619"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnInfoMotoristaEncomendaFinalizada" />
 
@@ -52,14 +53,12 @@
         android:id="@+id/txtnomeMotoristaEncomendaFinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="64dp"
         android:text="Motorista:"
-        app:layout_constraintEnd_toStartOf="@+id/txtnomeMotoristaEncomendaInfoFinalizada"
-        app:layout_constraintHorizontal_bias="0.722"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,14 +66,12 @@
         android:id="@+id/txtDestinoEncomendaFinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="16dp"
         android:text="Destino do objeto:"
-        app:layout_constraintEnd_toStartOf="@+id/txtDestinoEncomendaInfoFinalizada"
-        app:layout_constraintHorizontal_bias="0.75"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtOrigemEncomendaFinalizada" />
 
@@ -82,66 +79,78 @@
         android:id="@+id/txtDescricaoEncomendaFinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="16dp"
         android:text="Descrição:"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDestinoEncomendaFinalizada" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDataEncomendaFinalizada" />
 
     <TextView
         android:id="@+id/txtDataEncomendaFinalizada"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="92dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="16dp"
         android:text="Data de entrega:"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescricaoEncomendaFinalizada" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDestinoEncomendaFinalizada" />
 
     <TextView
         android:id="@+id/txtnomeMotoristaEncomendaInfoFinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginRight="160dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="64dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/txtnomeMotoristaEncomendaFinalizada"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtNomeObjetoEncomendaInfoFinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/txtnomeObjetoEncomendaFinalizada"
         app:layout_constraintTop_toBottomOf="@+id/btnInfoMotoristaEncomendaFinalizada" />
 
     <TextView
         android:id="@+id/txtOrigemEncomendaInfoFinalizada"
         android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginRight="148dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/txtOrigemEncomendaFinalizada"
         app:layout_constraintTop_toBottomOf="@+id/txtNomeObjetoEncomendaInfoFinalizada" />
 
     <TextView
         android:id="@+id/txtDestinoEncomendaInfoFinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginRight="148dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/txtDestinoEncomendaFinalizada"
         app:layout_constraintTop_toBottomOf="@+id/txtOrigemEncomendaInfoFinalizada" />
 
     <TextView
@@ -150,25 +159,25 @@
         android:layout_height="82dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/txtDescricaoEncomendaFinalizada"
-        app:layout_constraintTop_toBottomOf="@+id/txtDestinoEncomendaInfoFinalizada" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDataEncomendaInfoFinalizada" />
 
     <TextView
         android:id="@+id/txtDataEncomendaInfoFinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescricaoEncomendaInfoFinalizada" />
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/txtDataEncomendaFinalizada"
+        app:layout_constraintTop_toBottomOf="@+id/txtDestinoEncomendaInfoFinalizada" />
 
 
 </android.support.constraint.ConstraintLayout>
