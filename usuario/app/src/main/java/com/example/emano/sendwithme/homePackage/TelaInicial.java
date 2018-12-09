@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.emano.sendwithme.ChatPackage.ListaChatActivity;
+import com.example.emano.sendwithme.EncomendaPackage.AcompanhamentoEncomendas;
 import com.example.emano.sendwithme.EncomendaPackage.ListarEncomendasFinalizadas;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.ViagemPackage.ListarViagens;
@@ -56,7 +57,7 @@ public class TelaInicial extends AppCompatActivity {
     public void encomendas(View view){
         ///
 
-        Intent intent1 = new Intent(TelaInicial.this, ListarEncomendasFinalizadas.class);
+        Intent intent1 = new Intent(TelaInicial.this, AcompanhamentoEncomendas.class);
         startActivity(intent1);
 
     }

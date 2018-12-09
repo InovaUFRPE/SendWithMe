@@ -1,8 +1,11 @@
 package com.example.emano.sendwithme.EncomendaPackage;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -62,7 +65,7 @@ public class ListarEncomendasFinalizadas extends AppCompatActivity {
             }
         });
 
-        /*lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
@@ -72,14 +75,13 @@ public class ListarEncomendasFinalizadas extends AppCompatActivity {
                 intent.putExtra("destino", String.valueOf(encomendaSelecionadas.get(position).getCidadeDest()));
                 intent.putExtra("idUsuario", String.valueOf(encomendaSelecionadas.get(position).getIdUsuario()));
                 intent.putExtra("idMotorista", String.valueOf(encomendaSelecionadas.get(position).getIdMotorista()));
-                intent.putExtra("idEncomenda", String.valueOf(encomendaSelecionadas.get(position).getIdEncomenda()));
                 intent.putExtra("descricao", String.valueOf(encomendaSelecionadas.get(position).getDescricao()));
                 intent.putExtra("hora", String.valueOf(encomendaSelecionadas.get(position).getHoraViagem()));
                 intent.putExtra("data", String.valueOf(encomendaSelecionadas.get(position).getDataViagem()));
                 startActivity(intent);
 
             }
-        });*/
+        });
 
 
     }
