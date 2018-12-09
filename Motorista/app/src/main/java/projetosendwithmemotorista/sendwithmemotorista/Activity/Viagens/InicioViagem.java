@@ -1,6 +1,5 @@
 package projetosendwithmemotorista.sendwithmemotorista.Activity.Viagens;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -46,8 +50,7 @@ public class InicioViagem extends AppCompatActivity {
     private Integer HORARIOt;
     private Integer MINt;
 
-    private EditText edtcidade;
-    private EditText edtendereço;
+
     private EditText edtdia;
     private EditText edtmes;
     private EditText edtano;
@@ -56,6 +59,14 @@ public class InicioViagem extends AppCompatActivity {
 
     private Button btnavançar;
     private Button btnvoltar;
+
+    private EditText edtcidade;
+    private EditText edtendereço;
+
+    private PlaceAutocompleteFragment autocompleteFragmentCidade;
+    private PlaceAutocompleteFragment autocompleteFragmentEndereco;
+    private String cidadePadrao;
+    private String enderecoPadrao;
 
 
     @Override
@@ -66,8 +77,51 @@ public class InicioViagem extends AppCompatActivity {
         vartroca = "0";
 
         //
-        edtcidade = findViewById(R.id.Edtcity);
-        edtendereço = findViewById(R.id.Edtend);
+        //edtcidade = findViewById(R.id.Edtcity);
+        //edtendereço = findViewById(R.id.Edtend);
+        autocompleteFragmentCidade = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+
+        autocompleteFragmentEndereco = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment2);
+
+        cidadePadrao = "1";
+        enderecoPadrao = "1";
+
+        autocompleteFragmentCidade.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                // TODO: Get info about the selected place.
+                //Log.i(TAG, "Place: " + place.getName());
+                //Toast.makeText(MainActivity.this, place.getAddress(),Toast.LENGTH_SHORT).show();
+                cidadePadrao = place.getAddress().toString();
+            }
+
+            @Override
+            public void onError(Status status) {
+                // TODO: Handle the error.
+                //Log.i(TAG, "An error occurred: " + status);
+                Toast.makeText(getApplicationContext(), "Add endereco origem",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        autocompleteFragmentEndereco.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                // TODO: Get info about the selected place.
+                //Log.i(TAG, "Place: " + place.getName());
+                //Toast.makeText(MainActivity.this, place.getAddress(),Toast.LENGTH_SHORT).show();
+                enderecoPadrao = place.getAddress().toString();
+            }
+
+            @Override
+            public void onError(Status status) {
+                // TODO: Handle the error.
+                //Log.i(TAG, "An error occurred: " + status);
+                Toast.makeText(getApplicationContext(), "Add endereco origem",Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         //
         edtdia = findViewById(R.id.datadia);
@@ -84,13 +138,13 @@ public class InicioViagem extends AppCompatActivity {
             endereço = extras.getString("endereço");
             data = extras.getString("data");
             hora = extras.getString("hora");
-            cidadedest = extras.getString("cidadedest");
-            endereçodest = extras.getString("endereçodest");
+            //cidadedest = extras.getString("cidadedest");
+            //endereçodest = extras.getString("endereçodest");
             assentos = extras.getInt("assentos");
             encomendas = extras.getString("encomendas");
 
-            edtcidade.setText(cidade);
-            edtendereço.setText(endereço);
+            //edtcidade.setText(cidade);
+            //edtendereço.setText(endereço);
 
             if(!data.equals("")||!hora.equals("")){
 
@@ -142,8 +196,8 @@ public class InicioViagem extends AppCompatActivity {
 
     //
     private void funcavanc() {
-        cidade = edtcidade.getText().toString();
-        endereço = edtendereço.getText().toString();
+        //cidade = edtcidade.getText().toString();
+        //endereço = edtendereço.getText().toString();
         dia = edtdia.getText().toString();
         mes = edtmes.getText().toString();
         ano = edtano.getText().toString();
@@ -152,7 +206,7 @@ public class InicioViagem extends AppCompatActivity {
 
 
         //filtro basic
-        if (cidade.equals("")||endereço.equals("")||dia.equals("")||mes.equals("")||ano.equals("")||horario.equals("")||min.equals("")){
+        if (cidadePadrao.equals("1")||enderecoPadrao.equals("1")||dia.equals("")||mes.equals("")||ano.equals("")||horario.equals("")||min.equals("")){
             ////
             Toast.makeText(this,"Preencha todos os campos!",Toast.LENGTH_SHORT).show();
             vartroca="1";
@@ -266,12 +320,12 @@ public class InicioViagem extends AppCompatActivity {
         data = dia + "/" + mes + "/" + ano;
         hora = horario + ":" + min;
         Intent i = new Intent(InicioViagem.this, DestinoViagem.class);
-        i.putExtra("cidade", cidade);
-        i.putExtra("endereço",endereço);
+        i.putExtra("cidade", cidadePadrao);
+        i.putExtra("endereço",enderecoPadrao);
         i.putExtra("data",data);
         i.putExtra("hora",hora);
-        i.putExtra("cidadedest",cidadedest);
-        i.putExtra("endereçodest",endereçodest);
+        //i.putExtra("cidadedest",cidadedest);
+        //i.putExtra("endereçodest",endereçodest);
         i.putExtra("assentos",assentos);
         i.putExtra("encomendas",encomendas);
         startActivity(i);

@@ -8,6 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
+
 import projetosendwithmemotorista.sendwithmemotorista.R;
 
 public class DestinoViagem extends AppCompatActivity {
@@ -21,11 +26,15 @@ public class DestinoViagem extends AppCompatActivity {
     private String encomendas;
     private Integer assentos;
 
-    private EditText edtcidadedest;
-    private EditText edtendereçodest;
+    //private EditText edtcidadedest;
+    //private EditText edtendereçodest;
 
     private Button btnavançar;
     private Button btnvoltar;
+    private PlaceAutocompleteFragment autocompleteFragmentCidade;
+    private PlaceAutocompleteFragment autocompleteFragmentEndereco;
+    private String cidadePadrao;
+    private String enderecoPadrao;
 
 
     @Override
@@ -34,8 +43,53 @@ public class DestinoViagem extends AppCompatActivity {
         setContentView(R.layout.activity_destino_viagem);
 
         //
-        edtcidadedest = findViewById(R.id.Edtcity);
-        edtendereçodest = findViewById(R.id.Edtend);
+        //edtcidadedest = findViewById(R.id.Edtcity);
+        //edtendereçodest = findViewById(R.id.Edtend);
+
+        autocompleteFragmentCidade = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+
+        autocompleteFragmentEndereco = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment2);
+
+        cidadePadrao = "1";
+        enderecoPadrao = "1";
+
+        autocompleteFragmentCidade.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                // TODO: Get info about the selected place.
+                //Log.i(TAG, "Place: " + place.getName());
+                //Toast.makeText(MainActivity.this, place.getAddress(),Toast.LENGTH_SHORT).show();
+                cidadePadrao = place.getAddress().toString();
+            }
+
+            @Override
+            public void onError(Status status) {
+                // TODO: Handle the error.
+                //Log.i(TAG, "An error occurred: " + status);
+                Toast.makeText(getApplicationContext(), "Add endereco origem",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        autocompleteFragmentEndereco.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                // TODO: Get info about the selected place.
+                //Log.i(TAG, "Place: " + place.getName());
+                //Toast.makeText(MainActivity.this, place.getAddress(),Toast.LENGTH_SHORT).show();
+                enderecoPadrao = place.getAddress().toString();
+            }
+
+            @Override
+            public void onError(Status status) {
+                // TODO: Handle the error.
+                //Log.i(TAG, "An error occurred: " + status);
+                Toast.makeText(getApplicationContext(), "Add endereco origem",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         btnavançar = findViewById(R.id.Btnavanc);
         btnvoltar = findViewById(R.id.Btnvolt);
@@ -47,14 +101,14 @@ public class DestinoViagem extends AppCompatActivity {
             endereço = extras.getString("endereço");
             data = extras.getString("data");
             hora = extras.getString("hora");
-            cidadedest = extras.getString("cidadedest");
-            endereçodest = extras.getString("endereçodest");
+            //cidadedest = extras.getString("cidadedest");
+            //endereçodest = extras.getString("endereçodest");
             assentos = extras.getInt("assentos");
             encomendas = extras.getString("encomendas");
         }
 
-        edtcidadedest.setText(cidadedest);
-        edtendereçodest.setText(endereçodest);
+        //edtcidadedest.setText(cidadedest);
+        //edtendereçodest.setText(endereçodest);
 
         //
         btnavançar.setOnClickListener(new View.OnClickListener() {
@@ -80,15 +134,18 @@ public class DestinoViagem extends AppCompatActivity {
         i.putExtra("endereço",endereço);
         i.putExtra("data",data);
         i.putExtra("hora",hora);
+        i.putExtra("assentos",assentos);
+        i.putExtra("encomendas",encomendas);
+
         startActivity(i);
     }
 
     //
     private void funcavanc() {
-        cidadedest = edtcidadedest.getText().toString();
-        endereçodest = edtendereçodest.getText().toString();
+        //cidadedest = edtcidadedest.getText().toString();
+        //endereçodest = edtendereçodest.getText().toString();
 
-        if(cidadedest.equals("")||endereçodest.equals("")){
+        if(cidadePadrao.equals("1")||enderecoPadrao.equals("1")){
             Toast.makeText(this,"Preencha todos os campos!",Toast.LENGTH_LONG).show();
         }
         else {
@@ -97,8 +154,8 @@ public class DestinoViagem extends AppCompatActivity {
             i.putExtra("endereço",endereço);
             i.putExtra("data",data);
             i.putExtra("hora",hora);
-            i.putExtra("cidadedest",cidadedest);
-            i.putExtra("endereçodest",endereçodest);
+            i.putExtra("cidadedest",cidadePadrao);
+            i.putExtra("endereçodest",enderecoPadrao);
             i.putExtra("assentos",assentos);
             i.putExtra("encomendas",encomendas);
             startActivity(i);

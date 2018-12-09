@@ -26,6 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity android:name=".Activity.LoginMotorista.LoginActivity" />
         <activity android:name=".Activity.CadastroMotorista.CadastroActivity" />
         <activity android:name=".Activity.TelaPerfil.TelaPerfil" />

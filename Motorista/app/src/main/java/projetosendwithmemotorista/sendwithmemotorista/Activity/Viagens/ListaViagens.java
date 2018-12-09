@@ -95,8 +95,8 @@ public class ListaViagens extends AppCompatActivity {
         });
     }
     private void setView(){
-        edtcidade = findViewById(R.id.Edtcity);
-        edtendereço = findViewById(R.id.Edtend);
+        //edtcidade = findViewById(R.id.Edtcity);
+        //edtendereço = findViewById(R.id.Edtend);
       //  edtdata = findViewById(R.id.Edtdata);
       //  edthora = findViewById(R.id.Edthora);
     }
