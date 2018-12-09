@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/txtNomeEncomendaListaSelecionadaFinalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="19dp"
+        android:text="Nome Encomenda"
+        android:textColor="#01234a"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtOrigemListaEncomendaSelecionadaFinalizada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txtOrigemListaEncomendaSelecionadaFinalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Origem:"
+        android:textColor="#FFBA5C"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtOrigemEncomendaListaSelecionadaInfoFinalizada"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDestinoListaEncomendaSelecionadaFinalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Destino:"
+        android:textColor="#FFBA5C"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtDestinoEncomendaListaSelecionadaInfoFinalizada"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtOrigemEncomendaListaSelecionadaInfoFinalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="75dp"
+        android:text="Tracunhaém, Pernambuco"
+        android:textColor="#01234a"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/txtOrigemListaEncomendaSelecionadaFinalizada"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDestinoEncomendaListaSelecionadaInfoFinalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="São Lourenço, Pernambuco"
+        android:textColor="#01234a"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/txtDestinoListaEncomendaSelecionadaFinalizada"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrigemEncomendaListaSelecionadaInfoFinalizada" />
+
+</android.support.constraint.ConstraintLayout>

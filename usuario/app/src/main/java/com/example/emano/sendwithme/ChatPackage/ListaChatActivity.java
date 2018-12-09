@@ -1,7 +1,7 @@
 package com.example.emano.sendwithme.ChatPackage;
 
-import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristasAdapter;
-import com.example.emano.sendwithme.MotoristaPackage.Motorista;
+import com.example.emano.sendwithme.motoristaPackage.ListarMotoristasAdapter;
+import com.example.emano.sendwithme.motoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
 import android.content.Intent;
 import android.support.annotation.NonNull;

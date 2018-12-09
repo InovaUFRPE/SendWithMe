@@ -32,7 +32,7 @@
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".HomePackage.Splashscreen"
+            android:name=".homePackage.Splashscreen"
             android:label="@string/app_name"
             android:theme="@style/AppCompat.TelaCheia">
             <intent-filter>
@@ -55,9 +55,6 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".perfilPackage.EditarPerfil" />
-        <activity
-            android:name=".EncomendaPackage.CadastrarPedido"
-            android:label="@string/title_activity_maps2" />
         <activity android:name=".EncomendaPackage.ListarPedidos" />
         <activity android:name=".EncomendaPackage.ConfirmarPedido" />
         <activity android:name=".EncomendaPackage.InfoPedido" />
@@ -71,13 +68,14 @@
         <activity android:name=".EncomendaPackage.CadastrarEncomendaConfirmar" />
         <activity android:name=".ChatPackage.ChatActivity" />
         <activity android:name=".ChatPackage.ListaChatActivity" />
-        <activity android:name=".MotoristaPackage.ListarMotoristas2" />
+        <activity android:name=".motoristaPackage.ListarMotoristas2" />
         <activity android:name=".EncomendaPackage.ListarEncomendas" />
         <activity android:name=".EncomendaPackage.InfoEncomenda" />
         <activity android:name=".EncomendaPackage.InfoEncomendaSelecionada" />
         <activity android:name=".EncomendaPackage.ListarEncomendasSelecionadas" />
         <activity android:name=".motoristaPackage.InfoMotorista" />
-        <activity android:name=".ViagemPackage.ListarViagens"></activity>
+        <activity android:name=".ViagemPackage.ListarViagens" />
+        <activity android:name=".EncomendaPackage.ListarEncomendasFinalizadas"></activity>
     </application>
 
 </manifest>

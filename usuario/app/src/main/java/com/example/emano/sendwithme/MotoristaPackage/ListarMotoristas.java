@@ -13,8 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristasAdapter;
-import com.example.emano.sendwithme.MotoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.ViagemPackage.Viagem;
 import com.google.android.gms.maps.model.LatLng;

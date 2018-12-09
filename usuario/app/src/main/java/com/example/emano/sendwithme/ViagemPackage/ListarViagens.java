@@ -9,8 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristasAdapter2;
-import com.example.emano.sendwithme.MotoristaPackage.Motorista;
+import com.example.emano.sendwithme.motoristaPackage.ListarMotoristasAdapter2;
+import com.example.emano.sendwithme.motoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.motoristaPackage.InfoMotoristaViagem;
 import com.google.firebase.auth.FirebaseAuth;
