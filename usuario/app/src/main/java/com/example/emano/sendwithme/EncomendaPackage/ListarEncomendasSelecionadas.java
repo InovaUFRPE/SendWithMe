@@ -49,7 +49,7 @@ public class ListarEncomendasSelecionadas extends AppCompatActivity {
                     EncomendaSelecionada encomendaSelecionada = dados.getValue(EncomendaSelecionada.class);
                     idEncomendaSelecionadas.add(dados.getKey());
 
-                    if(encomendaSelecionada.getIdUsuario().equals(user.getUid()) && encomendaSelecionada.getStatus().equals("Finalizada")) {
+                    if(encomendaSelecionada.getIdUsuario().equals(user.getUid()) && !encomendaSelecionada.getStatus().equals("Finalizada")) {
 
                         addOnEncomendaSelecionadaOnLista(encomendaSelecionada);
 
