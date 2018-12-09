@@ -240,6 +240,7 @@ public class ListaEncomendas extends AppCompatActivity {
                     v.setCidadeOrigemViagem(cidade);
                     v.setDataViagem(data);
                     v.setHoraViagem(hora);
+                    v.setStatus("Em andamento");
                     String idAleatorio = Base64Custom.codificarBase64(UUID.randomUUID().toString());
                     DatabaseReference referenceFirebase = ConfiguracaoFirebase.getReferenceFirebase();
                     referenceFirebase.child("EncomendasSelecionadas").child(idAleatorio).setValue(v);

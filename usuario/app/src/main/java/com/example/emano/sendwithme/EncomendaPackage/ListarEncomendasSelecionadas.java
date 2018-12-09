@@ -27,6 +27,7 @@ public class ListarEncomendasSelecionadas extends AppCompatActivity {
     private ListView lista;
     private DatabaseReference databaseReference;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private ArrayList<String> idEncomendaSelecionadas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +47,9 @@ public class ListarEncomendasSelecionadas extends AppCompatActivity {
                 for(DataSnapshot dados: dataSnapshot.getChildren()){
 
                     EncomendaSelecionada encomendaSelecionada = dados.getValue(EncomendaSelecionada.class);
+                    idEncomendaSelecionadas.add(dados.getKey());
 
-                    if(encomendaSelecionada.getIdUsuario().equals(user.getUid())) {
+                    if(encomendaSelecionada.getIdUsuario().equals(user.getUid()) && encomendaSelecionada.getStatus().equals("Finalizada")) {
 
                         addOnEncomendaSelecionadaOnLista(encomendaSelecionada);
 
@@ -79,6 +81,7 @@ public class ListarEncomendasSelecionadas extends AppCompatActivity {
                 intent.putExtra("descricao", String.valueOf(encomendaSelecionadas.get(position).getDescricao()));
                 intent.putExtra("hora", String.valueOf(encomendaSelecionadas.get(position).getHoraViagem()));
                 intent.putExtra("data", String.valueOf(encomendaSelecionadas.get(position).getDataViagem()));
+                intent.putExtra("idEncomendaSelecionada", String.valueOf(idEncomendaSelecionadas.get(position)));
                 startActivity(intent);
 
             }

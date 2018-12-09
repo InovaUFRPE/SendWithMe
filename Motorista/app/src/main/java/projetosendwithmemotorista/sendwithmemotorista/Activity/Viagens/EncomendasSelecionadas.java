@@ -15,6 +15,16 @@ public class EncomendasSelecionadas {
 
     private String idEncomenda;
 
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
+    }
+
+    private String Status;
+
     public String getCidadeDest() {
         return cidadeDest;
     }
