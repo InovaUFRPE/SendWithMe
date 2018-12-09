@@ -1,14 +1,18 @@
 package com.example.emano.sendwithme.ViagemPackage;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristasAdapter2;
 import com.example.emano.sendwithme.MotoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
+import com.example.emano.sendwithme.motoristaPackage.InfoMotoristaViagem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -69,6 +73,37 @@ public class ListarViagens extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent1 = new Intent(getApplicationContext(), InfoMotoristaViagem.class);
+
+                intent1.putExtra("nome", String.valueOf(motoristas.get(position).getNome()));
+                intent1.putExtra("sobrenome", String.valueOf(motoristas.get(position).getSobrenome()));
+                intent1.putExtra("email", String.valueOf(motoristas.get(position).getEmail()));
+                intent1.putExtra("sexo", String.valueOf(motoristas.get(position).getSexo()));
+
+                intent1.putExtra("viagemId", String.valueOf(viagens.get(position).getViagemUID()));
+                intent1.putExtra("cidadedest", String.valueOf(viagens.get(position).getCidadedest()));
+                intent1.putExtra("enderecodest", String.valueOf(viagens.get(position).getEndereçodest()));
+                intent1.putExtra("endereco", String.valueOf(viagens.get(position).getEndereço()));
+                intent1.putExtra("cidade", String.valueOf(viagens.get(position).getCidade()));
+                intent1.putExtra("data", String.valueOf(viagens.get(position).getData()));
+                intent1.putExtra("hora", String.valueOf(viagens.get(position).getHora()));
+                intent1.putExtra("encomendas", String.valueOf(viagens.get(position).getEncomendas()));
+                intent1.putExtra("data", String.valueOf(viagens.get(position).getData()));
+                intent1.putExtra("hora", String.valueOf(viagens.get(position).getHora()));
+                intent1.putExtra("usuarioid", String.valueOf(viagens.get(position).getUsuarioid()));
+
+                startActivity(intent1);
+
+
 
             }
         });
