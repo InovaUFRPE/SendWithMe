@@ -129,7 +129,7 @@ public class StatusViagem extends AppCompatActivity {
         status.setButton(DialogInterface.BUTTON_POSITIVE, "Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                settarstatus();
                 status.dismiss();
             }
         });
