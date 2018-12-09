@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.motoristaPackage;
+package com.example.emano.sendwithme.MotoristaPackage;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +13,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristasAdapter2;
+import com.example.emano.sendwithme.MotoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.ViagemPackage.Viagem;
+import com.example.emano.sendwithme.motoristaPackage.InfoMotoristaViagem;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -115,7 +118,6 @@ public class ListarMotoristas2 extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 motoristas.clear();
-
 
 
                 for(DataSnapshot dados:dataSnapshot.getChildren()){

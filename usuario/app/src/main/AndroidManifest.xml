@@ -76,7 +76,8 @@
         <activity android:name=".EncomendaPackage.InfoEncomenda" />
         <activity android:name=".EncomendaPackage.InfoEncomendaSelecionada" />
         <activity android:name=".EncomendaPackage.ListarEncomendasSelecionadas" />
-        <activity android:name=".motoristaPackage.InfoMotorista"></activity>
+        <activity android:name=".motoristaPackage.InfoMotorista" />
+        <activity android:name=".ViagemPackage.ListarViagens"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.homePackage;
+package com.example.emano.sendwithme.HomePackage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

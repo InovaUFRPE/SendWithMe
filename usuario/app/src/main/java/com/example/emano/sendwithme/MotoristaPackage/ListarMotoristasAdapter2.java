@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.motoristaPackage;
+package com.example.emano.sendwithme.MotoristaPackage;
 
 
 import android.content.Context;

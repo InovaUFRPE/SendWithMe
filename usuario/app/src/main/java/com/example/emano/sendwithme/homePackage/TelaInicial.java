@@ -11,12 +11,14 @@ import com.example.emano.sendwithme.EncomendaPackage.CadastrarEncomenda;
 import com.example.emano.sendwithme.EncomendaPackage.ListarEncomendas;
 import com.example.emano.sendwithme.EncomendaPackage.ListarEncomendasSelecionadas;
 import com.example.emano.sendwithme.R;
+import com.example.emano.sendwithme.ViagemPackage.ListarViagens;
 import com.example.emano.sendwithme.caronaPackage.EnderecoCarona;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class TelaInicial extends AppCompatActivity {
 
     private Button botaoListaChat;
+    private Button botaoListarViagens;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class TelaInicial extends AppCompatActivity {
         setContentView(R.layout.activity_tela_inicial);
 
         botaoListaChat = findViewById(R.id.btnListaChat);
+        botaoListarViagens = findViewById(R.id.btnListaViagens);
 
         botaoListaChat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +34,15 @@ public class TelaInicial extends AppCompatActivity {
                 Intent intent = new Intent(TelaInicial.this, ListaChatActivity.class);
                 startActivity(intent);
 
+
+            }
+        });
+
+        botaoListarViagens.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaInicial.this, ListarViagens.class);
+                startActivity(intent);
 
             }
         });
