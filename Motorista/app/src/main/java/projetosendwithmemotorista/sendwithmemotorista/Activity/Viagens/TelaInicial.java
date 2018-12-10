@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import projetosendwithmemotorista.sendwithmemotorista.Activity.Chat.ListaChat;
 import projetosendwithmemotorista.sendwithmemotorista.Activity.LoginMotorista.LoginActivity;
 import projetosendwithmemotorista.sendwithmemotorista.Activity.TelaPerfil.TelaPerfil;
 import projetosendwithmemotorista.sendwithmemotorista.R;
@@ -101,7 +102,7 @@ public class TelaInicial extends AppCompatActivity {
         btnchat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(TelaInicial.this,ListaViagens.class));
+                startActivity(new Intent(TelaInicial.this,ListaChat.class));
             }
         });
     }
