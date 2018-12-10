@@ -33,6 +33,7 @@ public class ListaViagens extends AppCompatActivity {
     private Button btnvoltar;
     private ListView listaviagens;
     private ArrayList<String> lista;
+    private ArrayList<String> ids;
     private ArrayAdapter<String> adapter;
     private String idviagemselect;
 
@@ -57,7 +58,7 @@ public class ListaViagens extends AppCompatActivity {
         listaviagens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                idviagemselect = lista.get(position);
+                idviagemselect = ids.get(position);
                 Intent i = new Intent(ListaViagens.this, StatusViagem.class);
                 i.putExtra("idviagem",idviagemselect);
                 startActivity(i);
@@ -69,6 +70,7 @@ public class ListaViagens extends AppCompatActivity {
     private void setardadoslistaviagem(){
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Viagens");
+        ids = new ArrayList<>();
         lista = new ArrayList<>();
         adapter = new ArrayAdapter<String>(this,R.layout.infoviagens,R.id.textView8, lista);
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -78,9 +80,10 @@ public class ListaViagens extends AppCompatActivity {
                     ViagemFB viagem = ds.getValue(ViagemFB.class);
                     String userId = String.valueOf(viagem.getUsuarioid());
                     final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaViagens.this);
-                    if (userId.equals(preferenciasAndroid.getIdentificador()))
-                        lista.add(" Cidade Origem: " + viagem.getCidade() +"\n" + " Cidade Destino: "+ viagem.getCidadedest() + "\n"+ " Data:"+viagem.getData() + "\n" + " Hora: "+viagem.getHora() + "\n"+ "Assento(s): " +viagem.getAssentos() + "\n" + "Encomenda(s): " + viagem.getEncomendas() );
-                       // lista.add(ds.getValue().toString());
+                    if (userId.equals(preferenciasAndroid.getIdentificador())) {
+                        ids.add(ds.getKey());
+                        lista.add(" Cidade Origem: " + viagem.getCidade() + "\n" + " Cidade Destino: " + viagem.getCidadedest() + "\n" + " Data:" + viagem.getData() + "\n" + " Hora: " + viagem.getHora() + "\n" + "Assento(s): " + viagem.getAssentos() + "\n" + "Encomenda(s): " + viagem.getEncomendas());
+                    }
 
                 }
 

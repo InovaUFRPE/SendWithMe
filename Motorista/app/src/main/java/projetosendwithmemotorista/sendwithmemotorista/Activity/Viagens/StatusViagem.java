@@ -101,7 +101,7 @@ public class StatusViagem extends AppCompatActivity {
 
 
         listapass = new ArrayList<>();
-        listaadapter = new ArrayAdapter<>(this,R.layout.activity_status_viagem,R.id.listaPassageiros, listapass);
+        listaadapter = new ArrayAdapter<>(this,R.layout.infoviagens,R.id.textView8, listapass);
         viagemusuarioatual.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -109,7 +109,9 @@ public class StatusViagem extends AppCompatActivity {
                     Usuarios usuario = ds.getValue(Usuarios.class);
                     String nomeemail = usuario.getNome() + " " + usuario.getSobrenome() + "\n" + usuario.getEmail();
                     listapass.add(nomeemail);
-
+                }
+                if (listapass.isEmpty()){
+                    listapass.add("Parace que esta viagem não possui passageiros ainda :(");
                 }
                 listaPassageiros.setAdapter(listaadapter);
             }
@@ -177,6 +179,7 @@ public class StatusViagem extends AppCompatActivity {
         viagematual.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String aa = dataSnapshot.getValue().toString();
                 ViagemFB vg = dataSnapshot.getValue(ViagemFB.class);
                 statusDaViagem.setText(vg.getStatus());
                 if(vg.getStatus().equals("Viagem em andamento")){

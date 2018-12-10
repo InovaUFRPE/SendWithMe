@@ -16,7 +16,6 @@ public class ViagemFB {
     private String usuarioid;
 
     private String status;
-    private ArrayList listapass;
 
     private Integer assentos;
 
@@ -40,14 +39,6 @@ public class ViagemFB {
 
     public void setAssentos(Integer assentos) {
         this.assentos = assentos;
-    }
-
-    public ArrayList getListapass() {
-        return listapass;
-    }
-
-    public void setListapass(ArrayList listapass) {
-        this.listapass = listapass;
     }
 
     public String getViagemUID() {

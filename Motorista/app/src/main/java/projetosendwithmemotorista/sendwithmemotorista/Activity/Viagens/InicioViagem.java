@@ -65,8 +65,12 @@ public class InicioViagem extends AppCompatActivity {
 
     private PlaceAutocompleteFragment autocompleteFragmentCidade;
     private PlaceAutocompleteFragment autocompleteFragmentEndereco;
+
     private String cidadePadrao;
     private String enderecoPadrao;
+
+    private Toast datainvalida;
+    private Toast dataantiga;
 
 
     @Override
@@ -75,6 +79,8 @@ public class InicioViagem extends AppCompatActivity {
         setContentView(R.layout.activity_inicio_viagem);
 
         vartroca = "0";
+        datainvalida = Toast.makeText(this,"Data invalida!",Toast.LENGTH_SHORT);
+        dataantiga = Toast.makeText(this,"Insira uma data posterior á atual!",Toast.LENGTH_SHORT);
 
         //
         //edtcidade = findViewById(R.id.Edtcity);
@@ -252,6 +258,9 @@ public class InicioViagem extends AppCompatActivity {
                     vartroca = "1";
                 }
             }
+            if(vartroca.equals("1")){
+                datainvalida.show();
+            }
 
             //filtro horario e data atual
             DateFormat df = new SimpleDateFormat("dd/MM/yyyy/HH/mm");
@@ -264,31 +273,35 @@ public class InicioViagem extends AppCompatActivity {
             MINt = Integer.parseInt(datassplit[4]);
 
             //filtro master
-
-            if(ANO<ANOt){
-                vartroca = "1";
-            }
-            if(ANOt.equals(ANO)){
-                if(MES<MESt){
-                    vartroca="1";
+            if(vartroca.equals("0")) {
+                if (ANO < ANOt) {
+                    vartroca = "1";
                 }
-                if(MES.equals(MESt)){
-                    if(DIA<DIAt){
-                        vartroca="1";
+                if (ANOt.equals(ANO)) {
+                    if (MES < MESt) {
+                        vartroca = "1";
                     }
-                    if(DIA.equals(DIAt)){
-                        if(HORARIO<HORARIOt){
-                            vartroca="1";
+                    if (MES.equals(MESt)) {
+                        if (DIA < DIAt) {
+                            vartroca = "1";
                         }
-                        if(HORARIO.equals(HORARIOt)){
-                            if(MIN<MINt){
-                                vartroca="1";
+                        if (DIA.equals(DIAt)) {
+                            if (HORARIO < HORARIOt) {
+                                vartroca = "1";
                             }
-                            if(MIN.equals(MINt)){
-                                vartroca="0";
+                            if (HORARIO.equals(HORARIOt)) {
+                                if (MIN < MINt) {
+                                    vartroca = "1";
+                                }
+                                if (MIN.equals(MINt)) {
+                                    vartroca = "0";
+                                }
                             }
                         }
                     }
+                }
+                if(vartroca.equals("1")){
+                    dataantiga.show();
                 }
             }
 
