@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.maps.android.SphericalUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -62,8 +63,23 @@ public class ListarMotoristas2 extends AppCompatActivity {
                 for (DataSnapshot dados:dataSnapshot.getChildren()){
 
                     Viagem viagem = dados.getValue(Viagem.class);
-                    viagem.setViagemUID(dados.getKey());
-                    addViagemNaLista(viagem);
+                    if(viagem!=null){
+                        viagem.setViagemUID(dados.getKey());
+                        LatLng latLngDestinoViagem = getLocationFromAddress(ListarMotoristas2.this, viagem.getCidadedest());
+                        if(SphericalUtil.computeDistanceBetween(destinoUsuario, latLngDestinoViagem) < 60000){
+
+                            addViagemNaLista(viagem);
+
+                        }
+
+
+
+
+
+
+
+                    }
+
 
                 }
                 carregarLista();
