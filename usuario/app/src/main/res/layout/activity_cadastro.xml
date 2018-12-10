@@ -96,14 +96,16 @@
         android:id="@+id/btnCadastro"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_style"
         android:drawableRight="@drawable/registrar"
         android:paddingRight="10dp"
         android:text="Cadastrar"
         android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaCompara" />
 
@@ -120,6 +122,7 @@
         android:text="Cadastro"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -130,12 +133,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_style"
         android:drawableLeft="@drawable/voltar"
         android:paddingLeft="16dp"
         android:text="Voltar"
         android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaCompara" />
 </android.support.constraint.ConstraintLayout>
