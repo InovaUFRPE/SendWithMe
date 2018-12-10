@@ -110,9 +110,9 @@ public class InfoEncomendaSelecionada extends AppCompatActivity {
 
                 Intent intent1 = new Intent(InfoEncomendaSelecionada.this, ChatActivity.class);
 
-                intent.putExtra("nome", motorista.getNome() + " " + motorista.getSobrenome() );
-                intent.putExtra("id", idMotorista );
-                intent.putExtra("idcurrentuser", idUsuario);
+                intent1.putExtra("nome", motorista.getNome() + " " + motorista.getSobrenome() );
+                intent1.putExtra("id", idMotorista );
+                intent1.putExtra("idcurrentuser", idUsuario);
 
                 startActivity(intent1);
 

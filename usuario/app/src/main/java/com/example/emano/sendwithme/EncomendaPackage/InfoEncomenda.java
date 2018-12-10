@@ -3,6 +3,7 @@ package com.example.emano.sendwithme.EncomendaPackage;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.emano.sendwithme.R;
@@ -32,6 +33,13 @@ public class InfoEncomenda extends AppCompatActivity {
         origem.setText(origem1);
         destino.setText(destino1);
         descricao.setText(descricao1);
+
+    }
+
+    public void voltarListarEncomendas(View view){
+
+        Intent intent  = new Intent(InfoEncomenda.this, ListarEncomendas.class);
+        startActivity(intent);
 
     }
 
