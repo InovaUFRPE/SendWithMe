@@ -102,4 +102,11 @@ public class ListarEncomendasSelecionadas extends AppCompatActivity {
 
     }
 
+    public void voltarAcompanhamentoEncomendas2(View view){
+
+        Intent intent = new Intent(ListarEncomendasSelecionadas.this, AcompanhamentoEncomendas.class);
+        startActivity(intent);
+
+    }
+
 }
