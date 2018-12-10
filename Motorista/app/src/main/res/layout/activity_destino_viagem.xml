@@ -111,7 +111,8 @@
         android:gravity="center"
         android:text="@string/endereco_destino"
         android:textColor="@color/colorAccent"
-        android:textSize="18sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtpass7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
