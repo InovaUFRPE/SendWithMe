@@ -86,6 +86,8 @@ public class CadastrarEncomendaConfirmar extends AppCompatActivity {
                 Intent intent1 = new Intent(CadastrarEncomendaConfirmar.this, CadastrarEncomendaDescricao.class);
                 intent1.putExtra("cidadeOrigem", cidadeOrigem1);
                 intent1.putExtra("enderecoOrigem", enderecoOrigem1);
+                intent1.putExtra("enderecoDestino", enderecoDestino1);
+                intent1.putExtra("cidadeDestino", cidadeDestino1);
                 startActivity(intent1);
 
             }
