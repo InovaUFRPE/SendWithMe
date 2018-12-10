@@ -24,6 +24,7 @@ public class CadastrarEncomendaDestino extends AppCompatActivity {
     private String endereco;
 
     private Button avancar;
+    private Button voltar;
 
     private PlaceAutocompleteFragment autocompleteFragment;
     private PlaceAutocompleteFragment autocompleteFragment2;
@@ -89,6 +90,16 @@ public class CadastrarEncomendaDestino extends AppCompatActivity {
             }
         });
 
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(CadastrarEncomendaDestino.this, CadastrarEncomenda.class);
+                startActivity(intent);
+
+            }
+        });
+
 
 
     }
@@ -124,6 +135,7 @@ public class CadastrarEncomendaDestino extends AppCompatActivity {
         avancar = (Button) findViewById(R.id.btnAvancarCadastro2);
         cidade = "1";
         endereco = "1";
+        voltar = (Button) findViewById(R.id.btnVoltarCadastro2);
 
     }
 

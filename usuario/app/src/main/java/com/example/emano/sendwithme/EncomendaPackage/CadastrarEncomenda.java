@@ -98,6 +98,12 @@ public class CadastrarEncomenda extends AppCompatActivity {
 
     }
 
+    public void  voltarListaEncomendas(View view){
+
+        Intent intent = new Intent(CadastrarEncomenda.this, ListarEncomendas.class);
+        startActivity(intent);
+
+    }
 
     public void setView(){
 

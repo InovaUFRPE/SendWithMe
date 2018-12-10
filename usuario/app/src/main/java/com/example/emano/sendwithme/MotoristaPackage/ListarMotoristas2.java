@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.ViagemPackage.Viagem;
+import com.example.emano.sendwithme.caronaPackage.EnderecoCarona;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -142,6 +143,14 @@ public class ListarMotoristas2 extends AppCompatActivity {
 
 
     }
+
+    public void voltarEnderecoCarona(View view){
+
+        Intent intent = new Intent(ListarMotoristas2.this, EnderecoCarona.class);
+        startActivity(intent);
+
+    }
+
 
     public void addViagemNaLista(Viagem viagem){
         this.viagem.add(viagem);

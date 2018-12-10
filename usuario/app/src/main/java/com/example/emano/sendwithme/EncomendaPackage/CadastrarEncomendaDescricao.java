@@ -69,6 +69,10 @@ public class CadastrarEncomendaDescricao extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent2 = new Intent(CadastrarEncomendaDescricao.this, CadastrarEncomendaDestino.class);
+                intent2.putExtra("cidadeOrigem", cidadeOrigem);
+                intent2.putExtra("enderecoOrigem", enderecoOrigem);
+                intent2.putExtra("cidadeDestino", cidadeDestino);
+                intent2.putExtra("enderecoDestino", enderecoDestino);
                 startActivity(intent2);
 
             }

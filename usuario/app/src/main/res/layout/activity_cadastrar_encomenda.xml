@@ -52,6 +52,7 @@
         android:layout_marginTop="38dp"
         android:background="@drawable/button_style"
         android:drawableLeft="@drawable/voltar"
+        android:onClick="voltarListaEncomendas"
         android:paddingLeft="16dp"
         android:text="Voltar"
         android:textColor="@color/colorPrimary"

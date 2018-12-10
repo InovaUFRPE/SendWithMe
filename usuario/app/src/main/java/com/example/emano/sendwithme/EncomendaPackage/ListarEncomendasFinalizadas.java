@@ -99,4 +99,11 @@ public class ListarEncomendasFinalizadas extends AppCompatActivity {
 
     }
 
+    public void voltarAcompanhamentoEncomendas(View view){
+
+        Intent intent = new Intent(ListarEncomendasFinalizadas.this, AcompanhamentoEncomendas.class);
+        startActivity(intent);
+
+    }
+
 }

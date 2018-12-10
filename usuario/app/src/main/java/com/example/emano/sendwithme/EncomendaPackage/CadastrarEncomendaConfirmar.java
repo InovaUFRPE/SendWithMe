@@ -71,6 +71,8 @@ public class CadastrarEncomendaConfirmar extends AppCompatActivity {
 
                 database.push().setValue(encomenda);
 
+                Intent intent = new Intent(CadastrarEncomendaConfirmar.this, ListarEncomendas.class);
+                startActivity(intent);
 
                 Toast.makeText(CadastrarEncomendaConfirmar.this,"Encomenda cadastrada com sucesso!",Toast.LENGTH_SHORT).show();
 
@@ -82,6 +84,8 @@ public class CadastrarEncomendaConfirmar extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent1 = new Intent(CadastrarEncomendaConfirmar.this, CadastrarEncomendaDescricao.class);
+                intent1.putExtra("cidadeOrigem", cidadeOrigem1);
+                intent1.putExtra("enderecoOrigem", enderecoOrigem1);
                 startActivity(intent1);
 
             }

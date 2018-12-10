@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.emano.sendwithme.homePackage.TelaInicial;
 import com.example.emano.sendwithme.motoristaPackage.ListarMotoristasAdapter2;
 import com.example.emano.sendwithme.motoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
@@ -142,6 +143,13 @@ public class ListarViagens extends AppCompatActivity {
         });
 
 
+
+    }
+
+    public void voltarTelaInicial(View view){
+
+        Intent intent = new Intent(ListarViagens.this, TelaInicial.class);
+        startActivity(intent);
 
     }
 
