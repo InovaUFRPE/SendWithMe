@@ -41,8 +41,6 @@ public class Viagemrevisao extends AppCompatActivity {
     private String DESTINO;
     private String DATAHORA;
 
-    private ArrayList<String> lista =  new ArrayList<>();
-
 
     private TextView txtpartida;
     private TextView txtdestino;
@@ -79,7 +77,6 @@ public class Viagemrevisao extends AppCompatActivity {
             qtassentos = assentos.toString();
 
         }
-        lista.add(0,"Controle");
 
         //
         PARTIDA = endereço + " , " + cidade + ".";
@@ -150,7 +147,6 @@ public class Viagemrevisao extends AppCompatActivity {
                 v.setHora(hora);
                 v.setEncomendas(encomendas);
                 v.setAssentos(assentos);
-                v.setListapass(lista);
                 v.setUsuarioid(preferenciasAndroid.getIdentificador());
                 v.setStatus("Aguardando o início da viagem");
                 String idAleatorio = Base64Custom.codificarBase64(v.getViagemUID());
