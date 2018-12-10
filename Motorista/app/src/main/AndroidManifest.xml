@@ -44,7 +44,8 @@
         <activity android:name=".Activity.Chat.ChatActivity" />
         <activity android:name=".Activity.Viagens.ListaEncomendas" />
         <activity android:name=".Activity.Viagens.StatusViagem" />
-        <activity android:name=".Activity.Viagens.HistoricoEncomendas"></activity>
+        <activity android:name=".Activity.Viagens.HistoricoEncomendas" />
+        <activity android:name=".Activity.Chat.ListaChat"></activity>
     </application>
 
 </manifest>
