@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.motoristaPackage;
+package com.example.emano.sendwithme.MotoristaPackage;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import com.example.emano.sendwithme.EncomendaPackage.ListarEncomendas;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.ViagemPackage.Viagem;
 import com.example.emano.sendwithme.caronaPackage.EnderecoCarona;
+import com.example.emano.sendwithme.motoristaPackage.InfoMotoristaViagem;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.DataSnapshot;

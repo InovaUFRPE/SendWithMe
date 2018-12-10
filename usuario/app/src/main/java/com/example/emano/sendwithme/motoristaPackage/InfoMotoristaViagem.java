@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emano.sendwithme.ChatPackage.ChatActivity;
+import com.example.emano.sendwithme.MotoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.Usuario;
 import com.example.emano.sendwithme.ViagemPackage.Viagem;
