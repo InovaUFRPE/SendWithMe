@@ -67,7 +67,7 @@ public class Cadastro extends AppCompatActivity {
     public void setView(){
 
         nome = findViewById(R.id.edtNome);
-        email = findViewById(R.id.emailPerfilId);
+        email = findViewById(R.id.edtCadEmail);
         cpf = findViewById(R.id.edtCpf);
         senha = findViewById(R.id.senhaId);
         senhaConfirma = findViewById(R.id.edtSenhaCompara);
