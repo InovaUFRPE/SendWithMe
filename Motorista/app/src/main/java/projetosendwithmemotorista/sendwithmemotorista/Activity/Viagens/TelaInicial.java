@@ -23,6 +23,7 @@ public class TelaInicial extends AppCompatActivity {
     private Button buttonlistadecarona;
     private Button btnlista;
     private Button btnsair;
+    private Button btnchat;
     private String titulo;
     private String cont;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -59,6 +60,8 @@ public class TelaInicial extends AppCompatActivity {
         buttonperfil = findViewById(R.id.buttonperfil);
         btnlista = findViewById(R.id.btnlista);
         btnsair = findViewById(R.id.btnsair);
+        btnchat = findViewById(R.id.btnchat);
+
 
         btnnovacarona.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +98,12 @@ public class TelaInicial extends AppCompatActivity {
                 finish();
             }
         });
-
+        btnchat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TelaInicial.this,ListaViagens.class));
+            }
+        });
     }
 
 

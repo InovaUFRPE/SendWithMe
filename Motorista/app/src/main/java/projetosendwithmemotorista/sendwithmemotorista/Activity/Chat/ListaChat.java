@@ -77,18 +77,20 @@ public class ListaChat extends AppCompatActivity {
         listachat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Usuarios usuario = usuarios.get(position);
-                if(usuario.getId().equals(idPassageiro)){
-                    Toast.makeText(ListaChat.this,"É você..",Toast.LENGTH_SHORT).show();
+                if(usuariosnome.get(position).equals("Parece que nenhum passageiro abriu uma conversa com você :(")) {
+                    Toast.makeText(ListaChat.this,"Você não tem conversas",Toast.LENGTH_SHORT).show();
                 }
-                else{
-                    Intent i = new Intent(ListaChat.this,ChatActivity.class);
-                    i.putExtra("nome",usuariosnome.get(position));
-                    i.putExtra("id",usuario.getId());
-                    i.putExtra("idcurrentuser",idPassageiro);
+                else {
+                    Usuarios usuario = usuarios.get(position);
+                    if (usuario.getId().equals(idPassageiro)) {
+                        Toast.makeText(ListaChat.this, "É você..", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent i = new Intent(ListaChat.this, ChatActivity.class);
+                        i.putExtra("nome", usuariosnome.get(position));
+                        i.putExtra("id", usuario.getId());
+                        i.putExtra("idcurrentuser", idPassageiro);
+                    }
                 }
-
-
             }
         });
 
@@ -108,6 +110,9 @@ public class ListaChat extends AppCompatActivity {
                         usuarios.add(usuario);
                         usuariosnome.add(nomecomplet);
                     }
+                }
+                if(usuariosnome.isEmpty()){
+                    usuariosnome.add("Parece que nenhum passageiro abriu uma conversa com você :(");
                 }
                 listachat.setAdapter(adapter);
             }
