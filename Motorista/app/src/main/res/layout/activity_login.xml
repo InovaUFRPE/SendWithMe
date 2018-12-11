@@ -5,7 +5,7 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/laranja"
+    android:background="@color/colorAccent"
     android:gravity="center"
     tools:context=".Activity.LoginMotorista.LoginActivity">
 
@@ -60,7 +60,7 @@
         android:layout_marginRight="83dp"
         android:gravity="center"
         android:text="@string/esqueceu_senha"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogar" />

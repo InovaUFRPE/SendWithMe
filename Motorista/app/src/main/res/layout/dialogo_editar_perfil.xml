@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/laranja">
+    android:background="@color/colorAccent">
 
     <TextView
         android:id="@+id/textViewEditar"
@@ -16,9 +16,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/editar"
         android:gravity="center"
-        android:textColor="@color/colorAccent"
+        android:text="@string/editar"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextAlertConf"
         app:layout_constraintEnd_toEndOf="parent"

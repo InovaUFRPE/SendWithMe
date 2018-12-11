@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/laranja"
+    android:background="@color/colorAccent"
     tools:context=".Activity.Viagens.HistoricoEncomendas">
 
     <Button
@@ -36,7 +36,7 @@
         android:layout_marginRight="8dp"
         android:gravity="center"
         android:text="Histórico de encomendas"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,7 @@
         android:layout_marginRight="8dp"
         android:gravity="center"
         android:text="Segue abaixo o histórico de encomendas:"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

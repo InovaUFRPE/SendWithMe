@@ -22,7 +22,6 @@
         android:layout_height="wrap_content"
         android:text="@string/titulo"
         android:textAlignment="center"
-        android:textColor="@color/colorpreto"
         android:textSize="30dp"
         android:textStyle="bold" />
 
