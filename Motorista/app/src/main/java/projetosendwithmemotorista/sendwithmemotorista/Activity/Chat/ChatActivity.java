@@ -60,7 +60,9 @@ public class ChatActivity extends AppCompatActivity {
 
         firebase2 = FirebaseDatabase.getInstance();
 
-        firebase = firebase2.getReference().child("mensagens").child(idDestinatario).child(idEnviador);
+        firebase = firebase2.getReference().child("mensagens")
+                .child(idDestinatario)
+                .child(idEnviador);
 
 
         valueEventListenerMensagem = new ValueEventListener() {
