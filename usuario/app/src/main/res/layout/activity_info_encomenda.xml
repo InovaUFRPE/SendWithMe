@@ -9,13 +9,14 @@
 
     <TextView
         android:id="@+id/txtOrigemEncomendaListaInfo"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
         android:layout_marginLeft="43dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="Origem da encomenda:"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNomeObjetoInfoLista" />
@@ -29,18 +30,20 @@
         android:layout_marginTop="8dp"
         android:text="Rua A, 01, Recife"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtOrigemEncomendaListaInfo" />
 
     <TextView
         android:id="@+id/txtDestinoEncomendaListaInfo"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
         android:layout_marginLeft="43dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="Destino da encomenda:"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtOrigemEncomendaInfoLista" />
@@ -54,18 +57,20 @@
         android:layout_marginTop="8dp"
         android:text="Rua b, 02, Olinda"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDestinoEncomendaListaInfo" />
 
     <TextView
         android:id="@+id/txtNomeObjetoLista"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
         android:layout_marginLeft="43dp"
         android:layout_marginTop="32dp"
         android:text="Nome do objeto:"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtConfirmaEncomenda" />
@@ -79,6 +84,7 @@
         android:layout_marginTop="8dp"
         android:text="Descrição"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -91,6 +97,7 @@
         android:layout_marginTop="8dp"
         android:text="Livro"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNomeObjetoLista" />
 
@@ -137,9 +144,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
         android:layout_marginLeft="43dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="Descrição:"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDestinoEncomendaInfoLista" />
