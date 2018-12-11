@@ -48,10 +48,12 @@ public class ListaChat extends AppCompatActivity {
 
         listachat = findViewById(R.id.listviewchat);
 
-        final String idPassageiro = user.getUid();
+        final String idMotorista = user.getUid();
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario");
-        databaseReferenceConversa = FirebaseDatabase.getInstance().getReference().child("mensagens").child(idPassageiro);
+       // databaseReferenceConversa = FirebaseDatabase.getInstance().getReference().child("mensagens").child(idPassageiro);
+        databaseReferenceConversa = FirebaseDatabase.getInstance().getReference().child("mensagens");
+
 
         databaseReferenceConversa.addValueEventListener(new ValueEventListener() {
             @Override
@@ -59,11 +61,14 @@ public class ListaChat extends AppCompatActivity {
                 minhasconversas.clear();
 
                 for(DataSnapshot dados:dataSnapshot.getChildren()){
+                    for(DataSnapshot ds:dados.getChildren()){
+                        if(ds.getKey().equals(idMotorista)){
+                            String valor = dados.getKey();
+                            minhasconversas.add(valor);
+                        }
+                    }
 
-                    String valor = dados.getKey();
-                    minhasconversas.add(valor);
 
-                   // addMotoristaIdLista(valor);
                 }
                 carregarLista();
             }
@@ -82,13 +87,13 @@ public class ListaChat extends AppCompatActivity {
                 }
                 else {
                     Usuarios usuario = usuarios.get(position);
-                    if (usuario.getId().equals(idPassageiro)) {
+                    if (usuario.getId().equals(idMotorista)) {
                         Toast.makeText(ListaChat.this, "É você..", Toast.LENGTH_SHORT).show();
                     } else {
                         Intent i = new Intent(ListaChat.this, ChatActivity.class);
                         i.putExtra("nome", usuariosnome.get(position));
                         i.putExtra("id", usuario.getId());
-                        i.putExtra("idcurrentuser", idPassageiro);
+                        i.putExtra("idcurrentuser", idMotorista);
                     }
                 }
             }
