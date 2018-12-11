@@ -128,7 +128,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnVoltarLogin"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -137,6 +137,7 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/button_style"
         android:drawableLeft="@drawable/voltar"
+        android:onClick="voltarLogin"
         android:paddingLeft="16dp"
         android:text="Voltar"
         android:textColor="@color/colorPrimary"

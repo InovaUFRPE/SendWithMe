@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.motoristaPackage;
+package com.example.emano.sendwithme.MotoristaPackage;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -14,7 +14,7 @@ import com.example.emano.sendwithme.MotoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.Usuario;
 import com.example.emano.sendwithme.ViagemPackage.Viagem;
-import com.example.emano.sendwithme.homePackage.TelaInicial;
+import com.example.emano.sendwithme.HomePackage.TelaInicial;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

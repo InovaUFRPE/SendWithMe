@@ -1,5 +1,6 @@
-package com.example.emano.sendwithme.homePackage;
+package com.example.emano.sendwithme.HomePackage;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.Usuario;
+import com.example.emano.sendwithme.HomePackage.Login;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -105,6 +107,12 @@ public class Cadastro extends AppCompatActivity {
 
     }
 
+    public void voltarLogin(View view){
+
+        Intent intent = new Intent(Cadastro.this, Login.class);
+        startActivity(intent);
+
+    }
 
     private boolean validarCampos() {
         boolean erro = true;
