@@ -21,13 +21,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import projetosendwithmemotorista.sendwithmemotorista.Entidades.Usuarios;
+import projetosendwithmemotorista.sendwithmemotorista.Helper.PreferenciasAndroid;
 import projetosendwithmemotorista.sendwithmemotorista.R;
 
 public class ListaChat extends AppCompatActivity {
 
 
     private ArrayList<String> minhasconversas = new ArrayList<>();
-    private ArrayList<Usuarios> usuarios = new ArrayList<>();
+    private ArrayList<String> usuarios = new ArrayList<>();
     private ArrayList<String> usuariosnome = new ArrayList<>();
     private ArrayAdapter adapter;
 
@@ -47,11 +48,11 @@ public class ListaChat extends AppCompatActivity {
         erro = Toast.makeText(this,"Algo deu errado", Toast.LENGTH_SHORT);
 
         listachat = findViewById(R.id.listviewchat);
+        final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaChat.this);
+        final String idMorotista = preferenciasAndroid.getIdentificador();
 
-        final String idPassageiro = user.getUid();
-
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario");
-        databaseReferenceConversa = FirebaseDatabase.getInstance().getReference().child("mensagens").child(idPassageiro);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+        databaseReferenceConversa = FirebaseDatabase.getInstance().getReference().child("mensagens").child(idMorotista);
 
         databaseReferenceConversa.addValueEventListener(new ValueEventListener() {
             @Override
@@ -62,8 +63,6 @@ public class ListaChat extends AppCompatActivity {
 
                     String valor = dados.getKey();
                     minhasconversas.add(valor);
-
-                   // addMotoristaIdLista(valor);
                 }
                 carregarLista();
             }
@@ -81,14 +80,15 @@ public class ListaChat extends AppCompatActivity {
                     Toast.makeText(ListaChat.this,"Você não tem conversas",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Usuarios usuario = usuarios.get(position);
-                    if (usuario.getId().equals(idPassageiro)) {
+                    String idusu = usuarios.get(position);
+                    if (idusu.equals(idMorotista)) {
                         Toast.makeText(ListaChat.this, "É você..", Toast.LENGTH_SHORT).show();
                     } else {
                         Intent i = new Intent(ListaChat.this, ChatActivity.class);
                         i.putExtra("nome", usuariosnome.get(position));
-                        i.putExtra("id", usuario.getId());
-                        i.putExtra("idcurrentuser", idPassageiro);
+                        i.putExtra("id", idusu);
+                        i.putExtra("idcurrentuser", idMorotista);
+                        startActivity(i);
                     }
                 }
             }
@@ -106,8 +106,8 @@ public class ListaChat extends AppCompatActivity {
                 for (DataSnapshot ds:dataSnapshot.getChildren()){
                     Usuarios usuario = ds.getValue(Usuarios.class);
                     if(minhasconversas.contains(usuario.getId())) {
-                        String nomecomplet = usuario.getNome() + " " + usuario.getSobrenome();
-                        usuarios.add(usuario);
+                        String nomecomplet = usuario.getNome();
+                        usuarios.add(usuario.getId());
                         usuariosnome.add(nomecomplet);
                     }
                 }
