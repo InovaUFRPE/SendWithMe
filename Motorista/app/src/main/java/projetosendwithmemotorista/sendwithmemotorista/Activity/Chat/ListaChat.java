@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import projetosendwithmemotorista.sendwithmemotorista.Activity.Viagens.TelaInicial;
 import projetosendwithmemotorista.sendwithmemotorista.Entidades.Usuarios;
 import projetosendwithmemotorista.sendwithmemotorista.Helper.PreferenciasAndroid;
 import projetosendwithmemotorista.sendwithmemotorista.R;
@@ -40,12 +42,16 @@ public class ListaChat extends AppCompatActivity {
 
     private Toast erro;
 
+    private Button btnvoltar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_chat);
 
         erro = Toast.makeText(this,"Algo deu errado", Toast.LENGTH_SHORT);
+
+        btnvoltar = findViewById(R.id.button);
 
         listachat = findViewById(R.id.listviewchat);
         final PreferenciasAndroid preferenciasAndroid = new PreferenciasAndroid(ListaChat.this);
@@ -91,6 +97,14 @@ public class ListaChat extends AppCompatActivity {
                         startActivity(i);
                     }
                 }
+            }
+        });
+
+        btnvoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ListaChat.this,TelaInicial.class);
+                startActivity(i);
             }
         });
 

@@ -89,8 +89,12 @@ public class StatusViagem extends AppCompatActivity {
         botaoStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                status();
-
+                if(statusDaViagem.getText().equals("Viagem finalizada")){
+                    Toast.makeText(StatusViagem.this,"A viagem ja foi finalizada",Toast.LENGTH_SHORT) .show();
+                }
+                else {
+                    status();
+                }
             }
         });
 
@@ -162,9 +166,7 @@ public class StatusViagem extends AppCompatActivity {
                 if(status.equals("Viagem em andamento")){
                     definirviagemcompleta();
                 }
-                if(status.equals("Viagem finalizada")){
-                    Toast.makeText(StatusViagem.this,"A viagem ja foi finalizada",Toast.LENGTH_SHORT) .show();
-                }
+
             }
 
             @Override
