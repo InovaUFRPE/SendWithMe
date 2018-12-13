@@ -11,11 +11,11 @@ import android.widget.ListView;
 
 import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristasAdapter2;
 import com.example.emano.sendwithme.MotoristaPackage.Motorista;
-import com.example.emano.sendwithme.HomePackage.TelaInicial;
+import com.example.emano.sendwithme.homePackage.TelaInicial;
 import com.example.emano.sendwithme.MotoristaPackage.ListarMotoristasAdapter2;
 import com.example.emano.sendwithme.MotoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
-import com.example.emano.sendwithme.MotoristaPackage.InfoMotoristaViagem;
+import com.example.emano.sendwithme.motoristaPackage.InfoMotoristaViagem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

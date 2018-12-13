@@ -13,7 +13,7 @@ import com.example.emano.sendwithme.ChatPackage.ChatActivity;
 import com.example.emano.sendwithme.MotoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
 
-import com.example.emano.sendwithme.MotoristaPackage.InfoMotorista;
+import com.example.emano.sendwithme.motoristaPackage.InfoMotorista;
 import com.example.emano.sendwithme.MotoristaPackage.Motorista;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

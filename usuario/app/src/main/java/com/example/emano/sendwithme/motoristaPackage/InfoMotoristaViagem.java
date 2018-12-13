@@ -1,4 +1,4 @@
-package com.example.emano.sendwithme.MotoristaPackage;
+package com.example.emano.sendwithme.motoristaPackage;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -14,7 +14,8 @@ import com.example.emano.sendwithme.MotoristaPackage.Motorista;
 import com.example.emano.sendwithme.R;
 import com.example.emano.sendwithme.UsuarioPackage.Usuario;
 import com.example.emano.sendwithme.ViagemPackage.Viagem;
-import com.example.emano.sendwithme.HomePackage.TelaInicial;
+import com.example.emano.sendwithme.homePackage.TelaInicial;
+import com.example.emano.sendwithme.homePackage.TelaInicial;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -271,11 +272,11 @@ public class InfoMotoristaViagem extends AppCompatActivity {
             Toast.makeText(InfoMotoristaViagem.this, "Você ja participa dessa viagem!", Toast.LENGTH_SHORT).show();
 
         }else {
+            Toast.makeText(InfoMotoristaViagem.this,"Solicitação efetuada com sucesso!",Toast.LENGTH_SHORT).show();
             essaViagem.setAssentos(numeropassageiros-1);
             databaseReferenceViagem.child(viagemId).setValue(essaViagem);
             databaseReferenceViagemUsuario.child(esseUsuario.getId()).setValue(esseUsuario);
             databaseReferenceUsuarioViagem.child(user.getUid()).child(viagemId).setValue(essaViagem);
-            Toast.makeText(InfoMotoristaViagem.this,"Solicitação efetuada com sucesso!",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(InfoMotoristaViagem.this, TelaInicial.class);
             startActivity(intent);
 
