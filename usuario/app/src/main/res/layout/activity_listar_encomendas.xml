@@ -7,6 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".EncomendaPackage.ListarEncomendas">
 
+    <Button
+        android:id="@+id/btnVoltarEncomendas"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_style"
+        android:onClick="voltarEncomendas"
+        android:text="Voltar"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ListView
         android:id="@+id/encomenda_view"
         android:layout_width="300dp"
@@ -31,12 +48,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/button_style"
         android:onClick="novaEncomenda"
         android:text="Nova encomenda"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnVoltarEncomendas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
